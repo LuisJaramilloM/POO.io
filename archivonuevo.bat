@@ -1,1 +1,1 @@
-echo "archivo nuevoa"
+echo "archivo nuevoa".
