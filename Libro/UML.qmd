@@ -1,0 +1,136 @@
+---
+title: "R apuntes"
+author: "Luis Jaramillo"
+format: 
+  html: default
+  pdf: default
+editor: visual
+---
+
+## R studio.
+
+En este resumen se indica que podemos hacer con R studio desde lo básico hasta lo visto en las clases.
+
+## TIPOS DE DATOS.
+
+En R tenemos diferentes tipos de datos los cuales se puede observar a continuación.
+
+```{r}
+#                               tipos de datos
+x <- 56 #Numeric
+
+y <- "hola" # Character
+
+z <- TRUE #Logical
+
+x <- factor("hombre") #Factor 
+
+
+fecha1 <- as.Date("1990-08-07") #Date
+
+
+
+
+```
+
+Como se debe cambiar de un tipo de dato tipo fecha numérico, para realizar ese cambio se lo realiza con el comando as.tipo_archivo ejemplo: si quiero cambiar el resultado de fecha a numérico para realizar el calculo de años se realiza la siguiente operación.
+
+```{r}
+
+fecha1 <- as.Date("1990-08-07")
+fecha2 <- as.Date("2023-10-24")
+tiempovida = fecha2 - fecha1
+#Change type of Data Date to numeric
+anios = as.numeric(tiempovida) %/% 365 
+días = as.numeric(tiempovida) %% 365 
+anios
+días
+
+```
+
+#     OPERACIONES BÁSICAS EN R
+
+Para realizar las operaciones básicas en r se utilizan la siguente nomenclatura.
+
+#
+
+| Operación           | Comando     | Operación   | Comando      |
+|-------------------|-------------|---------------|--------------|
+| Suma              |      +      | EXPONENCIAL   |       ^      |
+| Resta             |      -      | EXPONENCIAL   |      **      |
+| Multiplicación    |      *      | Módulo        |      %%      |
+| División          |      /      | Div. Entera   |     %/%      |
+
+Estas operaciones también se puede ejecutar para matrices, vectores, listas teniendo presente la tabla siguiente.
+
+| Operación                     |         Comando         |
+|-------------------------------|-------------------------|
+| MULTIPLICACIÓN MATRICIAL      |             %*%         |
+| PRODUCTO EXTERIOR             |             %o%         |
+| PRODUCTO KRONECKER            |             %x%         |
+
+Se recuerda que también existe aquí la jerarquía de las operaciones que si no recuerdan es la siguiente.
+```{r}
+
+#             1) MULTIPLICACIÓN DIVISIÓN SUMA RESTA.
+
+4*6/2+2-3 # (4*6)=24 /2= 12 + 2 =14 -3 =11
+
+
+```
+
+
+Para ejecutar las operaciones se puede realizar conforme se muestra al código siguiente.
+```{r}
+40+50
+40-20
+4*2
+20/4
+21%%5 # 21 /5 sería 4 entero y  1 será residuo = el resultado que entraga la operación es 1
+21 %/%5 # a diferencia del anterior entregará el valor entero.
+```
+
+#                Operaciones Básicas en vectores.
+
+Para realizar operaciones básicas en los vectores, primero debemos partir desde la creación de los mismos, ya sea de 1 dimensión, 2, 3 dimesiones, matriz, listas.
+
+Empeceremos a la asignación de valor a una variable.
+```{r}
+#Para asignar un dato a una variable se lo realiza con el comando <- ejemplo:
+a <- 20 # a la variable a tendrá un valor de 20.
+b <- "luis" #el valor de b tendrá una cadena de dato "luis"
+#para imprimir esta cadena llamamos directamente a la variable.
+a
+b
+```
+
+Ahora para vamos a crear un vector 
+```{r}
+#Para crear un vector se recuerda que tienen sus dimensiones x|y|z,
+vector1d <- c(1)
+vector2d <- c(1, 2)
+vector3d <- c(1, 2, 3)
+
+
+#Para crear la imagen del vector 3d se puede realizar con los siguientes comandos.
+
+library(ggplot2)
+
+# Crear un data frame con el valor
+vector1 <- data.frame(x = vector3d[1], y = vector3d[2], z= vector3d[3])
+
+# Crear el gráfico con el punto de color verde
+ggplot(vector1, aes(x, y, z)) +
+  geom_point(color = "green", size = 4) +
+  theme_minimal()  # Opcional: Establece un tema si lo deseas
+# Para que la grafica se vea mejor se puede trazar lineas desde un origen 0.0.0
+
+library(plotly)
+
+Vector_grafico <- data.frame(x = c(0, 1), y = c(0, 2), z = c(0, 3))
+
+plot_ly(data = Vector_grafico, x = ~x, y = ~y, z = ~z, type = "scatter3d", mode = "lines", line = list(color = "green", width = 4)) %>%
+  layout(scene = list(aspectmode = "cube"))
+
+
+```
