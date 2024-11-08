@@ -1,13 +1,11 @@
 ---
-title: "R apuntes"
+title: "Estructura general de un programa"
 author: "Luis Jaramillo"
-format: 
-  html: default
-  pdf: default
+format: html
 editor: visual
 ---
 
-## Estructura General de un Programa.
+## Estructura General de un Programa en JAVA
 
 En el mundo de la programación, la estructura del programa consiste en un conjunto de sentencias con su respectiva sintaxis que se aplica de manera general al momento de la creación de un programa en cualquier lenguaje de programación.
 
@@ -15,25 +13,7 @@ Una sentencia es una unidad ejecutable más pequeña de un programa. En otras pa
 
 Las sentencias se ejecutan evaluando la expresión. Todos los efectos colaterales de la evaluación son tenidos en cuenta antes de ejecutar la próxima sentencia. La mayoría de sentencias son asignaciones o llamadas a funciones. Un caso especial es la sentencia nula; consiste en un punto y coma (;) aislado. Una sentencia nula no hace nada, pero puede ser necesaria en situaciones en que la sintaxis del lenguaje espere una sentencia pero nuestro programa no necesita hacer nada.
 
-Pueden existir infinitas sentencias distintas e innumerables criterios para su clasificación. Las clases de sentencia son:
-
--   De expresión
-
--   Compuestas
-
--   De selección
-
--   De iteración
-
--   De salto
-
--   De declaración
-
--   Bloques de intento
-
--   Sentencias de pre proceso
-
--   Sentencias ensamblador
+Pueden existir infinitas sentencias distintas e innumerables criterios para su clasificación. Las clases de sentencia son: - De expresión - Compuestas - De selección - De iteración - De salto - De declaración - Bloques de intento - Sentencias de pre proceso - Sentencias ensamblador
 
 Para utilizar los siguientes ejemplos realiza los siguientes pasos previos.
 
@@ -45,7 +25,7 @@ Para utilizar los siguientes ejemplos realiza los siguientes pasos previos.
 
 -   De expresión: Son sentencias que consisten en una expresión seguida de un punto y coma (;). La expresión puede ser una asignación, una llamada a un método, una operación aritmética, etc. Por ejemplo:
 
-```{java}
+``` java
 public class Clasevirtual {
     
 
@@ -59,12 +39,11 @@ public class Clasevirtual {
 }
 
 
-
 ```
 
 -   Compuestas: Son sentencias que agrupan varias sentencias simples o compuestas entre llaves ({ y }). Se usan para formar bloques de código que se ejecutan como una unidad. Por ejemplo:
 
-    ```{java}
+    ``` java
 
     { // Inicio del bloque
       int a = 10; // Sentencia simple
@@ -76,12 +55,11 @@ public class Clasevirtual {
         System.out.println("b es mayor que a"); // Sentencia simple
       }
     } // Fin del bloque
-
     ```
 
 -   De selección: Son sentencias que permiten elegir entre diferentes opciones de ejecución según se cumpla o no una condición o expresión lógica. Hay dos tipos principales de sentencias de selección: if y switch. Por ejemplo:
 
-    ```{java}
+    ``` java
 
     if (x > 0) { // Si x es positivo
       System.out.println("x es positivo"); // Muestra un mensaje
@@ -101,14 +79,11 @@ public class Clasevirtual {
         System.out.println("y es otro valor"); // Muestra otro mensaje
         break; // Sale del switch
     }
-
     ```
-
-<!-- -->
 
 -   De iteración: Son sentencias que permiten repetir una o más sentencias mientras se cumpla una condición o un número determinado de veces. Hay tres tipos principales de sentencias de iteración: while, do-while y for. Por ejemplo:
 
-    ```{java}
+    ``` java
     while (x < 10) { // Mientras x sea menor que 10
       System.out.println("x es " + x); // Muestra el valor de x
       x++; // Incrementa x en 1
@@ -122,12 +97,11 @@ public class Clasevirtual {
     for (z = 0; z < 5; z++) { // Para z desde 0 hasta 4, incrementando z en 1
       System.out.println("z es " + z); // Muestra el valor de z
     }
-
     ```
 
 -   De salto: Son sentencias que permiten alterar el flujo normal de ejecución de un programa, saltando a otra parte del código. Hay cuatro tipos principales de sentencias de salto: break, continue, return y throw. Por ejemplo:
 
-```{java}
+``` java
 for (i = 0; i < 10; i++) { // Para i desde 0 hasta 9
   if (i == 5) { // Si i es 5
     break; // Sale del bucle
@@ -137,7 +111,7 @@ for (i = 0; i < 10; i++) { // Para i desde 0 hasta 9
 
 -   De declaración: Son sentencias que permiten declarar variables, constantes, métodos, clases, interfaces, etc. Se usan para definir los identificadores y sus características que se usarán en el programa. Por ejemplo:
 
-    ```{java}
+    ``` java
     int x; // Declara una variable de tipo entero llamada x
     final double PI = 3.14; // Declara una constante de tipo real llamada PI con el valor 3.14
     void imprimir(String s) { // Declara un método que recibe un String y no devuelve nada
@@ -159,7 +133,7 @@ for (i = 0; i < 10; i++) { // Para i desde 0 hasta 9
 
 -   Bloques de intento: Son sentencias que permiten manejar las excepciones que pueden ocurrir durante la ejecución de un programa, como errores, fallos o situaciones anómalas. Se usan para evitar que el programa se cierre abruptamente y para tomar medidas correctivas o de recuperación. Hay tres tipos principales de bloques de intento: try, catch y finally. Por ejemplo:
 
-    ```{java}
+    ``` java
     try { // Intenta
       int a = 10; // Declara una variable de tipo entero con el valor 10
       int b = 0; // Declara otra variable de tipo entero con el valor 0
@@ -173,12 +147,11 @@ for (i = 0; i < 10; i++) { // Para i desde 0 hasta 9
     finally { // Finalmente
       System.out.println("Fin del programa"); // Muestra un mensaje de fin
     }
-
     ```
 
 -   Sentencias de preproceso: Son sentencias que se ejecutan antes de la compilación del programa, y que sirven para modificar el código fuente, incluir otros archivos, definir macros, establecer condiciones de compilación, etc. Java no tiene sentencias de preproceso como C o C++, pero tiene algunas directivas que se usan para importar otros paquetes o clases, definir el paquete al que pertenece una clase, o indicar que una clase o un método está obsoleto. Se reconocen por empezar con el símbolo \@. Por ejemplo:
 
-    ```{java}
+    ``` java
     import java.util.*; // Importa el paquete java.util
     package com.example; // Define el paquete com.example
     @Deprecated // Indica que la clase está obsoleta
@@ -192,7 +165,7 @@ for (i = 0; i < 10; i++) { // Para i desde 0 hasta 9
 
 -   Sentencias ensamblador: Son sentencias que se escriben en el lenguaje de bajo nivel del procesador, y que se usan para acceder directamente al hardware, optimizar el rendimiento, realizar operaciones específicas, etc. Java no tiene sentencias ensamblador como C o C++, pero tiene una forma de invocar código nativo escrito en otro lenguaje mediante la interfaz Java Native Interface (JNI). Se reconoce por usar la palabra reservada native. Por ejemplo:
 
-    ```{java}
+    ``` java
     class MiClase {
       // Declara un método nativo que recibe un int y devuelve un int
       public native int miMetodo(int x);
@@ -201,16 +174,15 @@ for (i = 0; i < 10; i++) { // Para i desde 0 hasta 9
         System.loadLibrary("miBiblioteca");
       }
     }
-
     ```
 
-## ESTRUCTURA GENERAL DE UN PROGRAMA.
+## ESTRUCTURA GENERAL DE UN PROGRAMA EN JAVA.
 
 La estructura general de un programa orientado a objetos depende del lenguaje de programación que se utilice, pero en general se basa en los siguientes elementos:
 
 -   Clases: Son las plantillas o modelos que definen las propiedades y los métodos comunes de un conjunto de objetos. Las clases se pueden organizar en jerarquías mediante la herencia, que permite reutilizar y extender el código de las clases superiores a las clases inferiores.
 
--   Objetos:  Son las instancias o ejemplares de las clases, que tienen un estado (valores de los atributos) y un comportamiento (ejecución de los métodos) específicos. Los objetos se pueden comunicar entre sí mediante mensajes, que son las llamadas a los métodos de otros objetos.
+-   Objetos: Son las instancias o ejemplares de las clases, que tienen un estado (valores de los atributos) y un comportamiento (ejecución de los métodos) específicos. Los objetos se pueden comunicar entre sí mediante mensajes, que son las llamadas a los métodos de otros objetos.
 
 -   Relaciones: Son los vínculos o conexiones que existen entre las clases y los objetos, que indican cómo se relacionan o interactúan entre sí. Hay diferentes tipos de relaciones, como la asociación, la dependencia, la generalización, la realización, la agregación y la composición.
 
@@ -222,7 +194,7 @@ Antes de empezar, utilizaremos la imagen que utilizamos en modelamiento y se enc
 
 Para el ejemplo utilizaremos el nombre de clase "Person", están indicados los métodos y atributos en privado para mejor entendimiento cambiaremos de privado a default, por lo que el código quería así.
 
-```{java}
+``` java
 public class Person{
   String name;  // Atributo 1
   int birthDate; // Atributo 2
@@ -240,7 +212,7 @@ public class Person{
 
 Un ejemplo más completo es el siguiente:
 
-```{java}
+``` java
 // Clase Persona
 public class Persona {
   // Atributos
@@ -393,12 +365,11 @@ public class Main {
     pr1.enseñar();
   }
 }
-
 ```
 
 Todo el código pertenece al siguiente esquema.
 
-![](images/ejemplo.png)
+![](images/ejemplo.png){fig-align="center"}
 
 Este programa define tres clases: Persona, Estudiante y Profesor. La clase Estudiante y la clase Profesor heredan de la clase Persona, lo que significa que comparten sus atributos y métodos, y añaden algunos propios. El programa crea tres objetos: uno de cada clase, y llama a sus métodos. El resultado es el siguiente:
 

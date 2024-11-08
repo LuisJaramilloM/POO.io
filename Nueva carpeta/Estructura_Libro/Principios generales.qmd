@@ -1,13 +1,8 @@
----
+------------------------------------------------------------------------
 
----
+------------------------------------------------------------------------
 
-\-\--
-title: "Principios generales de la Programación Orientada a Objetos"
-author: "Luis Jaramillo"
-format: html
-editor: visual
-\-\--
+\-\-- title: "Principios generales de la Programación Orientada a Objetos" author: "Luis Jaramillo" format: html editor: visual \-\--
 
 # Introducción a la Programación Orientada a Objetos
 

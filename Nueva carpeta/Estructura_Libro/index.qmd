@@ -28,15 +28,11 @@ Para el siguiente documento revisaremos las siguientes temáticas:
 
 ## [Modelamiento de clases y objetos](UML.html)
 
-## [Código limpio.html](Código%20limpio.html)
+## [Código limpio](CodigoLimpio.html)
 
 ## [Estructura General de un Programa](estructura_general_programa.html)
 
 ## ----------------------------------------------
-
-## 
-
-## 
 
 ## Hasta aquí está cargada la información
 

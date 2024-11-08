@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.450">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Luis Jaramillo">
+
+<title>Estructura General de un Programa</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="EsttructuraGeneralPrograma_files/libs/clipboard/clipboard.min.js"></script>
+<script src="EsttructuraGeneralPrograma_files/libs/quarto-html/quarto.js"></script>
+<script src="EsttructuraGeneralPrograma_files/libs/quarto-html/popper.min.js"></script>
+<script src="EsttructuraGeneralPrograma_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="EsttructuraGeneralPrograma_files/libs/quarto-html/anchor.min.js"></script>
+<link href="EsttructuraGeneralPrograma_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="EsttructuraGeneralPrograma_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="EsttructuraGeneralPrograma_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="EsttructuraGeneralPrograma_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="EsttructuraGeneralPrograma_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+
+
+</head>
+
+<body class="fullcontent">
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Estructura General de un Programa</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Luis Jaramillo </p>
+          </div>
+  </div>
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<section id="estructura-general-de-un-programa-en-java" class="level2">
+<h2 class="anchored" data-anchor-id="estructura-general-de-un-programa-en-java">Estructura General de un Programa en JAVA</h2>
+<p>En el mundo de la programación, la estructura del programa consiste en un conjunto de sentencias con su respectiva sintaxis que se aplica de manera general al momento de la creación de un programa en cualquier lenguaje de programación.</p>
+<p>Una sentencia es una unidad ejecutable más pequeña de un programa. En otras palabras, una línea de código escrita es una sentencia. Especifica y controla el flujo y orden de ejecución del programa. Una sentencia consta de palabras clave o reservadas como <em>cout, cin, for, while, if ... else,</em> etc., expresiones, declaraciones o llamadas a funciones. Si no existen sentencias específicas de selección o salto, el programa se ejecuta de forma secuencial en el mismo orden en que se ha escrito el código fuente (es el que podríamos considerar orden “natural” de ejecución).</p>
+<p>Las sentencias se ejecutan evaluando la expresión. Todos los efectos colaterales de la evaluación son tenidos en cuenta antes de ejecutar la próxima sentencia. La mayoría de sentencias son asignaciones o llamadas a funciones. Un caso especial es la sentencia nula; consiste en un punto y coma (;) aislado. Una sentencia nula no hace nada, pero puede ser necesaria en situaciones en que la sintaxis del lenguaje espere una sentencia pero nuestro programa no necesita hacer nada.</p>
+<p>Pueden existir infinitas sentencias distintas e innumerables criterios para su clasificación. Las clases de sentencia son: - De expresión - Compuestas - De selección - De iteración - De salto - De declaración - Bloques de intento - Sentencias de pre proceso - Sentencias ensamblador</p>
+<p>Para utilizar los siguientes ejemplos realiza los siguientes pasos previos.</p>
+<p>1) crea una clase tipo main.</p>
+<p>2) copia lo que está dentro de las llaves de la línea “public static void main(String[] args) {”</p>
+<p>3) ejecuta el código en netbeans o vscode, o como hayas configurado.</p>
+<ul>
+<li><p>De expresión: Son sentencias que consisten en una expresión seguida de un punto y coma (;). La expresión puede ser una asignación, una llamada a un método, una operación aritmética, etc. Por ejemplo:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode java code-with-copy"><code class="sourceCode java"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="kw">class</span> Clasevirtual <span class="op">{</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">public</span> <span class="dt">static</span> <span class="dt">void</span> <span class="fu">main</span><span class="op">(</span><span class="bu">String</span><span class="op">[]</span> args<span class="op">)</span> <span class="op">{</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>        <span class="dt">int</span> x<span class="op">,</span>y<span class="op">;</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>        x <span class="op">=</span> <span class="dv">5</span><span class="op">;</span> <span class="co">// Asigna el valor 5 a la variable x</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>        <span class="bu">System</span><span class="op">.</span><span class="fu">out</span><span class="op">.</span><span class="fu">println</span><span class="op">(</span><span class="st">"Hola"</span><span class="op">);</span> <span class="co">// Llama al método println para mostrar un mensaje</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>        y <span class="op">=</span> x <span class="op">+</span> <span class="dv">3</span><span class="op">;</span> <span class="co">// Suma el valor de x y 3 y lo guarda en la variable y</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>        <span class="bu">System</span><span class="op">.</span><span class="fu">out</span><span class="op">.</span><span class="fu">println</span><span class="op">(</span>y<span class="op">);</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+</ul>
+<!-- -->
+<ul>
+<li><p>Compuestas: Son sentencias que agrupan varias sentencias simples o compuestas entre llaves ({ y }). Se usan para formar bloques de código que se ejecutan como una unidad. Por ejemplo:</p>
+<p><code>hjayiq  { // Inicio del bloque   int a = 10; // Sentencia simple   int b = 20; // Sentencia simple   if (a &gt; b) { // Sentencia compuesta     System.out.println("a es mayor que b"); // Sentencia simple   }   else { // Sentencia compuesta     System.out.println("b es mayor que a"); // Sentencia simple   } } // Fin del bloque}</code></p></li>
+<li><p>De selección: Son sentencias que permiten elegir entre diferentes opciones de ejecución según se cumpla o no una condición o expresión lógica. Hay dos tipos principales de sentencias de selección: if y switch. Por ejemplo:</p>
+<p><code>hjayiq  if (x &gt; 0) { // Si x es positivo   System.out.println("x es positivo"); // Muestra un mensaje } else { // Si x no es positivo   System.out.println("x es negativo o cero"); // Muestra otro mensaje }  switch (y) { // Según el valor de y   case 1: // Si y es 1     System.out.println("y es uno"); // Muestra un mensaje     break; // Sale del switch   case 2: // Si y es 2     System.out.println("y es dos"); // Muestra otro mensaje     break; // Sale del switch   default: // Si y no es ni 1 ni 2     System.out.println("y es otro valor"); // Muestra otro mensaje     break; // Sale del switch }</code></p></li>
+<li><p>De iteración: Son sentencias que permiten repetir una o más sentencias mientras se cumpla una condición o un número determinado de veces. Hay tres tipos principales de sentencias de iteración: while, do-while y for. Por ejemplo:</p>
+<p><code>hjayiq while (x &lt; 10) { // Mientras x sea menor que 10   System.out.println("x es " + x); // Muestra el valor de x   x++; // Incrementa x en 1 }  do { // Haz   System.out.println("y es " + y); // Muestra el valor de y   y--; // Decrementa y en 1 } while (y &gt; 0); // Mientras y sea mayor que 0  for (z = 0; z &lt; 5; z++) { // Para z desde 0 hasta 4, incrementando z en 1   System.out.println("z es " + z); // Muestra el valor de z }</code></p></li>
+<li><p>De salto: Son sentencias que permiten alterar el flujo normal de ejecución de un programa, saltando a otra parte del código. Hay cuatro tipos principales de sentencias de salto: break, continue, return y throw. Por ejemplo:</p></li>
+</ul>
+<p><code>hjayiq for (i = 0; i &lt; 10; i++) { // Para i desde 0 hasta 9   if (i == 5) { // Si i es 5     break; // Sale del bucle   }   System.out.println("");}</code></p>
+<ul>
+<li><p>De declaración: Son sentencias que permiten declarar variables, constantes, métodos, clases, interfaces, etc. Se usan para definir los identificadores y sus características que se usarán en el programa. Por ejemplo:</p>
+<p><code>hjayiq int x; // Declara una variable de tipo entero llamada x final double PI = 3.14; // Declara una constante de tipo real llamada PI con el valor 3.14 void imprimir(String s) { // Declara un método que recibe un String y no devuelve nada   System.out.println(s); // Muestra el String } class Punto { // Declara una clase llamada Punto   int x; // Con un campo de tipo entero llamado x   int y; // Con otro campo de tipo entero llamado y } enum Color { // Declara una enumeración llamada Color   ROJO, // Con un valor llamado ROJO   VERDE, // Con otro valor llamado VERDE   AZUL // Con otro valor llamado AZUL } interface Figura { // Declara una interfaz llamada Figura   double area(); // Con un método abstracto llamado area que devuelve un double }</code></p></li>
+<li><p>Bloques de intento: Son sentencias que permiten manejar las excepciones que pueden ocurrir durante la ejecución de un programa, como errores, fallos o situaciones anómalas. Se usan para evitar que el programa se cierre abruptamente y para tomar medidas correctivas o de recuperación. Hay tres tipos principales de bloques de intento: try, catch y finally. Por ejemplo:</p>
+<p><code>hjayiq try { // Intenta   int a = 10; // Declara una variable de tipo entero con el valor 10   int b = 0; // Declara otra variable de tipo entero con el valor 0   int c = a / b; // Intenta dividir a entre b   System.out.println("c es " + c); // Muestra el valor de c } catch (ArithmeticException e) { // Captura la excepción de tipo aritmético   System.out.println("Error: división por cero"); // Muestra un mensaje de error   e.printStackTrace(); // Muestra la traza de la excepción } finally { // Finalmente   System.out.println("Fin del programa"); // Muestra un mensaje de fin }</code></p></li>
+<li><p>Sentencias de preproceso: Son sentencias que se ejecutan antes de la compilación del programa, y que sirven para modificar el código fuente, incluir otros archivos, definir macros, establecer condiciones de compilación, etc. Java no tiene sentencias de preproceso como C o C++, pero tiene algunas directivas que se usan para importar otros paquetes o clases, definir el paquete al que pertenece una clase, o indicar que una clase o un método está obsoleto. Se reconocen por empezar con el símbolo @. Por ejemplo:</p>
+<p><code>hjayiq import java.util.*; // Importa el paquete java.util package com.example; // Define el paquete com.example @Deprecated // Indica que la clase está obsoleta class MiClase {   @Deprecated // Indica que el método está obsoleto   void miMetodo() {     // Código del método   } }</code></p></li>
+<li><p>Sentencias ensamblador: Son sentencias que se escriben en el lenguaje de bajo nivel del procesador, y que se usan para acceder directamente al hardware, optimizar el rendimiento, realizar operaciones específicas, etc. Java no tiene sentencias ensamblador como C o C++, pero tiene una forma de invocar código nativo escrito en otro lenguaje mediante la interfaz Java Native Interface (JNI). Se reconoce por usar la palabra reservada native. Por ejemplo:</p>
+<p><code>hjayiq class MiClase {   // Declara un método nativo que recibe un int y devuelve un int   public native int miMetodo(int x);   // Carga la biblioteca que contiene el código nativo   static {     System.loadLibrary("miBiblioteca");   } }</code></p></li>
+</ul>
+</section>
+<section id="estructura-general-de-un-programa-en-java." class="level2">
+<h2 class="anchored" data-anchor-id="estructura-general-de-un-programa-en-java.">ESTRUCTURA GENERAL DE UN PROGRAMA EN JAVA.</h2>
+<p>La estructura general de un programa orientado a objetos depende del lenguaje de programación que se utilice, pero en general se basa en los siguientes elementos:</p>
+<ul>
+<li><p>Clases: Son las plantillas o modelos que definen las propiedades y los métodos comunes de un conjunto de objetos. Las clases se pueden organizar en jerarquías mediante la herencia, que permite reutilizar y extender el código de las clases superiores a las clases inferiores.</p></li>
+<li><p>Objetos: Son las instancias o ejemplares de las clases, que tienen un estado (valores de los atributos) y un comportamiento (ejecución de los métodos) específicos. Los objetos se pueden comunicar entre sí mediante mensajes, que son las llamadas a los métodos de otros objetos.</p></li>
+<li><p>Relaciones: Son los vínculos o conexiones que existen entre las clases y los objetos, que indican cómo se relacionan o interactúan entre sí. Hay diferentes tipos de relaciones, como la asociación, la dependencia, la generalización, la realización, la agregación y la composición.</p></li>
+</ul>
+<p>Veamos paso a paso un ejemplo de un programa orientado a objetos.</p>
+<p>Antes de empezar, utilizaremos la imagen que utilizamos en modelamiento y se encuentra a continuación.</p>
+<p><img src="images/pTQh8BwAIM.png" class="img-fluid"></p>
+<p>Para el ejemplo utilizaremos el nombre de clase “Person”, están indicados los métodos y atributos en privado para mejor entendimiento cambiaremos de privado a default, por lo que el código quería así.</p>
+<p><code>hjayiq public class Person{   String name;  // Atributo 1   int birthDate; // Atributo 2      public Person(String name, int birthDate) {  //constructor         this.name = name;         this.birthDate = birthDate;     }      public void isBirthday(){    //método     System.out.println("imprimir la fecha");   } }</code></p>
+<p>Un ejemplo más completo es el siguiente:</p>
+<p><code>hjayiq // Clase Persona public class Persona {   // Atributos   private String nombre;   private int edad;   private String dni;    // Constructor   public Persona(String nombre, int edad, String dni) {     this.nombre = nombre;     this.edad = edad;     this.dni = dni;   }    // Métodos   public String getNombre() {     return nombre;   }    public int getEdad() {     return edad;   }    public String getDni() {     return dni;   }    public void setNombre(String nombre) {     this.nombre = nombre;   }    public void setEdad(int edad) {     this.edad = edad;   }    public void setDni(String dni) {     this.dni = dni;   }    public void saludar() {     System.out.println("Hola, me llamo " + nombre + " y tengo " + edad + " años.");   } }  // Clase Estudiante que hereda de Persona public class Estudiante extends Persona {   // Atributos   private String carrera;   private double notaMedia;    // Constructor   public Estudiante(String nombre, int edad, String dni, String carrera, double notaMedia) {     // Llamada al constructor de la superclase     super(nombre, edad, dni);     this.carrera = carrera;     this.notaMedia = notaMedia;   }    // Métodos   public String getCarrera() {     return carrera;   }    public double getNotaMedia() {     return notaMedia;   }    public void setCarrera(String carrera) {     this.carrera = carrera;   }    public void setNotaMedia(double notaMedia) {     this.notaMedia = notaMedia;   }    public void estudiar() {     System.out.println("Estoy estudiando " + carrera + ".");   }    public void examinar() {     System.out.println("Me voy a examinar de " + carrera + ".");   }    // Sobrescritura del método saludar de la superclase   @Override   public void saludar() {     System.out.println("Hola, soy " + getNombre() + ", estudiante de " + carrera + " y tengo una nota media de " + notaMedia + ".");   } }  // Clase Profesor que hereda de Persona public class Profesor extends Persona {   // Atributos   private String asignatura;   private double salario;    // Constructor   public Profesor(String nombre, int edad, String dni, String asignatura, double salario) {     // Llamada al constructor de la superclase     super(nombre, edad, dni);     this.asignatura = asignatura;     this.salario = salario;   }    // Métodos   public String getAsignatura() {     return asignatura;   }    public double getSalario() {     return salario;   }    public void setAsignatura(String asignatura) {     this.asignatura = asignatura;   }    public void setSalario(double salario) {     this.salario = salario;   }    public void enseñar() {     System.out.println("Estoy enseñando " + asignatura + ".");   }    public void evaluar() {     System.out.println("Voy a evaluar a mis alumnos de " + asignatura + ".");   }    // Sobrescritura del método saludar de la superclase   @Override   public void saludar() {     System.out.println("Hola, soy " + getNombre() + ", profesor de " + asignatura + " y cobro " + salario + " euros al mes.");   } }  // Clase principal con el método main public class Main {   public static void main(String[] args) {     // Creación de objetos     Persona p1 = new Persona("Ana", 25, "12345678A");     Estudiante e1 = new Estudiante("Luis", 20, "87654321B", "Informática", 8.5);     Profesor pr1 = new Profesor("Pedro", 35, "45678912C", "Matemáticas", 1500);      // Llamada a los métodos de los objetos     p1.saludar();     e1.saludar();     pr1.saludar();     e1.estudiar();     pr1.enseñar();   } }</code></p>
+<p>Todo el código pertenece al siguiente esquema.</p>
+<p>Este programa define tres clases: Persona, Estudiante y Profesor. La clase Estudiante y la clase Profesor heredan de la clase Persona, lo que significa que comparten sus atributos y métodos, y añaden algunos propios. El programa crea tres objetos: uno de cada clase, y llama a sus métodos. El resultado es el siguiente:</p>
+<p>Hola, me llamo Ana y tengo 25 años.</p>
+<p>Hola, soy Luis, estudiante de Informática y tengo una nota media de 8.5.</p>
+<p>Hola, soy Pedro, profesor de Matemáticas y cobro 1500 euros al mes.</p>
+<p>Estoy estudiando Informática.</p>
+<p>Estoy enseñando Matemáticas.</p>
+</section>
+<section id="video" class="level2">
+<h2 class="anchored" data-anchor-id="video"><a href="https://www.youtube.com/watch?v=Z0yLerU0g-Q">Video</a></h2>
+</section>
+<section id="regresar" class="level2">
+<h2 class="anchored" data-anchor-id="regresar"><a href="index.html">regresar</a></h2>
+</section>
+
+</main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>

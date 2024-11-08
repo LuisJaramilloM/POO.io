@@ -1,5 +1,253 @@
 ---
-title: "aaa"
-format: pdf
+title: "Codigo Limpio"
+author: "Luis Jaramillo"
+format: html
 editor: visual
 ---
+
+# Introducción a Código Limpio
+
+Escribir **código limpio** significa crear un código que sea fácil de leer, entender y mantener. Según Robert C. Martin, también conocido como "Uncle Bob", un código limpio es aquel que "parece que fue escrito por alguien que se preocupa". A continuación, se presentan los principios clave de código limpio que todo desarrollador debe seguir para mejorar la calidad de sus programas.
+
+## 1. Nombres Claros y Descriptivos
+
+### Variables
+
+Los nombres de las variables deben ser descriptivos y reflejar claramente su propósito. Esto mejora la legibilidad y hace que el código sea más fácil de entender.
+
+**Ejemplo de un mal nombre:**
+
+``` java
+ int n; // ¿Qué representa "n"?
+ 
+```
+
+Ejemplo de un buen nombre:
+
+int numeroDeEstudiantes;
+
+Funciones y Métodos Los nombres de funciones y métodos deben describir lo que hacen. Es una buena práctica que los nombres sean verbos o frases verbales.
+
+Ejemplo de un mal nombre:
+
+``` java
+ void d();  // ¿Qué significa "d"?
+```
+
+Ejemplo de un buen nombre:
+
+``` java
+ void dibujarRectangulo();
+ 
+```
+
+## Funciones Simples y de Responsabilidad Única
+
+Las funciones deben ser cortas y realizar solo una tarea específica. Una función que intenta hacer muchas cosas es difícil de entender y mantener.
+
+Ejemplo En lugar de hacer todo en una sola función, divide las tareas en funciones separadas.
+
+Ejemplo de función compleja:
+
+``` java
+void procesarDatosYGuardarEnBD() { // Procesa datos // Guarda en la base de datos 
+}
+```
+
+**Ejemplo de funciones separadas:**
+
+``` java
+void procesarDatos() {     // Procesa datos 
+     }
+void guardarEnBD() {     // Guarda en la base de datos 
+     } 
+```
+
+## 3. Evitar Comentarios Innecesarios
+
+Un código limpio debería ser lo suficientemente claro para no necesitar comentarios. Si sientes que necesitas comentar para explicar el código, es probable que el código en sí necesite ser refactorizado.
+
+### Ejemplo
+
+**Código con comentarios innecesarios:**
+
+```         
+int edad = 25; // Declara la edad del usuario 
+```
+
+**Código claro sin comentarios:**
+
+```         
+int edadUsuario = 25; 
+```
+
+## 4. Evitar Código Duplicado
+
+El código duplicado genera inconsistencias y es difícil de mantener. Si necesitas hacer algo similar en múltiples lugares, utiliza funciones o métodos para reducir la duplicación.
+
+**Ejemplo de código duplicado:**
+
+``` java
+
+int calcularAreaRectangulo (int ancho, int alto) {
+          return ancho * alto; 
+          }  
+
+int calcularAreaCuadrado(int lado) {
+          return lado * lado; 
+          } 
+          
+```
+
+**Ejemplo de código refactorizado:**
+
+```         
+
+int calcularArea(int ancho, int alto) {
+      return ancho * alto; 
+      } 
+```
+
+## 5. Control de Excepciones y Errores
+
+El manejo de excepciones debe ser claro y específico. No uses excepciones generales como `catch (Exception e)` y evita el abuso de excepciones para el control de flujo.
+
+### Ejemplo
+
+**Mal manejo de excepciones:**
+
+``` java
+
+try {
+// Código 
+    } catch (Exception e) {
+        System.out.println("Ocurrió un error"); 
+    }
+    
+```
+
+**Buen manejo de excepciones:**
+
+``` java
+
+try {     
+    
+      // Código 
+    
+    } catch (IOException e) {  
+      
+      System.out.println("Error de entrada/salida"); 
+      
+      } catch (NullPointerException e) {
+      
+      System.out.println("Error: valor nulo encontrado");
+      
+      } 
+```
+
+## 6. Uso de Formato Consistente
+
+El código debe tener un formato consistente para mejorar su legibilidad. Esto incluye el uso adecuado de sangría, espacios y estilo de llaves. Además, el equipo de desarrollo debe seguir una convención de formato común.
+
+### Ejemplo
+
+**Mal formato:**
+
+``` java
+
+if(condicion){ 
+    doSomething(); 
+    } 
+```
+
+**Buen formato:**
+
+``` java
+if (condicion) {
+  doSomething(); 
+  }
+```
+
+## 7. Reducir el Número de Parámetros
+
+Las funciones con muchos parámetros son difíciles de entender y usar correctamente. Intenta reducir el número de parámetros pasando objetos cuando sea posible.
+
+**Ejemplo de demasiados parámetros:**
+
+```         
+void crearUsuario(String nombre, String apellido, int edad, String direccion) {
+// Crear usuario 
+} 
+```
+
+**Ejemplo de uso de un objeto:**
+
+```         
+// Main.java
+
+// Definición de la clase Usuario
+class Usuario {
+    String nombre;
+    String apellido;
+    int edad;
+    String direccion;
+
+    // Constructor para inicializar los atributos de Usuario
+    public Usuario(String nombre, String apellido, int edad, String direccion) {
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.edad = edad;
+        this.direccion = direccion;
+    }
+
+    // Método para mostrar la información del usuario
+    public void mostrarInformacion() {
+        System.out.println("Nombre: " + nombre);
+        System.out.println("Apellido: " + apellido);
+        System.out.println("Edad: " + edad);
+        System.out.println("Dirección: " + direccion);
+    }
+}
+
+// Clase principal con el método crearUsuario
+public class Main {
+
+    // Método para "crear" un usuario (en este caso, solo muestra la información)
+    public static void crearUsuario(Usuario usuario) {
+        System.out.println("Creando usuario...");
+        usuario.mostrarInformacion();
+    }
+
+    public static void main(String[] args) {
+        // Crear una instancia de Usuario
+        Usuario usuario = new Usuario("Luis", "Jaramillo", 30, "Calle Falsa 123");
+
+        // Llamar al método crearUsuario
+        crearUsuario(usuario);
+    }
+}
+```
+
+## 8. Pruebas Unitarias
+
+Es importante escribir pruebas unitarias para el código. Las pruebas ayudan a detectar errores y aseguran que el código funcione correctamente a medida que evoluciona.
+
+### Ejemplo de prueba unitaria en Java
+
+```         
+import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+public class CalculadoraTest {
+
+    @Test
+    public void testSuma() {
+        Calculadora calc = new Calculadora();
+        assertEquals(5, calc.suma(2, 3));
+    }
+}
+```
+
+\## \[TEST\](https://forms.gle/pRTgrvN2GhVDRkqw7)
+
+\## \[regresar\](index.html)
