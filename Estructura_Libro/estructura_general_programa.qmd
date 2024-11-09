@@ -38,7 +38,6 @@ public class Clasevirtual {
     }
 }
 
-
 ```
 
 -   Compuestas: Son sentencias que agrupan varias sentencias simples o compuestas entre llaves ({ y }). Se usan para formar bloques de código que se ejecutan como una unidad. Por ejemplo:
