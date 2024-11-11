@@ -1,0 +1,43 @@
+# Programación Orientada a Objetos {.unnumbered}
+
+La programación orientada a objetos (POO) es un paradigma de programación que se basa en el concepto de "objetos", los cuales son instancias de clases. En POO, un "objeto" puede entenderse como una entidad que encapsula datos y funciones que operan sobre esos datos. Este enfoque permite modelar el mundo real de manera más efectiva, ya que se pueden representar entidades y sus interacciones de manera más natural.
+
+En POO, una "clase" es un plano o plantilla para crear objetos. Define la estructura y el comportamiento de los objetos que se crearán a partir de ella. Los objetos son instancias concretas de una clase, y cada objeto puede tener sus propios datos (llamados atributos) y funciones (llamadas métodos).
+
+Los cuatro principios fundamentales de la POO son la encapsulación, la herencia, el polimorfismo y la abstracción. La "**encapsulación**" implica la ocultación de los detalles internos de un objeto y la exposición solo de lo necesario. La "**herencia**" permite la creación de nuevas clases basadas en clases existentes, heredando sus atributos y métodos. El "**polimorfismo**" permite que un objeto pueda tomar varias formas, es decir, un mismo método puede comportarse de manera diferente según el contexto. La "**abstracción**" consiste en simplificar la representación de un objeto centrándose en los aspectos esenciales y omitiendo los detalles innecesarios.
+Para el siguiente documento revisaremos las siguientes temáticas:
+
+Primer Parcial
+
+- Control de versionamiento
+- Entorno de Desarrollo
+- Paradigmas de programación
+- Conceptos Generales de la POO
+- Modelamiento de clases y objetos
+- Código limpio
+- Estructura General de un Programa
+- ----------------------------------------------
+- Lectura y escritura de datos por consola
+- Manejo de Excepciones
+- Encapsulamiento
+- Constructores
+- Métodos Getter y Setters
+- Persistencia de datos
+- Arreglos y Colecciones
+
+2 Parcial
+- Relaciones entre clases (Generalización/Especialización)
+- Revisiones de Código
+- Polimorfismo
+- Interfaces de Programación
+- Modelo Vista Controlador
+- Bases de Datos no SQL
+- Componentes y Objetos Gráficos
+
+3er Parcial
+- Principios SOLID
+- Modularidad
+- Introducción a Patrones de diseño
+- Patrones de creación
+- Patrones de Estructura
+- Patrones de Comportamiento

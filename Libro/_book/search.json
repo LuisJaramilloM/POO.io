@@ -1,0 +1,170 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Libro",
+    "section": "",
+    "text": "Programación Orientada a Objetos\nLa programación orientada a objetos (POO) es un paradigma de programación que se basa en el concepto de “objetos”, los cuales son instancias de clases. En POO, un “objeto” puede entenderse como una entidad que encapsula datos y funciones que operan sobre esos datos. Este enfoque permite modelar el mundo real de manera más efectiva, ya que se pueden representar entidades y sus interacciones de manera más natural.\nEn POO, una “clase” es un plano o plantilla para crear objetos. Define la estructura y el comportamiento de los objetos que se crearán a partir de ella. Los objetos son instancias concretas de una clase, y cada objeto puede tener sus propios datos (llamados atributos) y funciones (llamadas métodos).\nLos cuatro principios fundamentales de la POO son la encapsulación, la herencia, el polimorfismo y la abstracción. La “encapsulación” implica la ocultación de los detalles internos de un objeto y la exposición solo de lo necesario. La “herencia” permite la creación de nuevas clases basadas en clases existentes, heredando sus atributos y métodos. El “polimorfismo” permite que un objeto pueda tomar varias formas, es decir, un mismo método puede comportarse de manera diferente según el contexto. La “abstracción” consiste en simplificar la representación de un objeto centrándose en los aspectos esenciales y omitiendo los detalles innecesarios. Para el siguiente documento revisaremos las siguientes temáticas:\nPrimer Parcial\n\nControl de versionamiento\nEntorno de Desarrollo\nParadigmas de programación\nConceptos Generales de la POO\nModelamiento de clases y objetos\nCódigo limpio\nEstructura General de un Programa - ———————————————-\nLectura y escritura de datos por consola\nManejo de Excepciones\nEncapsulamiento\nConstructores\nMétodos Getter y Setters\nPersistencia de datos\nArreglos y Colecciones\n\n2 Parcial - Relaciones entre clases (Generalización/Especialización) - Revisiones de Código - Polimorfismo - Interfaces de Programación - Modelo Vista Controlador - Bases de Datos no SQL - Componentes y Objetos Gráficos\n3er Parcial - Principios SOLID - Modularidad - Introducción a Patrones de diseño - Patrones de creación - Patrones de Estructura - Patrones de Comportamiento"
+  },
+  {
+    "objectID": "Unidades/unidad1/intro.html",
+    "href": "Unidades/unidad1/intro.html",
+    "title": "1  Introduction",
+    "section": "",
+    "text": "This is a book created from markdown and executable code.\nSee Knuth (1984) for additional discussion of literate programming.\n\n\n\n\nKnuth, Donald E. 1984. “Literate Programming.” Comput. J. 27 (2): 97–111. https://doi.org/10.1093/comjnl/27.2.97."
+  },
+  {
+    "objectID": "Unidades/unidad2/cap2.html",
+    "href": "Unidades/unidad2/cap2.html",
+    "title": "2  ENTORNO DE DESARROLLO.",
+    "section": "",
+    "text": "Un entorno de desarrollo, comúnmente conocido como IDE por sus siglas en inglés (Integrated Development Environment), es una herramienta de software integral que se utiliza para facilitar la programación y el desarrollo de software. Un IDE proporciona un conjunto de características y herramientas que ayudan a los programadores a escribir, depurar, compilar y administrar código de manera más eficiente, en otras palabras es un paquete de software que combina todas las herramientas de desarrollo en una única interfaz gráfica de usuario (GUI), Algunos ejemplos de IDE más utilizados son NetBeans, Microsoft Visual Studio, Adobe Flex Builder y Eclipse.\nAlgunos componentes comunes de un entorno de desarrollo incluyen:\nEditor de código: Ofrece funciones de edición de texto avanzadas, como resaltado de sintaxis, autoindentación y autocompletado, lo que facilita la escritura de código.\nLa Identación se refiere al formato visual utilizado para estructurar y organizar el código fuente en un lenguaje de programación.\n\n\n\n\n\nDepurador: Permite a los programadores identificar y corregir errores en su código al proporcionar herramientas para establecer puntos de interrupción, inspeccionar variables y seguir la ejecución del programa paso a paso.\nCompilador/Intérprete: Proporciona la capacidad de compilar y ejecutar el código directamente desde el IDE. Algunos IDE también son específicos para un lenguaje y pueden incluir un intérprete para ejecutar el código directamente.\nGestión de proyectos: Permite organizar y administrar proyectos de desarrollo, lo que incluye la creación, apertura y gestión de archivos y directorios.\nHerramientas de versionado: Puede integrar sistemas de control de versiones, como Git, para realizar un seguimiento de los cambios en el código y colaborar con otros desarrolladores.\nAsistencia en el desarrollo: Ofrece sugerencias y advertencias en tiempo real mientras se escribe código, lo que ayuda a detectar posibles errores y mejorar la calidad del código.\nHerramientas de construcción: Facilita la construcción y automatización de tareas, como la compilación, la generación de documentación y la ejecución de pruebas.\nHerramientas de depuración visual: Algunos IDE proporcionan una interfaz gráfica para depurar aplicaciones de manera más visual, lo que puede incluir representaciones gráficas de estructuras de datos y flujos de programa.\nIntegración con SDK y bibliotecas: Puede integrar SDK (kits de desarrollo de software) y bibliotecas relevantes para el lenguaje o plataforma de desarrollo específico.\nFinalización de código: conocida como prompt de código, esta función se utiliza para analizar todo el código y para identificar e insertar los componentes de código que faltan. Su uso permite ahorrar tiempo y minimizar los fallos o errores\nPor ejemplo, un SDK de Android proporciona las herramientas y recursos necesarios para desarrollar aplicaciones para dispositivos Android, incluyendo bibliotecas para interactuar con el hardware y el sistema operativo, herramientas de depuración, un emulador de Android para probar aplicaciones y documentación detallada.\nLos IDE varían según el lenguaje de programación y la plataforma de desarrollo. Ejemplos populares de IDE incluyen Visual Studio (para desarrollo en C# y .NET), Eclipse (para Java), IntelliJ IDEA (para Java y otros lenguajes), PyCharm (para Python) y muchos otros. La elección de un IDE suele depender de las preferencias del desarrollador y del entorno de desarrollo específico en el que trabaje.\nCARACTERISTICAS E INTSALACIÓN.\nPara este curso se utilizará los lenguajes de programación de Python y Java, por lo que instalaremos dos entornos virtuales, para sacar el mayor provecho en el caso del lenguaje de programación Java.\nEl primer entorno virtual será Visual Studio Code  y el IDE para el lenguaje de programación será Netbeans IDE 16 .\nPara la instalación del IDE Visual Studio Code hay que seguir los siguientes pasos.\nPaso 1: Descarga de VS Code\nDirígete al sitio web oficial de Visual Studio Code en https://code.visualstudio.com/ y busca un botón de descarga, generalmente ubicado en la página principal. Aquí deberías encontrar una imagen que representa el botón de descarga.\n\nPaso 2: Selecciona tu Sistema Operativo, en mi caso Windows 10.\nPaso 3: Descarga del Instalador\nDespués de seleccionar tu sistema operativo, deberías ser redirigido a una página que te permitirá descargar el instalador específico para tu plataforma. Aquí encontrarás un enlace de descarga o un botón para iniciar la descarga, donde señalarás la carpeta y realizará la descarga.\nPaso 4: Ejecuta el Instalador\nUna vez que se complete la descarga, ejecuta el instalador haciendo doble clic en él (en Windows) o siguiendo las instrucciones específicas para tu sistema operativo.\nDurante la instalación, se te pueden presentar opciones de configuración. Estas opciones pueden variar según la versión y la plataforma. Generalmente, se te preguntará si deseas crear accesos directos en el escritorio o en el menú de inicio (en el caso de Windows), así como otras preferencias.\nPaso 5: Finaliza la Instalación\nFinalmente, cuando se complete la instalación, verás una pantalla que confirma que Visual Studio Code se ha instalado correctamente.\n\nPaso 6: Configuración de los lenguajes.\nLa configuración de los lenguajes es muy importante ya que este nos permite al momento de ejecutar los archivos con sus diferentes extensiones que corran de manera correcta, para este curso instalaremos Python y luego netbeans por lo que los pasos a seguir son los siguientes:\nPaso 1: Descargar Python: Ve al sitio web oficial de Python en https://www.python.org/downloads/.\nEn la página de descargas, verás las últimas versiones de Python disponibles. Elige la versión más reciente de Python 3 (por ejemplo, Python 3.9.6).\nDesplázate hacia abajo hasta encontrar la sección de descargas de archivos ejecutables. Dependiendo de tu sistema operativo (Windows, macOS o Linux), selecciona el enlace de descarga adecuado. Para Windows, es posible que veas dos opciones: una para 32 bits y otra para 64 bits. Si tienes un sistema operativo de 64 bits, selecciona la versión de 64 bits.\nPaso 2: Ejecutar el Instalador de Python: Una vez que se complete la descarga, haz doble clic en el archivo ejecutable que descargaste para iniciar el instalador de Python.\nAsegúrate de marcar la casilla que dice “Add Python X.Y to PATH” (donde “X.Y” representa la versión de Python que estás instalando). Esto añadirá Python al PATH de tu sistema, lo que facilitará su uso desde la línea de comandos.\nHaz clic en “Install Now” para comenzar la instalación.\nPaso 3: Verificar la Instalación de Python: Abre una terminal o línea de comandos, Escribe el siguiente comando y presiona Enter:\nbash\nCopy code\npython –version\nEsto mostrará la versión de Python que has instalado, como “Python 3.9.6” o similar.\nInstalación del Netbeans."
+  },
+  {
+    "objectID": "Unidades/unidad3/cap3.html",
+    "href": "Unidades/unidad3/cap3.html",
+    "title": "3  Introducción a los Paradigmas de Programación",
+    "section": "",
+    "text": "Los paradigmas de programación son enfoques o estilos para resolver problemas mediante código. Cada paradigma tiene sus principios, ventajas y desventajas, y está diseñado para abordar problemas de diferentes maneras. En este documento, exploraremos cuatro paradigmas principales: imperativo, declarativo, orientado a objetos y funcional.\n\n3.1 Paradigma Imperativo\n\nEl paradigma imperativo es uno de los enfoques más tradicionales. En él, el programador indica paso a paso cómo se debe realizar cada tarea.\n\nCaracterísticas:\n\nEnfoque en cambiar el estado mediante secuencias de instrucciones.\nUso intensivo de bucles y estructuras de control de flujo (if, else, for, while).\n\nEjemplo en Java\n\nEn Java, este paradigma se utiliza ampliamente debido a su sintaxis estructurada.\npublic class SumaImperativa {\n    public static void main(String[] args) {\n        int sum = 0;\n        for (int i = 1; i &lt;= 5; i++) {\n            sum += i;\n        }\n        System.out.println(\"La suma es: \" + sum);\n    }\n}\n\n3.2 Paradigma Declarativo\n\nEn el paradigma declarativo, el programador especifica qué se quiere lograr, no cómo hacerlo. Esto permite centrarse en el resultado y no en los pasos intermedios.\n\nCaracterísticas:\n\nDescribe el resultado deseado en lugar de los pasos detallados.\nMás conciso y fácil de leer para tareas específicas como consultas de bases de datos.\nEjemplo con Java y SQL\n\n\nEn Java, el uso de SQL en aplicaciones es un ejemplo de un enfoque declarativo.\nSELECT nombre, edad FROM estudiantes WHERE edad &gt; 18;\n\n3.3 Paradigma Orientado a Objetos\n\nLa programación orientada a objetos (POO) es ampliamente utilizada en Java. Este paradigma organiza el código en “objetos”, que representan entidades del mundo real.\n\nCaracterísticas:\n\nUsa conceptos de clases y objetos.\nPrincipios de abstracción, encapsulación, herencia y polimorfismo.\n\nEjemplo en Java\n\nAquí un ejemplo básico de POO en Java:\n\nclass Persona {\n    String nombre;\n    int edad;\n\n    public Persona(String nombre, int edad) {\n        this.nombre = nombre;\n        this.edad = edad;\n    }\n\n    public void presentarse() {\n        System.out.println(\"Hola, soy \" + nombre + \" y tengo \" + edad + \" años.\");\n    }\n}\n\npublic class Main {\n    public static void main(String[] args) {\n        Persona persona = new Persona(\"Ana\", 25);\n        persona.presentarse();\n    }\n}\n\n\n\n3.4 Paradigma Funcional.\n\nEl paradigma funcional trata las funciones como ciudadanos de primera clase. En este estilo, se evita el cambio de estado y las variables mutables.\n\nCaracterísticas:\n\nUso de funciones puras (sin efectos secundarios).\nUso de funciones de orden superior y técnicas como el mapeo y el filtrado.\n\nEjemplo en Java.\n\nmagina que tienes una lista de números y quieres obtener solo los números pares y calcular el doble de cada uno de ellos. En el paradigma funcional, no describimos cada paso de cómo lograr esto con bucles o variables que cambien, sino que aplicamos funciones que transforman la lista de manera declarativa. 1. Primero, aplicamos una función de filtro para seleccionar solo los números pares. 2. Luego, aplicamos una función de mapeo para multiplicar cada número par por dos. 3. Finalmente, obtenemos el resultado como una nueva lista.\nTest"
+  },
+  {
+    "objectID": "Unidades/unidad4/cap4.html",
+    "href": "Unidades/unidad4/cap4.html",
+    "title": "4  Conceptos Generales de la POO",
+    "section": "",
+    "text": "5 Polimorfismo\nEl polimorfismo permite que objetos de diferentes clases respondan al mismo método de formas distintas, aumentando la flexibilidad del código."
+  },
+  {
+    "objectID": "Unidades/unidad4/cap4.html#principios-fundamentales-de-la-poo",
+    "href": "Unidades/unidad4/cap4.html#principios-fundamentales-de-la-poo",
+    "title": "4  Conceptos Generales de la POO",
+    "section": "4.1 Principios Fundamentales de la POO",
+    "text": "4.1 Principios Fundamentales de la POO\nLa POO se basa en cuatro principios clave: Clases y Objetos, Encapsulación, Herencia y Polimorfismo. A continuación, veremos cada uno en detalle."
+  },
+  {
+    "objectID": "Unidades/unidad4/cap4.html#clases-y-objetos",
+    "href": "Unidades/unidad4/cap4.html#clases-y-objetos",
+    "title": "4  Conceptos Generales de la POO",
+    "section": "4.2 1 Clases y Objetos",
+    "text": "4.2 1 Clases y Objetos\n\n4.2.1 Clases\nUna clase es una plantilla o modelo que define las propiedades y comportamientos de un tipo de objeto. Es como un plano que describe cómo debe ser un objeto.\n\n\n\n\n\npublic class Persona { // NOMBRE DE LA CLASE\n    String nombre;     // ATRIBUTO\n    int edad;\n\n    public void presentarse() { // METODO\n        System.out.println(\"Hola, soy \" + nombre + \" y tengo \" + edad + \" años.\");\n    }\n}\n\n\n4.2.2 Objetos\nUn objeto es una instancia concreta de una clase. Cuando se crea un objeto, se asigna un espacio en memoria y se puede interactuar con sus atributos y métodos.\npublic class Main {\n    public static void main(String[] args) {\n        Persona persona = new Persona();\n        persona.nombre = \"Ana\";\n        persona.edad = 25;\n        persona.presentarse();\n    }\n}\nEn este ejemplo, persona es un objeto de la clase Persona con atributos nombre y edad."
+  },
+  {
+    "objectID": "Unidades/unidad4/cap4.html#encapsulación",
+    "href": "Unidades/unidad4/cap4.html#encapsulación",
+    "title": "4  Conceptos Generales de la POO",
+    "section": "4.3 2. Encapsulación",
+    "text": "4.3 2. Encapsulación\nLa encapsulación consiste en restringir el acceso directo a ciertos datos de un objeto, protegiendo sus atributos para que solo se modifiquen a través de métodos específicos.\n\n\n\n\n\n\n4.3.1 Ejemplo de Encapsulación\nclass Persona {\n    public String nombre;\n    private int edad;\n\n    public Persona(String nombre) {\n        this.nombre = nombre;\n    }\n\n    public String getEdad() {\n        return edad;\n    }\n\n    public void setEdad(int edad) {\n        this.edad = edad;\n    }\n}\nEn este caso, el atributos nombre es público y edad es privados, y solo se pueden acceder mediante los métodos getEdad() y setEdad()."
+  },
+  {
+    "objectID": "Unidades/unidad4/cap4.html#herencia",
+    "href": "Unidades/unidad4/cap4.html#herencia",
+    "title": "4  Conceptos Generales de la POO",
+    "section": "4.4 3 Herencia",
+    "text": "4.4 3 Herencia\nLa herencia permite que una clase (subclase) herede atributos y métodos de otra clase (superclase), permitiendo reutilizar código y extender funcionalidades.\n\n\n\n\n\nEjemplo de Herencia\nclass Animal {\n  public String nombre;\n  public Animal (String nombre){\n    this.nombre = nombre;\n  } \n  public void sonido() {\n        System.out.println(\"El animal hace un sonido\");\n  }\n}\n\nclass Perro extends Animal {\n  @Override\n  public void sonido() {\n      System.out.println(\"El perro ladra\");\n  }\n}\nAquí, Perro es una subclase de Animal y hereda el atributo nombre y su método sonido(), que luego sobrescribimos (@verride) para proporcionar un comportamiento específico."
+  },
+  {
+    "objectID": "Unidades/unidad5/cap5.html#tipos-de-relaciones-diagramas-de-casos-de-usos.",
+    "href": "Unidades/unidad5/cap5.html#tipos-de-relaciones-diagramas-de-casos-de-usos.",
+    "title": "5  Modelamiento de clases y objetos.",
+    "section": "5.1 TIPOS DE RELACIONES | DIAGRAMAS DE CASOS DE USOS.",
+    "text": "5.1 TIPOS DE RELACIONES | DIAGRAMAS DE CASOS DE USOS.\nLos diagramas de casos de uso muestran los casos de uso, los actores y las relaciones entre ellos. \nEs, con total seguridad, el diagrama más conocido y es utilizado para representar los actores externos que interactúan con el sistema de información y a través de que funcionalidades (casos de uso o requisitos funcionales) se relacionan. Dicho de otra manera, muestra de manera visual las distintas funciones que puede realizar un usuario (más bien un tipo de usuario) de un Sistema de Información.\nLo primero es saber cual es su finalidad. El diagrama de casos de uso, dependiendo de la profundidad que le demos, puede ser utilizado para muchos fines, entre ellos podemos encontrar los siguientes:\n\nRepresentar los requisitos funcionales.\nRepresentar los actores que se comunican con el sistema. Normalmente los actores del sistema son los usuarios y otros sistemas externos que se relacionan con el sistema. En el caso de los usuarios hay que entender el actor como un “perfil”, pudiendo existir varios usuarios que actúan como el mismo actor.\nRepresentar las relaciones entre requisitos funcionales y actores.\nGuiar el desarrollo del sistema. Crear un punto de partida sobre el que empezar a desarrollar el sistema.\nComunicarse de forma precisa entre cliente y desarrollador. Simplifica la forma en que todos los participes del desarrollo, incluyendo el cliente, perciben como el sistema funcionará y ofrecerá una visión general común del mismo."
+  },
+  {
+    "objectID": "Unidades/unidad5/cap5.html#elementos-de-un-diagrama-de-casos-de-uso",
+    "href": "Unidades/unidad5/cap5.html#elementos-de-un-diagrama-de-casos-de-uso",
+    "title": "5  Modelamiento de clases y objetos.",
+    "section": "5.2 Elementos de un diagrama de casos de uso",
+    "text": "5.2 Elementos de un diagrama de casos de uso\nUn diagrama de casos de uso está compuesto, principalmente, de 3 elementos: Actores, Casos de uso y Relaciones.\nLa interacción entre actores no se ve en el diagrama de casos de uso. Si esta interacción es esencial para una descripción coherente del comportamiento deseado, quizás los límites del sistema o del caso de uso deban de ser re-examinados. Alternativamente, la interacción entre actores puede ser parte de suposiciones usadas en el caso de uso. Sin embargo, los actores son una especie de rol, un usuario humano u otra entidad externa puede jugar varios papeles o roles. Así el Chef y el Cajero podrían ser realmente la misma persona.\n\n\n5.2.1 Actores\nComo ya hemos comentado en la presentación, un actor es algo o alguien externo al sistema que interactúa de forma directa con el sistema. Cuando decimos que interactúa nos referimos a que aporta información, recibe información, inicia una acción…\nSe representan con una imagen de un “muñeco de palo” con el nombre del actor debajo\n\nExisten dos tipos de actores: Los usuarios y los sistemas.\nNo hay que entender los usuarios como personas singulares, sino como “perfiles o roles” que identifican a un tipo de usuario, pero no al usuario en sí. Por ejemplo, en una aplicación de gestión de nóminas, un actor de este tipo podría ser “gestor de nóminas” que se encarga de emitir y firmar nóminas. Este rol podría ser tomado, por ejemplo, por cualquier individuo del personal de recursos humanos y, además, por el jefe de la empresa. Es un ejemplo muy sencillo, pero como puedes ver, un actor no representa a una única persona o a un único usuario.\n\nPor otro lado, los actores pueden ser otros sistemas que también interactúan con nuestro propio sistema. Un ejemplo podría ser, en nuestra aplicación de nóminas, un sistema que almacene las nóminas firmadas a modo de archivo. En este caso cuando se firma la nómina se recibe la misma por el sistema de archivo, por tanto el caso de uso se relaciona con el actor.\n\nEn ocasiones este tipo de actores no se representa con un “hombre de palo” porque puede dar la sensación de que es un usuario y queda poco intuitivo."
+  },
+  {
+    "objectID": "Unidades/unidad5/cap5.html#relaciones",
+    "href": "Unidades/unidad5/cap5.html#relaciones",
+    "title": "5  Modelamiento de clases y objetos.",
+    "section": "5.3 Relaciones",
+    "text": "5.3 Relaciones\nLas relaciones conectan los casos de uso con los actores o los casos de uso entre sí.\nCuando conectan un actor con un caso de uso representa que ese actor interactúa de alguna manera con ese caso de uso y se representa con una linea continua con la identificación &lt;&lt;communicates&gt;&gt;.\n\nCuando conectan casos de uso entre sí se pueden diferenciar dos tipos de relaciones: &lt;&lt;include&gt;&gt; y &lt;&lt;extends&gt;&gt;. En español a veces se usa la nomenclatura &lt;&lt;usa&gt;&gt; y &lt;&lt;extiende&gt;&gt;:\n\n&lt;&lt;include&gt;&gt;: Se utiliza para representar que un caso de uso utiliza siempre a otro caso de uso. Es decir, un caso de uso se ejecutará obligatoriamente (lo incluye, lo usa). Se representa con una flecha discontinua que va desde el caso de uso de origen al caso de uso que se incluye.\n\n\nUn uso típico de este tipo de relaciones se produce cuando dos casos de uso comparten una funcionalidad. Esa funcionalidad es extraida de los dos y se crea un caso de uso nuevo que se relaciona con los anteriores con un include.\n\nEn este ejemplo, los casos de uso emitir factura y enviar producto ejecutarán ambos el caso de uso autenticación.\n\n&lt;&lt;extend&gt;&gt;: Este tipo de relaciones se utilizan cuando un caso de uso tiene un comportamiento opcional, reflejado en otro caso de uso. Es decir, un caso de uso puede ejecutar, normalmente dependiendo de alguna condición o flujo del programa, otro caso de uso. Se representa con una flecha discontinua que va desde el caso de uso opcional al original.\n\n\nUn ejemplo de esta relación podría ser la siguiente:\n\nEn este supuesto el caso de uso Hacer pedido puede dar lugar (o no) a otros dos casos de uso: Enviar notificación SMS y Enviar notificación email. Se supone que, cuando un usuario hace un pedido, el sistema le permite elegir si quiere que se envíe una notificación de ese pedido por SMS o por email"
+  },
+  {
+    "objectID": "Unidades/unidad5/cap5.html#tipos-de-relaciones.",
+    "href": "Unidades/unidad5/cap5.html#tipos-de-relaciones.",
+    "title": "5  Modelamiento de clases y objetos.",
+    "section": "5.4 Tipos de relaciones.",
+    "text": "5.4 Tipos de relaciones.\nPara una mejor explicación del tipo de relaciones hagamos un ejemplo teniendo presente el siguiente diagrama.\n\nEn el grafico anterior podemos observar que consta de lo siguiente: nombre | atributos | métodos.\nCon esta información realicemos ejemplos para un mejor entendimiento.\nSi tenemos una clase denominada Animales, cuyos atributos son nombre, ID, edad y sus métodos son definirNombre y comer.\nPara esto tener presente la información de la imagen siguiente.\n\nEs decir para representar atributos privados sería de la siguiente manera:\n-nombre | Atributo privado\n+ID | Atributo público\n#edad | Atributo protegido.\nTeniendo la representación de la clase como se observa en la siguiente imagen.\n\nQue sucedería si se quisiera crear 2 animales diferentes un perro y un gato.\n\nTendríamos el siguiente diagrama, sin embargo, aplicando el principio de herencia, podemos re utilizar el código, como se observa en la imagen siguiente.\n\nLa clase animales en la imagen anterior toma el nombre de clase padre o superclase y las clases de perro y gato toman el nombre de subclase o clase hija."
+  },
+  {
+    "objectID": "Unidades/unidad5/cap5.html#tipos-de-relaciones-en-diagramas-de-clases-uml",
+    "href": "Unidades/unidad5/cap5.html#tipos-de-relaciones-en-diagramas-de-clases-uml",
+    "title": "5  Modelamiento de clases y objetos.",
+    "section": "5.5 Tipos de relaciones en diagramas de clases UML:",
+    "text": "5.5 Tipos de relaciones en diagramas de clases UML:\n\n\n\n\n\n\n5.5.1 Relación (Línea continua con flecha)\n\nEjemplo: Persona tiene una relación con Empleo.\nDescripción: Esta relación indica que una clase (Persona) está asociada a otra clase (Empleo). En este caso, una persona puede tener un empleo, lo que representa una asociación básica entre estas dos entidades.\nSímbolo: Línea continua con flecha.\n\n\n\n5.5.2 Implementación (Línea continua con triángulo)\n\nEjemplo: PagoConTarjeta implementa la InterfazPago.\nDescripción: En este caso, PagoConTarjeta debe proporcionar una implementación del método procesarPago() definido en la interfaz InterfazPago. Esto significa que PagoConTarjeta se compromete a cumplir con el contrato especificado por la interfaz.\nSímbolo: Línea continua con triángulo en la dirección de la interfaz.\n\n\n\n5.5.3 Composición (Línea continua con diamante lleno)\n\nEjemplo: Edificio contiene Aulas.\nDescripción: La composición representa una relación fuerte de “parte de”. En este caso, las aulas forman parte del edificio, y si el edificio se destruye, las aulas también desaparecen. Aula no puede existir sin Edificio.\nSímbolo: Línea continua con diamante lleno en el lado del todo (Edificio).\n\n\n\n5.5.4 Asociación (Línea continua)\n\nEjemplo: Profesor y Estudiante están asociados.\nDescripción: Indica una relación entre dos clases en la que ambas pueden interactuar entre sí. En este caso, un Profesor enseña a un Estudiante. Es una relación básica, sin dependencia fuerte ni implicaciones de pertenencia.\nSímbolo: Línea continua sin ningún otro símbolo.\n\n\n\n5.5.5 Herencia (Línea discontinua con triángulo)\n\nEjemplo: Carro hereda de Vehiculo.\nDescripción: La herencia indica una relación “es un tipo de”. Carro hereda de Vehiculo, lo que significa que Carro es una especialización de Vehiculo y hereda sus atributos y métodos. Este es un caso de polimorfismo donde Carro puede ser tratado como Vehiculo.\nSímbolo: Línea discontinua con triángulo apuntando hacia la superclase (Vehiculo).\n\n\n\n5.5.6 Dependencia (Línea discontinua con flecha)\n\nEjemplo: Usuario depende de AutenticacionService.\nDescripción: La dependencia indica que una clase (Usuario) utiliza otra clase (AutenticacionService) temporalmente para realizar una acción. En este ejemplo, Usuario depende de AutenticacionService para iniciar sesión. La relación es débil, lo que significa que Usuario solo necesita AutenticacionService temporalmente.\nSímbolo: Línea discontinua con flecha apuntando hacia la clase de la que depende (AutenticacionService).\n\n\n\n5.5.7 Agregación (Línea continua con diamante vacío)\n\nEjemplo: Perrera agrega Perro.\nDescripción: La agregación representa una relación de “parte de” débil. Perro es una parte de Perrera, pero puede existir independientemente de ella. Es decir, si la Perrera deja de existir, los Perros pueden seguir existiendo.\nSímbolo: Línea continua con un diamante vacío en el lado del todo (Perrera)."
+  },
+  {
+    "objectID": "Unidades/unidad5/cap5.html#asociación",
+    "href": "Unidades/unidad5/cap5.html#asociación",
+    "title": "5  Modelamiento de clases y objetos.",
+    "section": "5.6 Asociación:",
+    "text": "5.6 Asociación:\nUtilizando una linea simple la asociación indica una relación entre dos clases sin dependencia.\nEjemplo si ahora creamos un animal (PEZ), podemos decir que los gatos pueden comer peces utilizando el diagrama que se observa en la siguiente imagen."
+  },
+  {
+    "objectID": "Unidades/unidad5/cap5.html#agregación",
+    "href": "Unidades/unidad5/cap5.html#agregación",
+    "title": "5  Modelamiento de clases y objetos.",
+    "section": "5.7 Agregación:",
+    "text": "5.7 Agregación:\nEs un tipo especial de asociación que especifíca un todo y sus partes, esta relación indica que los elementos pueden existir fuera del todo. Ejemplo:\nSi creamos una clase Perro, y una clase Perrera, el perro podría pertenecer a la clase Perrera, pero no depende necesariamente la clase perro de la perrera y se representa como se observa en la siguiente imagen."
+  },
+  {
+    "objectID": "Unidades/unidad5/cap5.html#composición",
+    "href": "Unidades/unidad5/cap5.html#composición",
+    "title": "5  Modelamiento de clases y objetos.",
+    "section": "5.8 Composición:",
+    "text": "5.8 Composición:\nEs la relación en la que la parte no puede existir fuera del todo sin la otra clase. Ejemplo, si tenemos un centro de visitantes en la cual tenga varios espacios físicos como recepción y baños, Si el centro de visitantes se derrumbara sus espacios físicos como recepción y baño no podrían exisitir separados."
+  },
+  {
+    "objectID": "Unidades/unidad5/cap5.html#multiplicidad.",
+    "href": "Unidades/unidad5/cap5.html#multiplicidad.",
+    "title": "5  Modelamiento de clases y objetos.",
+    "section": "5.9 Multiplicidad.",
+    "text": "5.9 Multiplicidad.\nPermite restringir las restricciones numéricas de dependencia.\nEjemplo si queremos especificar que el centro de visitantes tiene un solo centro de recepción, y que puede tener uno o varios baños, se puede realizar la siguiente manera.\n\nSi tienes más dudas, te sugiero revisar el siguiente video:"
+  },
+  {
+    "objectID": "Unidades/unidad5/cap5.html#plantiumuml-herramienta",
+    "href": "Unidades/unidad5/cap5.html#plantiumuml-herramienta",
+    "title": "5  Modelamiento de clases y objetos.",
+    "section": "5.10 PlantiumUML herramienta",
+    "text": "5.10 PlantiumUML herramienta\n@startuml\nclass Persona {\n    + nombre : String\n    + correr() : void\n}\n@enduml\n@startuml\nclass Persona {\n    + nombre : String\n    + correr() : void\n}\n\nclass Estudiante extends Persona {\n    + matricula : String\n    + estudiar() : void\n}\n@enduml"
+  },
+  {
+    "objectID": "Unidades/unidad5/cap5.html#plantiumuml-video",
+    "href": "Unidades/unidad5/cap5.html#plantiumuml-video",
+    "title": "5  Modelamiento de clases y objetos.",
+    "section": "5.11 PlantiumUML Video",
+    "text": "5.11 PlantiumUML Video"
+  },
+  {
+    "objectID": "Unidades/unidad5/cap5.html#video",
+    "href": "Unidades/unidad5/cap5.html#video",
+    "title": "5  Modelamiento de clases y objetos.",
+    "section": "5.12 Video",
+    "text": "5.12 Video"
+  },
+  {
+    "objectID": "Unidades/unidad5/cap5.html#test",
+    "href": "Unidades/unidad5/cap5.html#test",
+    "title": "5  Modelamiento de clases y objetos.",
+    "section": "5.13 TEST",
+    "text": "5.13 TEST"
+  },
+  {
+    "objectID": "summary.html",
+    "href": "summary.html",
+    "title": "6  Summary",
+    "section": "",
+    "text": "In summary, this book has no content whatsoever."
+  },
+  {
+    "objectID": "references.html",
+    "href": "references.html",
+    "title": "References",
+    "section": "",
+    "text": "Knuth, Donald E. 1984. “Literate Programming.” Comput.\nJ. 27 (2): 97–111. https://doi.org/10.1093/comjnl/27.2.97."
+  }
+]

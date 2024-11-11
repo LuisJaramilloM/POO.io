@@ -1,0 +1,722 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.450">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Libro - 5&nbsp; Modelamiento de clases y objetos.</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../summary.html" rel="next">
+<link href="../../Unidades/unidad4/cap4.html" rel="prev">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../Unidades/unidad5/cap5.html">Unidad 5: Modelamiento de clases y objetos</a></li><li class="breadcrumb-item"><a href="../../Unidades/unidad5/cap5.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Modelamiento de clases y objetos.</span></a></li></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      </a>
+      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="../../">Libro</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Programación Orientada a Objetos</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+ <span class="menu-text">Unidad 1: Nombre de la Unidad</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../Unidades/unidad1/intro.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
+ <span class="menu-text">Unidad 2: Entorno de Desarrollo</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../Unidades/unidad2/cap2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">ENTORNO DE DESARROLLO.</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
+ <span class="menu-text">Unidad 3: Paradigmas de Programación</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../Unidades/unidad3/cap3.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Introducción a los Paradigmas de Programación</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">
+ <span class="menu-text">Unidad 4: Conceptos Generales de la POO</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../Unidades/unidad4/cap4.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Conceptos Generales de la POO</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="true">
+ <span class="menu-text">Unidad 5: Modelamiento de clases y objetos</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../Unidades/unidad5/cap5.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Modelamiento de clases y objetos.</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../summary.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Summary</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">References</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#tipos-de-relaciones-diagramas-de-casos-de-usos." id="toc-tipos-de-relaciones-diagramas-de-casos-de-usos." class="nav-link active" data-scroll-target="#tipos-de-relaciones-diagramas-de-casos-de-usos."><span class="header-section-number">5.1</span> TIPOS DE RELACIONES | DIAGRAMAS DE CASOS DE USOS.</a></li>
+  <li><a href="#elementos-de-un-diagrama-de-casos-de-uso" id="toc-elementos-de-un-diagrama-de-casos-de-uso" class="nav-link" data-scroll-target="#elementos-de-un-diagrama-de-casos-de-uso"><span class="header-section-number">5.2</span> Elementos de un diagrama de casos de uso</a>
+  <ul class="collapse">
+  <li><a href="#actores" id="toc-actores" class="nav-link" data-scroll-target="#actores"><span class="header-section-number">5.2.1</span> <strong>Actores</strong></a></li>
+  </ul></li>
+  <li><a href="#relaciones" id="toc-relaciones" class="nav-link" data-scroll-target="#relaciones"><span class="header-section-number">5.3</span> Relaciones</a></li>
+  <li><a href="#tipos-de-relaciones." id="toc-tipos-de-relaciones." class="nav-link" data-scroll-target="#tipos-de-relaciones."><span class="header-section-number">5.4</span> Tipos de relaciones.</a></li>
+  <li><a href="#tipos-de-relaciones-en-diagramas-de-clases-uml" id="toc-tipos-de-relaciones-en-diagramas-de-clases-uml" class="nav-link" data-scroll-target="#tipos-de-relaciones-en-diagramas-de-clases-uml"><span class="header-section-number">5.5</span> Tipos de relaciones en diagramas de clases UML:</a>
+  <ul class="collapse">
+  <li><a href="#relación-línea-continua-con-flecha" id="toc-relación-línea-continua-con-flecha" class="nav-link" data-scroll-target="#relación-línea-continua-con-flecha"><span class="header-section-number">5.5.1</span> <strong>Relación</strong> (Línea continua con flecha)</a></li>
+  <li><a href="#implementación-línea-continua-con-triángulo" id="toc-implementación-línea-continua-con-triángulo" class="nav-link" data-scroll-target="#implementación-línea-continua-con-triángulo"><span class="header-section-number">5.5.2</span> <strong>Implementación</strong> (Línea continua con triángulo)</a></li>
+  <li><a href="#composición-línea-continua-con-diamante-lleno" id="toc-composición-línea-continua-con-diamante-lleno" class="nav-link" data-scroll-target="#composición-línea-continua-con-diamante-lleno"><span class="header-section-number">5.5.3</span> <strong>Composición</strong> (Línea continua con diamante lleno)</a></li>
+  <li><a href="#asociación-línea-continua" id="toc-asociación-línea-continua" class="nav-link" data-scroll-target="#asociación-línea-continua"><span class="header-section-number">5.5.4</span> <strong>Asociación</strong> (Línea continua)</a></li>
+  <li><a href="#herencia-línea-discontinua-con-triángulo" id="toc-herencia-línea-discontinua-con-triángulo" class="nav-link" data-scroll-target="#herencia-línea-discontinua-con-triángulo"><span class="header-section-number">5.5.5</span> <strong>Herencia</strong> (Línea discontinua con triángulo)</a></li>
+  <li><a href="#dependencia-línea-discontinua-con-flecha" id="toc-dependencia-línea-discontinua-con-flecha" class="nav-link" data-scroll-target="#dependencia-línea-discontinua-con-flecha"><span class="header-section-number">5.5.6</span> <strong>Dependencia</strong> (Línea discontinua con flecha)</a></li>
+  <li><a href="#agregación-línea-continua-con-diamante-vacío" id="toc-agregación-línea-continua-con-diamante-vacío" class="nav-link" data-scroll-target="#agregación-línea-continua-con-diamante-vacío"><span class="header-section-number">5.5.7</span> <strong>Agregación</strong> (Línea continua con diamante vacío)</a></li>
+  </ul></li>
+  <li><a href="#asociación" id="toc-asociación" class="nav-link" data-scroll-target="#asociación"><span class="header-section-number">5.6</span> Asociación:</a></li>
+  <li><a href="#agregación" id="toc-agregación" class="nav-link" data-scroll-target="#agregación"><span class="header-section-number">5.7</span> Agregación:</a></li>
+  <li><a href="#composición" id="toc-composición" class="nav-link" data-scroll-target="#composición"><span class="header-section-number">5.8</span> Composición:</a></li>
+  <li><a href="#multiplicidad." id="toc-multiplicidad." class="nav-link" data-scroll-target="#multiplicidad."><span class="header-section-number">5.9</span> Multiplicidad.</a></li>
+  <li><a href="#plantiumuml-herramienta" id="toc-plantiumuml-herramienta" class="nav-link" data-scroll-target="#plantiumuml-herramienta"><span class="header-section-number">5.10</span> PlantiumUML herramienta</a></li>
+  <li><a href="#plantiumuml-video" id="toc-plantiumuml-video" class="nav-link" data-scroll-target="#plantiumuml-video"><span class="header-section-number">5.11</span> PlantiumUML Video</a></li>
+  <li><a href="#video" id="toc-video" class="nav-link" data-scroll-target="#video"><span class="header-section-number">5.12</span> Video</a></li>
+  <li><a href="#test" id="toc-test" class="nav-link" data-scroll-target="#test"><span class="header-section-number">5.13</span> TEST</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Modelamiento de clases y objetos.</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<p>ntro</p>
+<p>El modelamiento de clases y objetos es un tema fundamental en la programación orientada a objetos, un paradigma de programación que se basa en la idea de que los programas pueden estar formados por entidades que representan conceptos o cosas del mundo real. Estas entidades se llaman objetos, y tienen características (atributos) y comportamientos (métodos) que los definen y los diferencian de otros objetos. Los objetos se agrupan en clases, que son modelos o plantillas que definen las propiedades y las operaciones comunes de un conjunto de objetos. Por ejemplo, una clase puede ser Persona, y un objeto puede ser Juan, que es una instancia de la clase Persona.</p>
+<p>El modelamiento de clases y objetos consiste en diseñar y representar gráficamente las clases y los objetos que forman parte de un sistema de software, así como sus relaciones y sus interacciones. Para ello, se utiliza un lenguaje estándar llamado UML (Lenguaje Unificado de Modelado), que tiene una notación gráfica y textual para describir los diferentes aspectos de un sistema. UML tiene varios tipos de diagramas, pero el más importante para el modelamiento de clases y objetos es el diagrama de clases, que muestra las clases, sus atributos, sus métodos y sus relaciones con otras clases.</p>
+<p>Otros diagramas que se puede realizar es aquellos que muestran diferentes aspectos de un sistema. Por ejemplo, un diagrama de clases muestra las clases de un sistema y sus atributos y operaciones, un diagrama de secuencia muestra cómo se comunican los objetos entre sí a lo largo del tiempo, un diagrama de casos de uso muestra los requisitos funcionales de un sistema y los actores involucrados, etc.</p>
+<p>El modelamiento de clases y objetos tiene muchos beneficios para el desarrollo de software, como facilitar la comprensión del problema, mejorar la comunicación entre los desarrolladores y los clientes, aumentar la reutilización y la modularidad del código, y reducir los errores y los costos de mantenimiento. El modelamiento de clases y objetos es una habilidad esencial para cualquier programador que quiera crear sistemas de software de calidad, eficientes y adaptables. En este tema, aprenderás los conceptos básicos del modelamiento de clases y objetos, cómo usar UML para representarlos, y cómo implementarlos en un lenguaje de programación como Java.</p>
+<p>Los tipos de diagramas UML se pueden observar en la siguiente imagen.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="https://diagramasuml.com/"><img src="imagenes/clasificacion-diagramasUML.png" class="img-fluid figure-img" alt="Clasificación de los diagramas UML"></a></p>
+</figure>
+</div>
+<section id="tipos-de-relaciones-diagramas-de-casos-de-usos." class="level2" data-number="5.1">
+<h2 data-number="5.1" class="anchored" data-anchor-id="tipos-de-relaciones-diagramas-de-casos-de-usos."><span class="header-section-number">5.1</span> TIPOS DE RELACIONES | DIAGRAMAS DE CASOS DE USOS.</h2>
+<p><strong>Los diagramas de casos de uso</strong> muestran los casos de uso, los actores y las relaciones entre ellos.&nbsp;</p>
+<p>Es, con total seguridad, el diagrama más conocido y es utilizado para representar los actores externos que interactúan con el sistema de información y a través de que funcionalidades (casos de uso o requisitos funcionales) se relacionan. Dicho de otra manera, muestra de manera visual las distintas funciones que puede realizar un usuario (más bien un tipo de usuario) de un Sistema de Información.</p>
+<p>Lo primero es saber cual es su finalidad. El diagrama de casos de uso, dependiendo de la profundidad que le demos, puede ser utilizado para muchos fines, entre ellos podemos encontrar los siguientes:</p>
+<ul>
+<li><p><strong>Representar los requisitos funcionales</strong>.</p></li>
+<li><p><strong>Representar los actores</strong> que se comunican con el sistema. Normalmente los actores del sistema son los usuarios y otros sistemas externos que se relacionan con el sistema. En el caso de los usuarios hay que entender el actor como un “perfil”, pudiendo existir varios usuarios que actúan como el mismo actor.</p></li>
+<li><p><strong>Representar las relaciones</strong> entre requisitos funcionales y actores.</p></li>
+<li><p><strong>Guiar el desarrollo</strong> del sistema. Crear un punto de partida sobre el que empezar a desarrollar el sistema.</p></li>
+<li><p><strong>Comunicarse de forma precisa entre cliente y desarrollador</strong>.&nbsp;Simplifica la forma en que todos los participes del desarrollo, incluyendo el cliente, perciben como el sistema funcionará y ofrecerá una visión general común del mismo.</p></li>
+</ul>
+</section>
+<section id="elementos-de-un-diagrama-de-casos-de-uso" class="level2" data-number="5.2">
+<h2 data-number="5.2" class="anchored" data-anchor-id="elementos-de-un-diagrama-de-casos-de-uso"><span class="header-section-number">5.2</span> Elementos de un diagrama de casos de uso</h2>
+<p>Un diagrama de casos de uso está compuesto, principalmente, de 3 elementos: <strong>Actores, Casos de uso y Relaciones</strong>.</p>
+<p>La interacción entre actores no se ve en el&nbsp;<strong>diagrama de casos de uso</strong>. Si esta interacción es esencial para una descripción coherente del comportamiento deseado, quizás los límites del sistema o del caso de uso deban de ser re-examinados. Alternativamente, la interacción entre actores puede ser parte de suposiciones usadas en el caso de uso. Sin embargo, los actores son una especie de rol, un usuario humano u otra entidad externa puede jugar varios papeles o roles. Así el Chef y el Cajero podrían ser realmente la misma persona.</p>
+<p><img src="imagenes/thHFyNFVKP.png" class="img-fluid"></p>
+<section id="actores" class="level3" data-number="5.2.1">
+<h3 data-number="5.2.1" class="anchored" data-anchor-id="actores"><span class="header-section-number">5.2.1</span> <strong>Actores</strong></h3>
+<p>Como ya hemos comentado en la presentación, un actor es algo o alguien externo al sistema que interactúa de forma directa con el sistema. Cuando decimos que interactúa nos referimos a que aporta información, recibe información, inicia una acción…</p>
+<p>Se representan con una imagen de un “muñeco de palo” con el nombre del actor debajo</p>
+<p><img src="imagenes/CsBEQI4pgb-01.png" class="img-fluid"></p>
+<p>Existen dos tipos de actores: Los usuarios y los sistemas.</p>
+<p>No hay que entender los usuarios como personas singulares, sino como “perfiles o roles” que identifican a un tipo de usuario, pero no al usuario en sí. Por ejemplo, en una aplicación de gestión de nóminas, un actor de este tipo podría ser “gestor de nóminas” que se encarga de emitir y firmar nóminas. Este rol podría ser tomado, por ejemplo, por cualquier individuo del personal de recursos humanos y, además, por el jefe de la empresa. Es un ejemplo muy sencillo, pero como puedes ver, un actor no representa a una única persona o a un único usuario.</p>
+<p><img src="imagenes/h8WPuz3DEC.png" class="img-fluid"></p>
+<p>Por otro lado, los actores pueden ser otros sistemas que también interactúan con nuestro propio sistema. Un ejemplo podría ser, en nuestra aplicación de nóminas, un sistema que almacene las nóminas firmadas a modo de archivo. En este caso cuando se firma la nómina se recibe la misma por el sistema de archivo, por tanto el caso de uso se relaciona con el actor.</p>
+<p><br>
+En ocasiones este tipo de actores no se representa con un “hombre de palo” porque puede dar la sensación de que es un usuario y queda poco intuitivo.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="imagenes/UMLELEMENTOS.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</section>
+</section>
+<section id="relaciones" class="level2" data-number="5.3">
+<h2 data-number="5.3" class="anchored" data-anchor-id="relaciones"><span class="header-section-number">5.3</span> Relaciones</h2>
+<p>Las relaciones <strong>conectan los casos de uso</strong> con los actores o los casos de uso entre sí.</p>
+<p>Cuando conectan un actor con un caso de uso representa que ese actor <strong>interactúa</strong> de alguna manera con ese caso de uso y se representa con una linea continua con la identificación&nbsp;<em>&lt;&lt;communicates&gt;&gt;</em>.</p>
+<p><img src="imagenes/K4Cpo0rEC2.png" class="img-fluid"></p>
+<p>Cuando conectan casos de uso entre sí se pueden diferenciar dos tipos de relaciones: <strong>&lt;&lt;include&gt;&gt; y &lt;&lt;extends&gt;&gt;</strong>. En español a veces se usa la nomenclatura &lt;&lt;usa&gt;&gt; y &lt;&lt;extiende&gt;&gt;:</p>
+<ul>
+<li><strong>&lt;&lt;include&gt;&gt;:</strong> Se utiliza para representar que un caso de uso <strong>utiliza siempre</strong> a otro caso de uso. Es decir, un caso de uso se ejecutará obligatoriamente (lo incluye, lo usa). Se representa con una flecha discontinua que va desde el caso de uso de origen al caso de uso que se incluye.</li>
+</ul>
+<p><img src="imagenes/rPAfQkJ9Lg.png" class="img-fluid"></p>
+<p>Un uso típico de este tipo de relaciones se produce cuando dos casos de uso&nbsp;<strong>comparten una funcionalidad</strong>. Esa funcionalidad es extraida de los dos y se crea un caso de uso nuevo que se relaciona con los anteriores con un include.</p>
+<p><img src="imagenes/ez7fWuZWEO.png" class="img-fluid"></p>
+<p>En este ejemplo, los casos de uso emitir factura y enviar producto ejecutarán ambos el caso de uso autenticación.</p>
+<ul>
+<li><strong>&lt;&lt;extend&gt;&gt;:</strong> Este tipo de relaciones se utilizan cuando un caso de uso tiene un comportamiento <strong>opcional</strong>, reflejado en otro caso de uso. Es decir, un caso de uso puede ejecutar, normalmente dependiendo de alguna condición o flujo del programa, otro caso de uso. Se representa con una flecha discontinua que va desde el caso de uso opcional al original.</li>
+</ul>
+<p><img src="imagenes/y9Gpnv3wVI.png" class="img-fluid"></p>
+<p>Un ejemplo de esta relación podría ser la siguiente:</p>
+<p><img src="imagenes/9dbg2DzrlC.png" class="img-fluid"></p>
+<p>En este supuesto el caso de uso Hacer pedido puede dar lugar (o no) a otros dos casos de uso: Enviar notificación SMS y Enviar notificación email. Se supone que, cuando un usuario hace un pedido, el sistema le permite elegir si quiere que se envíe una notificación de ese pedido por SMS o por email</p>
+</section>
+<section id="tipos-de-relaciones." class="level2" data-number="5.4">
+<h2 data-number="5.4" class="anchored" data-anchor-id="tipos-de-relaciones."><span class="header-section-number">5.4</span> Tipos de relaciones.</h2>
+<p>Para una mejor explicación del tipo de relaciones hagamos un ejemplo teniendo presente el siguiente diagrama.</p>
+<p><img src="imagenes/pTQh8BwAIM.png" class="img-fluid"></p>
+<p>En el grafico anterior podemos observar que consta de lo siguiente: nombre | atributos | métodos.</p>
+<p>Con esta información realicemos ejemplos para un mejor entendimiento.</p>
+<p>Si tenemos una clase denominada Animales, cuyos atributos son nombre, ID, edad y sus métodos son definirNombre y comer.</p>
+<p>Para esto tener presente la información de la imagen siguiente.</p>
+<p><img src="imagenes/agYKMD4LXf.png" class="img-fluid"></p>
+<p>Es decir para representar atributos privados sería de la siguiente manera:</p>
+<p>-nombre | Atributo privado</p>
+<p>+ID | Atributo público</p>
+<p>#edad | Atributo protegido.</p>
+<p>Teniendo la representación de la clase como se observa en la siguiente imagen.</p>
+<p><img src="imagenes/chrome_L3JuBEfKT8.png" class="img-fluid"></p>
+<p>Que sucedería si se quisiera crear 2 animales diferentes un perro y un gato.</p>
+<p><img src="imagenes/bf8lkMn9BY.png" class="img-fluid"></p>
+<p>Tendríamos el siguiente diagrama, sin embargo, aplicando el principio de herencia, podemos re utilizar el código, como se observa en la imagen siguiente.</p>
+<p><img src="imagenes/LEUWkeYblM.png" class="img-fluid"></p>
+<p>La clase animales en la imagen anterior toma el nombre de clase padre o superclase y las clases de perro y gato toman el nombre de subclase o clase hija.</p>
+</section>
+<section id="tipos-de-relaciones-en-diagramas-de-clases-uml" class="level2" data-number="5.5">
+<h2 data-number="5.5" class="anchored" data-anchor-id="tipos-de-relaciones-en-diagramas-de-clases-uml"><span class="header-section-number">5.5</span> Tipos de relaciones en diagramas de clases UML:</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="imagenes/flechas.png" class="img-fluid figure-img" width="759"></p>
+</figure>
+</div>
+<section id="relación-línea-continua-con-flecha" class="level3" data-number="5.5.1">
+<h3 data-number="5.5.1" class="anchored" data-anchor-id="relación-línea-continua-con-flecha"><span class="header-section-number">5.5.1</span> <strong>Relación</strong> (Línea continua con flecha)</h3>
+<ul>
+<li><p><strong>Ejemplo</strong>: <code>Persona</code> tiene una relación con <code>Empleo</code>.</p></li>
+<li><p><strong>Descripción</strong>: Esta relación indica que una clase (<code>Persona</code>) está asociada a otra clase (<code>Empleo</code>). En este caso, una persona puede tener un empleo, lo que representa una asociación básica entre estas dos entidades.</p></li>
+<li><p><strong>Símbolo</strong>: Línea continua con flecha.</p></li>
+</ul>
+</section>
+<section id="implementación-línea-continua-con-triángulo" class="level3" data-number="5.5.2">
+<h3 data-number="5.5.2" class="anchored" data-anchor-id="implementación-línea-continua-con-triángulo"><span class="header-section-number">5.5.2</span> <strong>Implementación</strong> (Línea continua con triángulo)</h3>
+<ul>
+<li><p><strong>Ejemplo</strong>: <code>PagoConTarjeta</code> implementa la <code>InterfazPago</code>.</p></li>
+<li><p><strong>Descripción</strong>: En este caso, <code>PagoConTarjeta</code> debe proporcionar una implementación del método <code>procesarPago()</code> definido en la interfaz <code>InterfazPago</code>. Esto significa que <code>PagoConTarjeta</code> se compromete a cumplir con el contrato especificado por la interfaz.</p></li>
+<li><p><strong>Símbolo</strong>: Línea continua con triángulo en la dirección de la interfaz.</p></li>
+</ul>
+</section>
+<section id="composición-línea-continua-con-diamante-lleno" class="level3" data-number="5.5.3">
+<h3 data-number="5.5.3" class="anchored" data-anchor-id="composición-línea-continua-con-diamante-lleno"><span class="header-section-number">5.5.3</span> <strong>Composición</strong> (Línea continua con diamante lleno)</h3>
+<ul>
+<li><p><strong>Ejemplo</strong>: <code>Edificio</code> contiene <code>Aulas</code>.</p></li>
+<li><p><strong>Descripción</strong>: La composición representa una relación fuerte de “parte de”. En este caso, las aulas forman parte del edificio, y si el edificio se destruye, las aulas también desaparecen. <code>Aula</code> no puede existir sin <code>Edificio</code>.</p></li>
+<li><p><strong>Símbolo</strong>: Línea continua con diamante lleno en el lado del todo (<code>Edificio</code>).</p></li>
+</ul>
+</section>
+<section id="asociación-línea-continua" class="level3" data-number="5.5.4">
+<h3 data-number="5.5.4" class="anchored" data-anchor-id="asociación-línea-continua"><span class="header-section-number">5.5.4</span> <strong>Asociación</strong> (Línea continua)</h3>
+<ul>
+<li><p><strong>Ejemplo</strong>: <code>Profesor</code> y <code>Estudiante</code> están asociados.</p></li>
+<li><p><strong>Descripción</strong>: Indica una relación entre dos clases en la que ambas pueden interactuar entre sí. En este caso, un <code>Profesor</code> enseña a un <code>Estudiante</code>. Es una relación básica, sin dependencia fuerte ni implicaciones de pertenencia.</p></li>
+<li><p><strong>Símbolo</strong>: Línea continua sin ningún otro símbolo.</p></li>
+</ul>
+</section>
+<section id="herencia-línea-discontinua-con-triángulo" class="level3" data-number="5.5.5">
+<h3 data-number="5.5.5" class="anchored" data-anchor-id="herencia-línea-discontinua-con-triángulo"><span class="header-section-number">5.5.5</span> <strong>Herencia</strong> (Línea discontinua con triángulo)</h3>
+<ul>
+<li><p><strong>Ejemplo</strong>: <code>Carro</code> hereda de <code>Vehiculo</code>.</p></li>
+<li><p><strong>Descripción</strong>: La herencia indica una relación “es un tipo de”. <code>Carro</code> hereda de <code>Vehiculo</code>, lo que significa que <code>Carro</code> es una especialización de <code>Vehiculo</code> y hereda sus atributos y métodos. Este es un caso de polimorfismo donde <code>Carro</code> puede ser tratado como <code>Vehiculo</code>.</p></li>
+<li><p><strong>Símbolo</strong>: Línea discontinua con triángulo apuntando hacia la superclase (<code>Vehiculo</code>).</p></li>
+</ul>
+</section>
+<section id="dependencia-línea-discontinua-con-flecha" class="level3" data-number="5.5.6">
+<h3 data-number="5.5.6" class="anchored" data-anchor-id="dependencia-línea-discontinua-con-flecha"><span class="header-section-number">5.5.6</span> <strong>Dependencia</strong> (Línea discontinua con flecha)</h3>
+<ul>
+<li><p><strong>Ejemplo</strong>: <code>Usuario</code> depende de <code>AutenticacionService</code>.</p></li>
+<li><p><strong>Descripción</strong>: La dependencia indica que una clase (<code>Usuario</code>) utiliza otra clase (<code>AutenticacionService</code>) temporalmente para realizar una acción. En este ejemplo, <code>Usuario</code> depende de <code>AutenticacionService</code> para iniciar sesión. La relación es débil, lo que significa que <code>Usuario</code> solo necesita <code>AutenticacionService</code> temporalmente.</p></li>
+<li><p><strong>Símbolo</strong>: Línea discontinua con flecha apuntando hacia la clase de la que depende (<code>AutenticacionService</code>).</p></li>
+</ul>
+</section>
+<section id="agregación-línea-continua-con-diamante-vacío" class="level3" data-number="5.5.7">
+<h3 data-number="5.5.7" class="anchored" data-anchor-id="agregación-línea-continua-con-diamante-vacío"><span class="header-section-number">5.5.7</span> <strong>Agregación</strong> (Línea continua con diamante vacío)</h3>
+<ul>
+<li><p><strong>Ejemplo</strong>: <code>Perrera</code> agrega <code>Perro</code>.</p></li>
+<li><p><strong>Descripción</strong>: La agregación representa una relación de “parte de” débil. <code>Perro</code> es una parte de <code>Perrera</code>, pero puede existir independientemente de ella. Es decir, si la <code>Perrera</code> deja de existir, los <code>Perros</code> pueden seguir existiendo.</p></li>
+<li><p><strong>Símbolo</strong>: Línea continua con un diamante vacío en el lado del todo (<code>Perrera</code>).</p></li>
+</ul>
+</section>
+</section>
+<section id="asociación" class="level2" data-number="5.6">
+<h2 data-number="5.6" class="anchored" data-anchor-id="asociación"><span class="header-section-number">5.6</span> Asociación:</h2>
+<p>Utilizando una linea simple la asociación indica una relación entre dos clases sin dependencia.</p>
+<p>Ejemplo si ahora creamos un animal (PEZ), podemos decir que los gatos pueden comer peces utilizando el diagrama que se observa en la siguiente imagen.</p>
+<p><img src="imagenes/nn5iUKbauB.png" class="img-fluid"></p>
+</section>
+<section id="agregación" class="level2" data-number="5.7">
+<h2 data-number="5.7" class="anchored" data-anchor-id="agregación"><span class="header-section-number">5.7</span> Agregación:</h2>
+<p>Es un tipo especial de asociación que especifíca un todo y sus partes, esta relación indica que los elementos pueden existir fuera del todo. Ejemplo:</p>
+<p>Si creamos una clase Perro, y una clase Perrera, el perro podría pertenecer a la clase Perrera, pero no depende necesariamente la clase perro de la perrera y se representa como se observa en la siguiente imagen.</p>
+<p><img src="imagenes/agregación.png" class="img-fluid"></p>
+</section>
+<section id="composición" class="level2" data-number="5.8">
+<h2 data-number="5.8" class="anchored" data-anchor-id="composición"><span class="header-section-number">5.8</span> Composición:</h2>
+<p>Es la relación en la que la parte no puede existir fuera del todo sin la otra clase. Ejemplo, si tenemos un centro de visitantes en la cual tenga varios espacios físicos como recepción y baños, Si el centro de visitantes se derrumbara sus espacios físicos como recepción y baño no podrían exisitir separados.</p>
+<p><img src="imagenes/composición.png" class="img-fluid"></p>
+</section>
+<section id="multiplicidad." class="level2" data-number="5.9">
+<h2 data-number="5.9" class="anchored" data-anchor-id="multiplicidad."><span class="header-section-number">5.9</span> Multiplicidad.</h2>
+<p>Permite restringir las restricciones numéricas de dependencia.</p>
+<p>Ejemplo si queremos especificar que el centro de visitantes tiene un solo centro de recepción, y que puede tener uno o varios baños, se puede realizar la siguiente manera.</p>
+<p><img src="imagenes/multiplicacidad.png" class="img-fluid"></p>
+<p>Si tienes más dudas, te sugiero revisar el siguiente video:</p>
+</section>
+<section id="plantiumuml-herramienta" class="level2" data-number="5.10">
+<h2 data-number="5.10" class="anchored" data-anchor-id="plantiumuml-herramienta"><span class="header-section-number">5.10</span> <a href="https://www.plantuml.com/plantuml/uml/SyfFKj2rKt3CoKnELR1Io4ZDoSa700003">PlantiumUML herramienta</a></h2>
+<pre class="plantuml"><code>@startuml
+class Persona {
+    + nombre : String
+    + correr() : void
+}
+@enduml</code></pre>
+<pre class="plantuml"><code>@startuml
+class Persona {
+    + nombre : String
+    + correr() : void
+}
+
+class Estudiante extends Persona {
+    + matricula : String
+    + estudiar() : void
+}
+@enduml</code></pre>
+</section>
+<section id="plantiumuml-video" class="level2" data-number="5.11">
+<h2 data-number="5.11" class="anchored" data-anchor-id="plantiumuml-video"><span class="header-section-number">5.11</span> <a href="https://www.youtube.com/watch?v=qxVKpKYPKUk">PlantiumUML Video</a></h2>
+</section>
+<section id="video" class="level2" data-number="5.12">
+<h2 data-number="5.12" class="anchored" data-anchor-id="video"><span class="header-section-number">5.12</span> <a href="https://www.youtube.com/watch?v=Z0yLerU0g-Q">Video</a></h2>
+</section>
+<section id="test" class="level2" data-number="5.13">
+<h2 data-number="5.13" class="anchored" data-anchor-id="test"><span class="header-section-number">5.13</span> <a href="https://forms.gle/1pobRPyVkX9xXu92A">TEST</a></h2>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../../Unidades/unidad4/cap4.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Conceptos Generales de la POO</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../../summary.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Summary</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+</body></html>

@@ -1,0 +1,44 @@
+project:
+  type: book
+
+book:
+  title: "Libro"
+  author: "Luis Jaramillo"
+  date: "8/11/2024"
+  chapters:
+
+    
+    - index.qmd
+    - part: "Unidad 1: Nombre de la Unidad"
+      chapters: 
+        - Unidades/unidad1/intro.qmd     
+    - part: "Unidad 2: Entorno de Desarrollo"
+      chapters: 
+        - Unidades/unidad2/cap2.qmd
+
+    - part: "Unidad 3: Paradigmas de Programación"
+      chapters: 
+        - Unidades/unidad3/cap3.qmd
+      
+    - part: "Unidad 4: Conceptos Generales de la POO"
+      chapters: 
+        - Unidades/unidad4/cap4.qmd
+    
+    - part: "Unidad 5: Modelamiento de clases y objetos"
+      chapters: 
+        - Unidades/unidad5/cap5.qmd
+
+
+    - summary.qmd
+    - references.qmd
+
+bibliography: references.bib
+
+format:
+  html:
+    theme: cosmo
+  pdf:
+    documentclass: scrreprt
+
+
+
