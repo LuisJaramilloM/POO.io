@@ -166,5 +166,89 @@
     "title": "References",
     "section": "",
     "text": "Knuth, Donald E. 1984. “Literate Programming.” Comput.\nJ. 27 (2): 97–111. https://doi.org/10.1093/comjnl/27.2.97."
+  },
+  {
+    "objectID": "Unidades/unidad6/cap6.html#nombres-claros-y-descriptivos",
+    "href": "Unidades/unidad6/cap6.html#nombres-claros-y-descriptivos",
+    "title": "6  Introducción a Código Limpio",
+    "section": "6.1 Nombres Claros y Descriptivos",
+    "text": "6.1 Nombres Claros y Descriptivos\n\nVariables\n\nLos nombres de las variables deben ser descriptivos y reflejar claramente su propósito. Esto mejora la legibilidad y hace que el código sea más fácil de entender.\n\nEjemplo de un mal nombre:**\n\n int n; // ¿Qué representa \"n\"?\n \n\nEjemplo de un buen nombre:\n\nint numeroDeEstudiantes;"
+  },
+  {
+    "objectID": "Unidades/unidad6/cap6.html#funciones-y-métodos-los-nombres-de-funciones-y-métodos-deben-describir-lo-que-hacen.-es-una-buena-práctica-que-los-nombres-sean-verbos-o-frases-verbales.",
+    "href": "Unidades/unidad6/cap6.html#funciones-y-métodos-los-nombres-de-funciones-y-métodos-deben-describir-lo-que-hacen.-es-una-buena-práctica-que-los-nombres-sean-verbos-o-frases-verbales.",
+    "title": "6  Introducción a Código Limpio",
+    "section": "6.2 Funciones y Métodos Los nombres de funciones y métodos deben describir lo que hacen. Es una buena práctica que los nombres sean verbos o frases verbales.",
+    "text": "6.2 Funciones y Métodos Los nombres de funciones y métodos deben describir lo que hacen. Es una buena práctica que los nombres sean verbos o frases verbales.\n\nEjemplo de un mal nombre:\n\n void d();  // ¿Qué significa \"d\"?\n\nEjemplo de un buen nombre:\n\n void dibujarRectangulo();"
+  },
+  {
+    "objectID": "Unidades/unidad6/cap6.html#evitar-comentarios-innecesarios",
+    "href": "Unidades/unidad6/cap6.html#evitar-comentarios-innecesarios",
+    "title": "6  Introducción a Código Limpio",
+    "section": "6.4 Evitar Comentarios Innecesarios",
+    "text": "6.4 Evitar Comentarios Innecesarios\nUn código limpio debería ser lo suficientemente claro para no necesitar comentarios. Si sientes que necesitas comentar para explicar el código, es probable que el código en sí necesite ser refactorizado.\n\nEjemplo\n\nCódigo con comentarios innecesarios:\nint edad = 25; // Declara la edad del usuario \nCódigo claro sin comentarios:\nint edadUsuario = 25;"
+  },
+  {
+    "objectID": "Unidades/unidad6/cap6.html#evitar-código-duplicado",
+    "href": "Unidades/unidad6/cap6.html#evitar-código-duplicado",
+    "title": "6  Introducción a Código Limpio",
+    "section": "6.5 Evitar Código Duplicado",
+    "text": "6.5 Evitar Código Duplicado\nEl código duplicado genera inconsistencias y es difícil de mantener. Si necesitas hacer algo similar en múltiples lugares, utiliza funciones o métodos para reducir la duplicación.\nEjemplo de código duplicado:\n\nint calcularAreaRectangulo (int ancho, int alto) {\n          return ancho * alto; \n          }  \n\nint calcularAreaCuadrado(int lado) {\n          return lado * lado; \n          } \n          \nEjemplo de código refactorizado:\n\nint calcularArea(int ancho, int alto) {\n      return ancho * alto; \n      }"
+  },
+  {
+    "objectID": "Unidades/unidad6/cap6.html#control-de-excepciones-y-errores",
+    "href": "Unidades/unidad6/cap6.html#control-de-excepciones-y-errores",
+    "title": "6  Introducción a Código Limpio",
+    "section": "6.6 Control de Excepciones y Errores",
+    "text": "6.6 Control de Excepciones y Errores\nEl manejo de excepciones debe ser claro y específico. No uses excepciones generales como catch (Exception e) y evita el abuso de excepciones para el control de flujo.\n\nEjemplo\n\nMal manejo de excepciones:\n\ntry {\n// Código \n    } catch (Exception e) {\n        System.out.println(\"Ocurrió un error\"); \n    }\n    \nBuen manejo de excepciones:\n\ntry {     \n    \n      // Código \n    \n    } catch (IOException e) {  \n      \n      System.out.println(\"Error de entrada/salida\"); \n      \n      } catch (NullPointerException e) {\n      \n      System.out.println(\"Error: valor nulo encontrado\");\n      \n      }"
+  },
+  {
+    "objectID": "Unidades/unidad6/cap6.html#uso-de-formato-consistente",
+    "href": "Unidades/unidad6/cap6.html#uso-de-formato-consistente",
+    "title": "6  Introducción a Código Limpio",
+    "section": "6.7 Uso de Formato Consistente",
+    "text": "6.7 Uso de Formato Consistente\nEl código debe tener un formato consistente para mejorar su legibilidad. Esto incluye el uso adecuado de sangría, espacios y estilo de llaves. Además, el equipo de desarrollo debe seguir una convención de formato común.\n\n6.7.1 Ejemplo\nMal formato:\n\nif(condicion){ \n    doSomething(); \n    } \nBuen formato:\nif (condicion) {\n  doSomething(); \n  }"
+  },
+  {
+    "objectID": "Unidades/unidad6/cap6.html#reducir-el-número-de-parámetros",
+    "href": "Unidades/unidad6/cap6.html#reducir-el-número-de-parámetros",
+    "title": "6  Introducción a Código Limpio",
+    "section": "6.8 Reducir el Número de Parámetros",
+    "text": "6.8 Reducir el Número de Parámetros\nLas funciones con muchos parámetros son difíciles de entender y usar correctamente. Intenta reducir el número de parámetros pasando objetos cuando sea posible.\nEjemplo de demasiados parámetros:\nvoid crearUsuario(String nombre, String apellido, int edad, String direccion) {\n// Crear usuario \n} \nEjemplo de uso de un objeto:\n// Main.java\n\n// Definición de la clase Usuario\nclass Usuario {\n    String nombre;\n    String apellido;\n    int edad;\n    String direccion;\n\n    // Constructor para inicializar los atributos de Usuario\n    public Usuario(String nombre, String apellido, int edad, String direccion) {\n        this.nombre = nombre;\n        this.apellido = apellido;\n        this.edad = edad;\n        this.direccion = direccion;\n    }\n\n    // Método para mostrar la información del usuario\n    public void mostrarInformacion() {\n        System.out.println(\"Nombre: \" + nombre);\n        System.out.println(\"Apellido: \" + apellido);\n        System.out.println(\"Edad: \" + edad);\n        System.out.println(\"Dirección: \" + direccion);\n    }\n}\n\n// Clase principal con el método crearUsuario\npublic class Main {\n\n    // Método para \"crear\" un usuario (en este caso, solo muestra la información)\n    public static void crearUsuario(Usuario usuario) {\n        System.out.println(\"Creando usuario...\");\n        usuario.mostrarInformacion();\n    }\n\n    public static void main(String[] args) {\n        // Crear una instancia de Usuario\n        Usuario usuario = new Usuario(\"Luis\", \"Jaramillo\", 30, \"Calle Falsa 123\");\n\n        // Llamar al método crearUsuario\n        crearUsuario(usuario);\n    }\n}"
+  },
+  {
+    "objectID": "Unidades/unidad6/cap6.html#pruebas-unitarias",
+    "href": "Unidades/unidad6/cap6.html#pruebas-unitarias",
+    "title": "6  Introducción a Código Limpio",
+    "section": "6.9 Pruebas Unitarias",
+    "text": "6.9 Pruebas Unitarias\nEs importante escribir pruebas unitarias para el código. Las pruebas ayudan a detectar errores y aseguran que el código funcione correctamente a medida que evoluciona.\n\nEjemplo de prueba unitaria en Java\n\nimport org.junit.jupiter.api.Test;\nimport static org.junit.jupiter.api.Assertions.assertEquals;\n\npublic class CalculadoraTest {\n\n    @Test\n    public void testSuma() {\n        Calculadora calc = new Calculadora();\n        assertEquals(5, calc.suma(2, 3));\n    }\n}\n## [TEST](https://forms.gle/pRTgrvN2GhVDRkqw7)"
+  },
+  {
+    "objectID": "Unidades/unidad6/cap6.html#test",
+    "href": "Unidades/unidad6/cap6.html#test",
+    "title": "6  Introducción a Código Limpio",
+    "section": "6.9 TEST",
+    "text": "6.9 TEST"
+  },
+  {
+    "objectID": "Unidades/unidad6/cap6.html#funciones-simples-y-de-responsabilidad-única",
+    "href": "Unidades/unidad6/cap6.html#funciones-simples-y-de-responsabilidad-única",
+    "title": "6  Introducción a Código Limpio",
+    "section": "6.3 Funciones Simples y de Responsabilidad Única",
+    "text": "6.3 Funciones Simples y de Responsabilidad Única\nLas funciones deben ser cortas y realizar solo una tarea específica. Una función que intenta hacer muchas cosas es difícil de entender y mantener.\n\nEjemplo En lugar de hacer todo en una sola función, divide las tareas en funciones separadas.\nEjemplo de función compleja:\n\nvoid procesarDatosYGuardarEnBD() { // Procesa datos // Guarda en la base de datos \n}\nEjemplo de funciones separadas:\nvoid procesarDatos() {     // Procesa datos \n     }\nvoid guardarEnBD() {     // Guarda en la base de datos \n     }"
+  },
+  {
+    "objectID": "Unidades/unidad7/cap7.html#estructura-general-de-un-programa-en-java.",
+    "href": "Unidades/unidad7/cap7.html#estructura-general-de-un-programa-en-java.",
+    "title": "7  Estructura General de un Programa en JAVA",
+    "section": "7.1 ESTRUCTURA GENERAL DE UN PROGRAMA EN JAVA.",
+    "text": "7.1 ESTRUCTURA GENERAL DE UN PROGRAMA EN JAVA.\nLa estructura general de un programa orientado a objetos depende del lenguaje de programación que se utilice, pero en general se basa en los siguientes elementos:\n\nClases: Son las plantillas o modelos que definen las propiedades y los métodos comunes de un conjunto de objetos. Las clases se pueden organizar en jerarquías mediante la herencia, que permite reutilizar y extender el código de las clases superiores a las clases inferiores.\nObjetos: Son las instancias o ejemplares de las clases, que tienen un estado (valores de los atributos) y un comportamiento (ejecución de los métodos) específicos. Los objetos se pueden comunicar entre sí mediante mensajes, que son las llamadas a los métodos de otros objetos.\nRelaciones: Son los vínculos o conexiones que existen entre las clases y los objetos, que indican cómo se relacionan o interactúan entre sí. Hay diferentes tipos de relaciones, como la asociación, la dependencia, la generalización, la realización, la agregación y la composición.\n\nVeamos paso a paso un ejemplo de un programa orientado a objetos.\nAntes de empezar, utilizaremos la imagen que utilizamos en modelamiento y se encuentra a continuación.\n\nPara el ejemplo utilizaremos el nombre de clase “Person”, están indicados los métodos y atributos en privado para mejor entendimiento cambiaremos de privado a default, por lo que el código quería así.\npublic class Person{\n  String name;  // Atributo 1\n  int birthDate; // Atributo 2\n  \n  public Person(String name, int birthDate) {  //constructor\n        this.name = name;\n        this.birthDate = birthDate;\n    }\n  \n  public void isBirthday(){    //método\n    System.out.println(\"imprimir la fecha\");\n  }\n}\nUn ejemplo más completo es el siguiente:\n// Clase Persona\npublic class Persona {\n  // Atributos\n  String nombre;\n  int edad;\n  String dni;\n\n  // Constructor\n  public Persona(String nombre, int edad, String dni) {\n    this.nombre = nombre;\n    this.edad = edad;\n    this.dni = dni;\n  }\n\n  public void saludar() {\n    System.out.println(\"Hola, me llamo \" + nombre + \" y tengo \" + edad + \" años.\");\n  }\n}\n\n// Clase Estudiante que hereda de Persona\npublic class Estudiante extends Persona {\n  // Atributos\n  public String carrera;\n  public double notaMedia;\n\n  // Constructor\n  public Estudiante(String nombre, int edad, String dni, String carrera, double notaMedia) {\n    // Llamada al constructor de la superclase\n    super(nombre, edad, dni);\n    this.carrera = carrera;\n    this.notaMedia = notaMedia;\n  }\n\n  public void estudiar() {\n    System.out.println(\"Estoy estudiando \" + carrera + \".\");\n  }\n\n  public void examinar() {\n    System.out.println(\"Me voy a examinar de \" + carrera + \".\");\n  }\n\n  // Sobrescritura del método saludar de la superclase\n  @Override\n  public void saludar() {\n    System.out.println(\"Hola, soy \" + nombre + \", estudiante de \" + carrera + \" y tengo una nota media de \" + notaMedia + \".\");\n  }\n}\n\n// Clase Profesor que hereda de Persona\npublic class Profesor extends Persona {\n  // Atributos\n  String asignatura;\n  double salario;\n\n  // Constructor\n  public Profesor(String nombre, int edad, String dni, String asignatura, double salario) {\n    // Llamada al constructor de la superclase\n    super(nombre, edad, dni);\n    this.asignatura = asignatura;\n    this.salario = salario;\n  }\n\n  public void enseñar() {\n    System.out.println(\"Estoy enseñando \" + asignatura + \".\");\n  }\n\n  public void evaluar() {\n    System.out.println(\"Voy a evaluar a mis alumnos de \" + asignatura + \".\");\n  }\n\n  // Sobrescritura del método saludar de la superclase\n  @Override\n  public void saludar() {\n    System.out.println(\"Hola, soy \" + nombre + \", profesor de \" + asignatura + \" y cobro \" + salario + \" euros al mes.\");\n  }\n}\n\n// Clase principal con el método main\npublic class Main {\n  public static void main(String[] args) {\n    // Creación de objetos\n    Persona p1 = new Persona(\"Ana\", 25, \"12345678A\");\n    Estudiante e1 = new Estudiante(\"Luis\", 20, \"87654321B\", \"Informática\", 8.5);\n    Profesor pr1 = new Profesor(\"Pedro\", 35, \"45678912C\", \"Matemáticas\", 1500);\n\n    // Llamada a los métodos de los objetos\n    p1.saludar();\n    e1.saludar();\n    pr1.saludar();\n    e1.estudiar();\n    pr1.enseñar();\n  }\n}\nTodo el código pertenece al siguiente esquema.\n\n\n\n\n\nEste programa define tres clases: Persona, Estudiante y Profesor. La clase Estudiante y la clase Profesor heredan de la clase Persona, lo que significa que comparten sus atributos y métodos, y añaden algunos propios. El programa crea tres objetos: uno de cada clase, y llama a sus métodos. El resultado es el siguiente:\nHola, me llamo Ana y tengo 25 años.\nHola, soy Luis, estudiante de Informática y tengo una nota media de 8.5.\nHola, soy Pedro, profesor de Matemáticas y cobro 1500 euros al mes.\nEstoy estudiando Informática.\nEstoy enseñando Matemáticas."
+  },
+  {
+    "objectID": "Unidades/unidad7/cap7.html#video",
+    "href": "Unidades/unidad7/cap7.html#video",
+    "title": "7  Estructura General de un Programa en JAVA",
+    "section": "7.2 Video",
+    "text": "7.2 Video"
   }
 ]

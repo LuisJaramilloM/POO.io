@@ -28,6 +28,14 @@ book:
       chapters: 
         - Unidades/unidad5/cap5.qmd
 
+    - part: "Unidad 6: Codigo Limpio"
+      chapters: 
+        - Unidades/unidad6/cap6.qmd
+
+    - part: "Unidad 7: Estructura General de un Programa"
+      chapters: 
+        - Unidades/unidad7/cap7.qmd
+
 
     - summary.qmd
     - references.qmd
