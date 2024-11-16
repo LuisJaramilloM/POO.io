@@ -154,88 +154,60 @@
     "text": "5.13 TEST"
   },
   {
-    "objectID": "summary.html",
-    "href": "summary.html",
-    "title": "6  Summary",
-    "section": "",
-    "text": "In summary, this book has no content whatsoever."
-  },
-  {
-    "objectID": "references.html",
-    "href": "references.html",
-    "title": "References",
-    "section": "",
-    "text": "Knuth, Donald E. 1984. “Literate Programming.” Comput.\nJ. 27 (2): 97–111. https://doi.org/10.1093/comjnl/27.2.97."
-  },
-  {
-    "objectID": "Unidades/unidad6/cap6.html#nombres-claros-y-descriptivos",
-    "href": "Unidades/unidad6/cap6.html#nombres-claros-y-descriptivos",
-    "title": "6  Introducción a Código Limpio",
-    "section": "6.1 Nombres Claros y Descriptivos",
-    "text": "6.1 Nombres Claros y Descriptivos\n\nVariables\n\nLos nombres de las variables deben ser descriptivos y reflejar claramente su propósito. Esto mejora la legibilidad y hace que el código sea más fácil de entender.\n\nEjemplo de un mal nombre:**\n\n int n; // ¿Qué representa \"n\"?\n \n\nEjemplo de un buen nombre:\n\nint numeroDeEstudiantes;"
-  },
-  {
     "objectID": "Unidades/unidad6/cap6.html#funciones-y-métodos-los-nombres-de-funciones-y-métodos-deben-describir-lo-que-hacen.-es-una-buena-práctica-que-los-nombres-sean-verbos-o-frases-verbales.",
     "href": "Unidades/unidad6/cap6.html#funciones-y-métodos-los-nombres-de-funciones-y-métodos-deben-describir-lo-que-hacen.-es-una-buena-práctica-que-los-nombres-sean-verbos-o-frases-verbales.",
-    "title": "6  Introducción a Código Limpio",
-    "section": "6.2 Funciones y Métodos Los nombres de funciones y métodos deben describir lo que hacen. Es una buena práctica que los nombres sean verbos o frases verbales.",
-    "text": "6.2 Funciones y Métodos Los nombres de funciones y métodos deben describir lo que hacen. Es una buena práctica que los nombres sean verbos o frases verbales.\n\nEjemplo de un mal nombre:\n\n void d();  // ¿Qué significa \"d\"?\n\nEjemplo de un buen nombre:\n\n void dibujarRectangulo();"
-  },
-  {
-    "objectID": "Unidades/unidad6/cap6.html#evitar-comentarios-innecesarios",
-    "href": "Unidades/unidad6/cap6.html#evitar-comentarios-innecesarios",
-    "title": "6  Introducción a Código Limpio",
-    "section": "6.4 Evitar Comentarios Innecesarios",
-    "text": "6.4 Evitar Comentarios Innecesarios\nUn código limpio debería ser lo suficientemente claro para no necesitar comentarios. Si sientes que necesitas comentar para explicar el código, es probable que el código en sí necesite ser refactorizado.\n\nEjemplo\n\nCódigo con comentarios innecesarios:\nint edad = 25; // Declara la edad del usuario \nCódigo claro sin comentarios:\nint edadUsuario = 25;"
-  },
-  {
-    "objectID": "Unidades/unidad6/cap6.html#evitar-código-duplicado",
-    "href": "Unidades/unidad6/cap6.html#evitar-código-duplicado",
-    "title": "6  Introducción a Código Limpio",
-    "section": "6.5 Evitar Código Duplicado",
-    "text": "6.5 Evitar Código Duplicado\nEl código duplicado genera inconsistencias y es difícil de mantener. Si necesitas hacer algo similar en múltiples lugares, utiliza funciones o métodos para reducir la duplicación.\nEjemplo de código duplicado:\n\nint calcularAreaRectangulo (int ancho, int alto) {\n          return ancho * alto; \n          }  \n\nint calcularAreaCuadrado(int lado) {\n          return lado * lado; \n          } \n          \nEjemplo de código refactorizado:\n\nint calcularArea(int ancho, int alto) {\n      return ancho * alto; \n      }"
-  },
-  {
-    "objectID": "Unidades/unidad6/cap6.html#control-de-excepciones-y-errores",
-    "href": "Unidades/unidad6/cap6.html#control-de-excepciones-y-errores",
-    "title": "6  Introducción a Código Limpio",
-    "section": "6.6 Control de Excepciones y Errores",
-    "text": "6.6 Control de Excepciones y Errores\nEl manejo de excepciones debe ser claro y específico. No uses excepciones generales como catch (Exception e) y evita el abuso de excepciones para el control de flujo.\n\nEjemplo\n\nMal manejo de excepciones:\n\ntry {\n// Código \n    } catch (Exception e) {\n        System.out.println(\"Ocurrió un error\"); \n    }\n    \nBuen manejo de excepciones:\n\ntry {     \n    \n      // Código \n    \n    } catch (IOException e) {  \n      \n      System.out.println(\"Error de entrada/salida\"); \n      \n      } catch (NullPointerException e) {\n      \n      System.out.println(\"Error: valor nulo encontrado\");\n      \n      }"
-  },
-  {
-    "objectID": "Unidades/unidad6/cap6.html#uso-de-formato-consistente",
-    "href": "Unidades/unidad6/cap6.html#uso-de-formato-consistente",
-    "title": "6  Introducción a Código Limpio",
-    "section": "6.7 Uso de Formato Consistente",
-    "text": "6.7 Uso de Formato Consistente\nEl código debe tener un formato consistente para mejorar su legibilidad. Esto incluye el uso adecuado de sangría, espacios y estilo de llaves. Además, el equipo de desarrollo debe seguir una convención de formato común.\n\n6.7.1 Ejemplo\nMal formato:\n\nif(condicion){ \n    doSomething(); \n    } \nBuen formato:\nif (condicion) {\n  doSomething(); \n  }"
-  },
-  {
-    "objectID": "Unidades/unidad6/cap6.html#reducir-el-número-de-parámetros",
-    "href": "Unidades/unidad6/cap6.html#reducir-el-número-de-parámetros",
-    "title": "6  Introducción a Código Limpio",
-    "section": "6.8 Reducir el Número de Parámetros",
-    "text": "6.8 Reducir el Número de Parámetros\nLas funciones con muchos parámetros son difíciles de entender y usar correctamente. Intenta reducir el número de parámetros pasando objetos cuando sea posible.\nEjemplo de demasiados parámetros:\nvoid crearUsuario(String nombre, String apellido, int edad, String direccion) {\n// Crear usuario \n} \nEjemplo de uso de un objeto:\n// Main.java\n\n// Definición de la clase Usuario\nclass Usuario {\n    String nombre;\n    String apellido;\n    int edad;\n    String direccion;\n\n    // Constructor para inicializar los atributos de Usuario\n    public Usuario(String nombre, String apellido, int edad, String direccion) {\n        this.nombre = nombre;\n        this.apellido = apellido;\n        this.edad = edad;\n        this.direccion = direccion;\n    }\n\n    // Método para mostrar la información del usuario\n    public void mostrarInformacion() {\n        System.out.println(\"Nombre: \" + nombre);\n        System.out.println(\"Apellido: \" + apellido);\n        System.out.println(\"Edad: \" + edad);\n        System.out.println(\"Dirección: \" + direccion);\n    }\n}\n\n// Clase principal con el método crearUsuario\npublic class Main {\n\n    // Método para \"crear\" un usuario (en este caso, solo muestra la información)\n    public static void crearUsuario(Usuario usuario) {\n        System.out.println(\"Creando usuario...\");\n        usuario.mostrarInformacion();\n    }\n\n    public static void main(String[] args) {\n        // Crear una instancia de Usuario\n        Usuario usuario = new Usuario(\"Luis\", \"Jaramillo\", 30, \"Calle Falsa 123\");\n\n        // Llamar al método crearUsuario\n        crearUsuario(usuario);\n    }\n}"
-  },
-  {
-    "objectID": "Unidades/unidad6/cap6.html#pruebas-unitarias",
-    "href": "Unidades/unidad6/cap6.html#pruebas-unitarias",
-    "title": "6  Introducción a Código Limpio",
-    "section": "6.9 Pruebas Unitarias",
-    "text": "6.9 Pruebas Unitarias\nEs importante escribir pruebas unitarias para el código. Las pruebas ayudan a detectar errores y aseguran que el código funcione correctamente a medida que evoluciona.\n\nEjemplo de prueba unitaria en Java\n\nimport org.junit.jupiter.api.Test;\nimport static org.junit.jupiter.api.Assertions.assertEquals;\n\npublic class CalculadoraTest {\n\n    @Test\n    public void testSuma() {\n        Calculadora calc = new Calculadora();\n        assertEquals(5, calc.suma(2, 3));\n    }\n}\n## [TEST](https://forms.gle/pRTgrvN2GhVDRkqw7)"
-  },
-  {
-    "objectID": "Unidades/unidad6/cap6.html#test",
-    "href": "Unidades/unidad6/cap6.html#test",
-    "title": "6  Introducción a Código Limpio",
-    "section": "6.9 TEST",
-    "text": "6.9 TEST"
+    "title": "6  Nombres Claros y Descriptivos",
+    "section": "6.1 Funciones y Métodos Los nombres de funciones y métodos deben describir lo que hacen. Es una buena práctica que los nombres sean verbos o frases verbales.",
+    "text": "6.1 Funciones y Métodos Los nombres de funciones y métodos deben describir lo que hacen. Es una buena práctica que los nombres sean verbos o frases verbales.\n\nEjemplo de un mal nombre:\n\n void d();  // ¿Qué significa \"d\"?\n\nEjemplo de un buen nombre:\n\n void dibujarRectangulo();"
   },
   {
     "objectID": "Unidades/unidad6/cap6.html#funciones-simples-y-de-responsabilidad-única",
     "href": "Unidades/unidad6/cap6.html#funciones-simples-y-de-responsabilidad-única",
-    "title": "6  Introducción a Código Limpio",
-    "section": "6.3 Funciones Simples y de Responsabilidad Única",
-    "text": "6.3 Funciones Simples y de Responsabilidad Única\nLas funciones deben ser cortas y realizar solo una tarea específica. Una función que intenta hacer muchas cosas es difícil de entender y mantener.\n\nEjemplo En lugar de hacer todo en una sola función, divide las tareas en funciones separadas.\nEjemplo de función compleja:\n\nvoid procesarDatosYGuardarEnBD() { // Procesa datos // Guarda en la base de datos \n}\nEjemplo de funciones separadas:\nvoid procesarDatos() {     // Procesa datos \n     }\nvoid guardarEnBD() {     // Guarda en la base de datos \n     }"
+    "title": "6  Nombres Claros y Descriptivos",
+    "section": "6.2 Funciones Simples y de Responsabilidad Única",
+    "text": "6.2 Funciones Simples y de Responsabilidad Única\nLas funciones deben ser cortas y realizar solo una tarea específica. Una función que intenta hacer muchas cosas es difícil de entender y mantener.\n\nEjemplo En lugar de hacer todo en una sola función, divide las tareas en funciones separadas.\nEjemplo de función compleja:\n\nvoid procesarDatosYGuardarEnBD() { // Procesa datos // Guarda en la base de datos \n}\nEjemplo de funciones separadas:\nvoid procesarDatos() {     // Procesa datos \n     }\nvoid guardarEnBD() {     // Guarda en la base de datos \n     }"
+  },
+  {
+    "objectID": "Unidades/unidad6/cap6.html#evitar-comentarios-innecesarios",
+    "href": "Unidades/unidad6/cap6.html#evitar-comentarios-innecesarios",
+    "title": "6  Nombres Claros y Descriptivos",
+    "section": "6.3 Evitar Comentarios Innecesarios",
+    "text": "6.3 Evitar Comentarios Innecesarios\nUn código limpio debería ser lo suficientemente claro para no necesitar comentarios. Si sientes que necesitas comentar para explicar el código, es probable que el código en sí necesite ser refactorizado.\n\nEjemplo\n\nCódigo con comentarios innecesarios:\nint edad = 25; // Declara la edad del usuario \nCódigo claro sin comentarios:\nint edadUsuario = 25;"
+  },
+  {
+    "objectID": "Unidades/unidad6/cap6.html#evitar-código-duplicado",
+    "href": "Unidades/unidad6/cap6.html#evitar-código-duplicado",
+    "title": "6  Nombres Claros y Descriptivos",
+    "section": "6.4 Evitar Código Duplicado",
+    "text": "6.4 Evitar Código Duplicado\nEl código duplicado genera inconsistencias y es difícil de mantener. Si necesitas hacer algo similar en múltiples lugares, utiliza funciones o métodos para reducir la duplicación.\nEjemplo de código duplicado:\n\nint calcularAreaRectangulo (int ancho, int alto) {\n          return ancho * alto; \n          }  \n\nint calcularAreaCuadrado(int lado) {\n          return lado * lado; \n          } \n          \nEjemplo de código refactorizado:\n\nint calcularArea(int ancho, int alto) {\n      return ancho * alto; \n      }"
+  },
+  {
+    "objectID": "Unidades/unidad6/cap6.html#control-de-excepciones-y-errores",
+    "href": "Unidades/unidad6/cap6.html#control-de-excepciones-y-errores",
+    "title": "6  Nombres Claros y Descriptivos",
+    "section": "6.5 Control de Excepciones y Errores",
+    "text": "6.5 Control de Excepciones y Errores\nEl manejo de excepciones debe ser claro y específico. No uses excepciones generales como catch (Exception e) y evita el abuso de excepciones para el control de flujo.\n\nEjemplo\n\nMal manejo de excepciones:\n\ntry {\n// Código \n    } catch (Exception e) {\n        System.out.println(\"Ocurrió un error\"); \n    }\n    \nBuen manejo de excepciones:\n\ntry {     \n    \n      // Código \n    \n    } catch (IOException e) {  \n      \n      System.out.println(\"Error de entrada/salida\"); \n      \n      } catch (NullPointerException e) {\n      \n      System.out.println(\"Error: valor nulo encontrado\");\n      \n      }"
+  },
+  {
+    "objectID": "Unidades/unidad6/cap6.html#uso-de-formato-consistente",
+    "href": "Unidades/unidad6/cap6.html#uso-de-formato-consistente",
+    "title": "6  Nombres Claros y Descriptivos",
+    "section": "6.6 Uso de Formato Consistente",
+    "text": "6.6 Uso de Formato Consistente\nEl código debe tener un formato consistente para mejorar su legibilidad. Esto incluye el uso adecuado de sangría, espacios y estilo de llaves. Además, el equipo de desarrollo debe seguir una convención de formato común.\n\n6.6.1 Ejemplo\nMal formato:\n\nif(condicion){ \n    doSomething(); \n    } \nBuen formato:\nif (condicion) {\n  doSomething(); \n  }"
+  },
+  {
+    "objectID": "Unidades/unidad6/cap6.html#reducir-el-número-de-parámetros",
+    "href": "Unidades/unidad6/cap6.html#reducir-el-número-de-parámetros",
+    "title": "6  Nombres Claros y Descriptivos",
+    "section": "6.7 Reducir el Número de Parámetros",
+    "text": "6.7 Reducir el Número de Parámetros\nLas funciones con muchos parámetros son difíciles de entender y usar correctamente. Intenta reducir el número de parámetros pasando objetos cuando sea posible.\nEjemplo de demasiados parámetros:\nvoid crearUsuario(String nombre, String apellido, int edad, String direccion) {\n// Crear usuario \n} \nEjemplo de uso de un objeto:\n// Main.java\n\n// Definición de la clase Usuario\nclass Usuario {\n    String nombre;\n    String apellido;\n    int edad;\n    String direccion;\n\n    // Constructor para inicializar los atributos de Usuario\n    public Usuario(String nombre, String apellido, int edad, String direccion) {\n        this.nombre = nombre;\n        this.apellido = apellido;\n        this.edad = edad;\n        this.direccion = direccion;\n    }\n\n    // Método para mostrar la información del usuario\n    public void mostrarInformacion() {\n        System.out.println(\"Nombre: \" + nombre);\n        System.out.println(\"Apellido: \" + apellido);\n        System.out.println(\"Edad: \" + edad);\n        System.out.println(\"Dirección: \" + direccion);\n    }\n}\n\n// Clase principal con el método crearUsuario\npublic class Main {\n\n    // Método para \"crear\" un usuario (en este caso, solo muestra la información)\n    public static void crearUsuario(Usuario usuario) {\n        System.out.println(\"Creando usuario...\");\n        usuario.mostrarInformacion();\n    }\n\n    public static void main(String[] args) {\n        // Crear una instancia de Usuario\n        Usuario usuario = new Usuario(\"Luis\", \"Jaramillo\", 30, \"Calle Falsa 123\");\n\n        // Llamar al método crearUsuario\n        crearUsuario(usuario);\n    }\n}"
+  },
+  {
+    "objectID": "Unidades/unidad6/cap6.html#pruebas-unitarias",
+    "href": "Unidades/unidad6/cap6.html#pruebas-unitarias",
+    "title": "6  Nombres Claros y Descriptivos",
+    "section": "6.8 Pruebas Unitarias",
+    "text": "6.8 Pruebas Unitarias\nEs importante escribir pruebas unitarias para el código. Las pruebas ayudan a detectar errores y aseguran que el código funcione correctamente a medida que evoluciona.\n\nEjemplo de prueba unitaria en Java\n\nimport org.junit.jupiter.api.Test;\nimport static org.junit.jupiter.api.Assertions.assertEquals;\n\npublic class CalculadoraTest {\n\n    @Test\n    public void testSuma() {\n        Calculadora calc = new Calculadora();\n        assertEquals(5, calc.suma(2, 3));\n    }\n}\n## [TEST](https://forms.gle/pRTgrvN2GhVDRkqw7)"
   },
   {
     "objectID": "Unidades/unidad7/cap7.html#estructura-general-de-un-programa-en-java.",
@@ -250,5 +222,61 @@
     "title": "7  Estructura General de un Programa en JAVA",
     "section": "7.2 Video",
     "text": "7.2 Video"
+  },
+  {
+    "objectID": "Unidades/unidad8/cap8.html#introducción-a-la-entrada-y-salida-en-consola",
+    "href": "Unidades/unidad8/cap8.html#introducción-a-la-entrada-y-salida-en-consola",
+    "title": "8  Lectura y Escritura de Datos por Consola",
+    "section": "8.1 Introducción a la Entrada y Salida en Consola",
+    "text": "8.1 Introducción a la Entrada y Salida en Consola\nLa interacción por consola en Java permite a los desarrolladores capturar información ingresada por el usuario y devolver resultados o mensajes. En Java, la entrada y salida (E/S) de datos es fundamental para muchos programas, y este capítulo se centra en métodos prácticos para implementar E/S en aplicaciones de consola. A través de ejemplos prácticos, entenderás cómo utilizar las clases y métodos esenciales para obtener y mostrar información en el entorno de línea de comandos."
+  },
+  {
+    "objectID": "Unidades/unidad8/cap8.html#entrada-de-datos",
+    "href": "Unidades/unidad8/cap8.html#entrada-de-datos",
+    "title": "8  Lectura y Escritura de Datos por Consola",
+    "section": "8.2 Entrada de datos",
+    "text": "8.2 Entrada de datos\n\n8.2.1 Clase Scanner\nLa clase Scanner es la herramienta más común para la entrada de datos en Java. Pertenece al paquete java.util y permite leer diferentes tipos de datos: cadenas, enteros, decimales y booleanos. El uso de Scanner facilita la captura de datos con el método next() para cadenas o nextInt(), nextDouble(), entre otros, para tipos específicos.\n\nEjemplo: Leer un número y un nombre\n\nimport java.util.Scanner;\n\npublic class EjemploScanner {\n    public static void main(String[] args) {\n        Scanner entrada = new Scanner(System.in);\n\n        System.out.print(\"Ingresa tu nombre: \");\n        String nombre = entrada.nextLine();\n\n        System.out.print(\"Ingresa tu edad: \");\n        int edad = entrada.nextInt();\n\n        System.out.println(\"Hola \" + nombre + \", tienes \" + edad + \" años.\");\n    }\n}\n\nnextLine(): captura una línea completa de texto, incluyendo espacios.\nnextInt(): captura un número entero.\n\nPrecaución al Leer Datos en Java\nEs importante tener cuidado al alternar la lectura de datos de diferentes tipos en Java, especialmente cuando se combinan enteros o decimales (int, float, etc.) con cadenas (String). Después de leer un valor numérico con métodos como nextInt() o nextFloat(), el buffer de entrada puede contener un salto de línea (\\n) residual. Esto puede causar que una llamada posterior a nextLine() lea dicho salto de línea en lugar de capturar la cadena esperada. Para evitar errores, se recomienda limpiar el buffer antes de leer una cadena, usando nextLine() adicionalmente.\n\n\nimport java.util.Scanner;\n\npublic class principal {\n    public static void main(String[] args) {\n        Scanner lectura = new Scanner(System.in); // 'in' significa entrada, 'out' significa salida\n        // Ejemplo de lectura de datos\n        System.out.print(\"Ingrese su nombre: \");\n        String nombre = lectura.nextLine(); // Leemos un dato tipo cadena de caracteres\n        System.out.print(\"Ingrese su edad: \");\n        int edad = lectura.nextInt(); // Leemos un dato tipo entero\n        System.out.print(\"Salario: \");\n        float salario = lectura.nextFloat();\n        // Limpiar el buffer después de leer un entero\n        lectura.nextLine();\n        System.out.print(\"Ingrese su apellido: \");\n        String apellido = lectura.nextLine();\n\n        // ¿Qué pasará si no limpiamos el buffer?\n        System.out.println(\"¿Qué pasará si no limpiamos el buffer?\");\n\n        System.out.print(\"Ingrese su nombre2: \");\n        String nombre2 = lectura.nextLine();\n        System.out.print(\"Ingrese su edad2: \");\n        int edad2 = lectura.nextInt();\n        System.out.print(\"Salario2: \");\n        float salario2 = lectura.nextFloat();\n        System.out.print(\"Ingrese su apellido: \");\n        String apellido2 = lectura.nextLine();\n        // Cerrar el scanner al finalizar\n        lectura.close();\n\n        // Ejemplo de escritura de datos\n        System.out.println(\"******************************\");\n        System.out.println(\"\\nInformación ingresada1:\");\n        System.out.println(\"Nombre: \" + nombre);\n        System.out.println(\"Apellido: \" + apellido);\n        System.out.println(\"Edad: \" + edad);\n        System.out.println(\"Salario: \" + salario);\n\n\n        System.out.println(\"******************************\");\n        System.out.println(\"\\nInformación ingresada2:\");\n        System.out.println(\"Nombre2: \" + nombre2);\n        System.out.println(\"Apellido: \" + apellido2);\n        System.out.println(\"Edad2: \" + edad2);\n        System.out.println(\"Salario2: \" + salario2);\n    }\n    \n}\n\nLimpieza de Buffer: Luego de leer int o float, se utiliza lectura.nextLine(); para limpiar el buffer antes de leer un String con nextLine().\nEvitar Errores: Al no limpiar el buffer, el programa puede no capturar la entrada del usuario como se espera y leer datos incorrectos o vacíos.\n\n\n\n8.2.2 Uso de BufferedReader\nBufferedReader es otra opción para la lectura de datos y es especialmente útil para aplicaciones que requieren un manejo eficiente de grandes volúmenes de datos. Utiliza InputStreamReader para leer desde System.in.\nEjemplo: Leer una cadena de texto\nimport java.io.BufferedReader;\nimport java.io.InputStreamReader;\nimport java.io.IOException;\n\npublic class EjemploBufferedReader {\n    public static void main(String[] args) throws IOException {\n        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));\n\n        System.out.print(\"Ingresa un mensaje: \");\n        String mensaje = reader.readLine();\n\n        System.out.println(\"Mensaje recibido: \" + mensaje);\n    }\n}\nExplicación:\n\nreadLine(): lee una línea de texto completa, ideal para capturar grandes bloques de datos."
+  },
+  {
+    "objectID": "Unidades/unidad8/cap8.html#escritura-de-datos-en-la-consola",
+    "href": "Unidades/unidad8/cap8.html#escritura-de-datos-en-la-consola",
+    "title": "8  Lectura y Escritura de Datos por Consola",
+    "section": "8.3 Escritura de Datos en la Consola",
+    "text": "8.3 Escritura de Datos en la Consola\n\n8.3.1 Uso de System.out.println\nSystem.out.println es el método más sencillo y común para mostrar datos en la consola. Acepta texto y datos variables, permitiendo mostrar mensajes, resultados, y más.\nEjemplo: Saludo Básico\npublic class EjemploPrintln {\n    public static void main(String[] args) {\n        System.out.println(\"Bienvenido al sistema.\");\n        System.out.println(\"Este mensaje aparecerá en una nueva línea.\");\n    }\n}\nFormateo de Salida con System.out.printf\nEl método printf permite controlar el formato de la salida, especialmente útil cuando se requiere una presentación organizada de datos, como tablas o valores numéricos con un número específico de decimales.\nEjemplo: Formateo con printf\npublic class EjemploPrintf {\n    public static void main(String[] args) {\n        String producto = \"Laptop\";\n        double precio = 1234.56;\n\n        System.out.printf(\"Producto: %s, Precio: %.2f\\n\", producto, precio);\n    }\n}\n\n%s es un marcador de posición para cadenas.\n%.2f indica un número decimal con dos dígitos después del punto.\n\nEjemplo 2 : Formateo con printf\npublic class Ejemplo2Printf {\n    public static void main(String[] args) {\n        String nombre = \"Ana\";\n        int edad = 25;\n\n        System.out.printf(\"Nombre: %s, Edad: %d años\\n\", nombre, edad);\n    }\n}\nSalida esperada: Nombre: Ana, Edad: 25 años"
+  },
+  {
+    "objectID": "Unidades/unidad9/cap9.html#introducción-a-la-entrada-y-salida-en-consola",
+    "href": "Unidades/unidad9/cap9.html#introducción-a-la-entrada-y-salida-en-consola",
+    "title": "9  Lectura y Escritura de Datos por Consola",
+    "section": "9.1 Introducción a la Entrada y Salida en Consola",
+    "text": "9.1 Introducción a la Entrada y Salida en Consola\nLa interacción por consola en Java permite a los desarrolladores capturar información ingresada por el usuario y devolver resultados o mensajes. En Java, la entrada y salida (E/S) de datos es fundamental para muchos programas, y este capítulo se centra en métodos prácticos para implementar E/S en aplicaciones de consola. A través de ejemplos prácticos, entenderás cómo utilizar las clases y métodos esenciales para obtener y mostrar información en el entorno de línea de comandos."
+  },
+  {
+    "objectID": "Unidades/unidad9/cap9.html#entrada-de-datos",
+    "href": "Unidades/unidad9/cap9.html#entrada-de-datos",
+    "title": "9  Lectura y Escritura de Datos por Consola",
+    "section": "9.2 Entrada de datos",
+    "text": "9.2 Entrada de datos\n\n9.2.1 Clase Scanner\nLa clase Scanner es la herramienta más común para la entrada de datos en Java. Pertenece al paquete java.util y permite leer diferentes tipos de datos: cadenas, enteros, decimales y booleanos. El uso de Scanner facilita la captura de datos con el método next() para cadenas o nextInt(), nextDouble(), entre otros, para tipos específicos.\n\nEjemplo: Leer un número y un nombre\n\nimport java.util.Scanner;\n\npublic class EjemploScanner {\n    public static void main(String[] args) {\n        Scanner entrada = new Scanner(System.in);\n\n        System.out.print(\"Ingresa tu nombre: \");\n        String nombre = entrada.nextLine();\n\n        System.out.print(\"Ingresa tu edad: \");\n        int edad = entrada.nextInt();\n\n        System.out.println(\"Hola \" + nombre + \", tienes \" + edad + \" años.\");\n    }\n}\n\nnextLine(): captura una línea completa de texto, incluyendo espacios.\nnextInt(): captura un número entero.\n\nPrecaución al Leer Datos en Java\nEs importante tener cuidado al alternar la lectura de datos de diferentes tipos en Java, especialmente cuando se combinan enteros o decimales (int, float, etc.) con cadenas (String). Después de leer un valor numérico con métodos como nextInt() o nextFloat(), el buffer de entrada puede contener un salto de línea (\\n) residual. Esto puede causar que una llamada posterior a nextLine() lea dicho salto de línea en lugar de capturar la cadena esperada. Para evitar errores, se recomienda limpiar el buffer antes de leer una cadena, usando nextLine() adicionalmente.\n\n\nimport java.util.Scanner;\n\npublic class principal {\n    public static void main(String[] args) {\n        Scanner lectura = new Scanner(System.in); // 'in' significa entrada, 'out' significa salida\n        // Ejemplo de lectura de datos\n        System.out.print(\"Ingrese su nombre: \");\n        String nombre = lectura.nextLine(); // Leemos un dato tipo cadena de caracteres\n        System.out.print(\"Ingrese su edad: \");\n        int edad = lectura.nextInt(); // Leemos un dato tipo entero\n        System.out.print(\"Salario: \");\n        float salario = lectura.nextFloat();\n        // Limpiar el buffer después de leer un entero\n        lectura.nextLine();\n        System.out.print(\"Ingrese su apellido: \");\n        String apellido = lectura.nextLine();\n\n        // ¿Qué pasará si no limpiamos el buffer?\n        System.out.println(\"¿Qué pasará si no limpiamos el buffer?\");\n\n        System.out.print(\"Ingrese su nombre2: \");\n        String nombre2 = lectura.nextLine();\n        System.out.print(\"Ingrese su edad2: \");\n        int edad2 = lectura.nextInt();\n        System.out.print(\"Salario2: \");\n        float salario2 = lectura.nextFloat();\n        System.out.print(\"Ingrese su apellido: \");\n        String apellido2 = lectura.nextLine();\n        // Cerrar el scanner al finalizar\n        lectura.close();\n\n        // Ejemplo de escritura de datos\n        System.out.println(\"******************************\");\n        System.out.println(\"\\nInformación ingresada1:\");\n        System.out.println(\"Nombre: \" + nombre);\n        System.out.println(\"Apellido: \" + apellido);\n        System.out.println(\"Edad: \" + edad);\n        System.out.println(\"Salario: \" + salario);\n\n\n        System.out.println(\"******************************\");\n        System.out.println(\"\\nInformación ingresada2:\");\n        System.out.println(\"Nombre2: \" + nombre2);\n        System.out.println(\"Apellido: \" + apellido2);\n        System.out.println(\"Edad2: \" + edad2);\n        System.out.println(\"Salario2: \" + salario2);\n    }\n    \n}\n\nLimpieza de Buffer: Luego de leer int o float, se utiliza lectura.nextLine(); para limpiar el buffer antes de leer un String con nextLine().\nEvitar Errores: Al no limpiar el buffer, el programa puede no capturar la entrada del usuario como se espera y leer datos incorrectos o vacíos.\n\n\n\n9.2.2 Uso de BufferedReader\nBufferedReader es otra opción para la lectura de datos y es especialmente útil para aplicaciones que requieren un manejo eficiente de grandes volúmenes de datos. Utiliza InputStreamReader para leer desde System.in.\nEjemplo: Leer una cadena de texto\nimport java.io.BufferedReader;\nimport java.io.InputStreamReader;\nimport java.io.IOException;\n\npublic class EjemploBufferedReader {\n    public static void main(String[] args) throws IOException {\n        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));\n\n        System.out.print(\"Ingresa un mensaje: \");\n        String mensaje = reader.readLine();\n\n        System.out.println(\"Mensaje recibido: \" + mensaje);\n    }\n}\nExplicación:\n\nreadLine(): lee una línea de texto completa, ideal para capturar grandes bloques de datos."
+  },
+  {
+    "objectID": "Unidades/unidad9/cap9.html#escritura-de-datos-en-la-consola",
+    "href": "Unidades/unidad9/cap9.html#escritura-de-datos-en-la-consola",
+    "title": "9  Lectura y Escritura de Datos por Consola",
+    "section": "9.3 Escritura de Datos en la Consola",
+    "text": "9.3 Escritura de Datos en la Consola\n\n9.3.1 Uso de System.out.println\nSystem.out.println es el método más sencillo y común para mostrar datos en la consola. Acepta texto y datos variables, permitiendo mostrar mensajes, resultados, y más.\nEjemplo: Saludo Básico\npublic class EjemploPrintln {\n    public static void main(String[] args) {\n        System.out.println(\"Bienvenido al sistema.\");\n        System.out.println(\"Este mensaje aparecerá en una nueva línea.\");\n    }\n}\nFormateo de Salida con System.out.printf\nEl método printf permite controlar el formato de la salida, especialmente útil cuando se requiere una presentación organizada de datos, como tablas o valores numéricos con un número específico de decimales.\nEjemplo: Formateo con printf\npublic class EjemploPrintf {\n    public static void main(String[] args) {\n        String producto = \"Laptop\";\n        double precio = 1234.56;\n\n        System.out.printf(\"Producto: %s, Precio: %.2f\\n\", producto, precio);\n    }\n}\n\n%s es un marcador de posición para cadenas.\n%.2f indica un número decimal con dos dígitos después del punto.\n\nEjemplo 2 : Formateo con printf\npublic class Ejemplo2Printf {\n    public static void main(String[] args) {\n        String nombre = \"Ana\";\n        int edad = 25;\n\n        System.out.printf(\"Nombre: %s, Edad: %d años\\n\", nombre, edad);\n    }\n}\nSalida esperada: Nombre: Ana, Edad: 25 años"
+  },
+  {
+    "objectID": "summary.html",
+    "href": "summary.html",
+    "title": "10  Summary",
+    "section": "",
+    "text": "In summary, this book has no content whatsoever."
+  },
+  {
+    "objectID": "references.html",
+    "href": "references.html",
+    "title": "References",
+    "section": "",
+    "text": "Knuth, Donald E. 1984. “Literate Programming.” Comput.\nJ. 27 (2): 97–111. https://doi.org/10.1093/comjnl/27.2.97."
   }
 ]

@@ -1,0 +1,181 @@
+## Lectura y Escritura de Datos por Consola
+
+El desarrollo de aplicaciones en Java, uno de los primeros aspectos fundamentales que todo programador debe dominar es la interacción entre el programa y el usuario a través de la consola. Esta capacidad de leer y escribir datos en la consola no solo es esencial para crear aplicaciones interactivas, sino también para facilitar la depuración y prueba de código, además de permitir el desarrollo de interfaces de usuario en programas de línea de comandos.
+
+Este capítulo explora en profundidad los conceptos de lectura y escritura de datos por consola, desde las operaciones básicas hasta las técnicas avanzadas de captura y manipulación de datos. Iniciaremos con una explicación de los métodos más comunes en Java para obtener entradas del usuario, utilizando la clase `Scanner` de la biblioteca estándar, y abordaremos otros métodos útiles como `System.in` y `BufferedReader`. A continuación, profundizaremos en las técnicas de salida de datos utilizando `System.out`, desde el uso básico de `println` hasta el formato avanzado de mensajes con `printf`.
+
+## Introducción a la Entrada y Salida en Consola
+
+La interacción por consola en Java permite a los desarrolladores capturar información ingresada por el usuario y devolver resultados o mensajes. En Java, la entrada y salida (E/S) de datos es fundamental para muchos programas, y este capítulo se centra en métodos prácticos para implementar E/S en aplicaciones de consola. A través de ejemplos prácticos, entenderás cómo utilizar las clases y métodos esenciales para obtener y mostrar información en el entorno de línea de comandos.
+
+## Entrada de datos
+
+### Clase `Scanner`
+
+La clase `Scanner` es la herramienta más común para la entrada de datos en Java. Pertenece al paquete `java.util` y permite leer diferentes tipos de datos: **cadenas, enteros, decimales y booleanos**. El uso de `Scanner` facilita la captura de datos con el método **`next()`** para cadenas o `nextInt()`, **`nextDouble()`**, entre otros, para tipos específicos.
+
+-   Ejemplo: Leer un número y un nombre
+
+``` java
+import java.util.Scanner;
+
+public class EjemploScanner {
+    public static void main(String[] args) {
+        Scanner entrada = new Scanner(System.in);
+
+        System.out.print("Ingresa tu nombre: ");
+        String nombre = entrada.nextLine();
+
+        System.out.print("Ingresa tu edad: ");
+        int edad = entrada.nextInt();
+
+        System.out.println("Hola " + nombre + ", tienes " + edad + " años.");
+    }
+}
+```
+
+-   `nextLine()`: captura una línea completa de texto, incluyendo espacios.
+
+-   `nextInt()`: captura un número entero.
+
+**Precaución al Leer Datos en Java**
+
+Es importante tener cuidado al alternar la lectura de datos de diferentes tipos en Java, especialmente cuando se combinan enteros o decimales (`int`, `float`, etc.) con cadenas (`String`). Después de leer un valor numérico con métodos como `nextInt()` o `nextFloat()`, el buffer de entrada puede contener un salto de línea (`\n`) residual. Esto puede causar que una llamada posterior a `nextLine()` lea dicho salto de línea en lugar de capturar la cadena esperada. Para evitar errores, se recomienda limpiar el buffer antes de leer una cadena, usando `nextLine()` adicionalmente.
+
+``` java
+
+
+import java.util.Scanner;
+
+public class principal {
+    public static void main(String[] args) {
+        Scanner lectura = new Scanner(System.in); // 'in' significa entrada, 'out' significa salida
+        // Ejemplo de lectura de datos
+        System.out.print("Ingrese su nombre: ");
+        String nombre = lectura.nextLine(); // Leemos un dato tipo cadena de caracteres
+        System.out.print("Ingrese su edad: ");
+        int edad = lectura.nextInt(); // Leemos un dato tipo entero
+        System.out.print("Salario: ");
+        float salario = lectura.nextFloat();
+        // Limpiar el buffer después de leer un entero
+        lectura.nextLine();
+        System.out.print("Ingrese su apellido: ");
+        String apellido = lectura.nextLine();
+
+        // ¿Qué pasará si no limpiamos el buffer?
+        System.out.println("¿Qué pasará si no limpiamos el buffer?");
+
+        System.out.print("Ingrese su nombre2: ");
+        String nombre2 = lectura.nextLine();
+        System.out.print("Ingrese su edad2: ");
+        int edad2 = lectura.nextInt();
+        System.out.print("Salario2: ");
+        float salario2 = lectura.nextFloat();
+        System.out.print("Ingrese su apellido: ");
+        String apellido2 = lectura.nextLine();
+        // Cerrar el scanner al finalizar
+        lectura.close();
+
+        // Ejemplo de escritura de datos
+        System.out.println("******************************");
+        System.out.println("\nInformación ingresada1:");
+        System.out.println("Nombre: " + nombre);
+        System.out.println("Apellido: " + apellido);
+        System.out.println("Edad: " + edad);
+        System.out.println("Salario: " + salario);
+
+
+        System.out.println("******************************");
+        System.out.println("\nInformación ingresada2:");
+        System.out.println("Nombre2: " + nombre2);
+        System.out.println("Apellido: " + apellido2);
+        System.out.println("Edad2: " + edad2);
+        System.out.println("Salario2: " + salario2);
+    }
+    
+}
+```
+
+-   `Limpieza de Buffer`: Luego de leer int o float, se utiliza lectura.nextLine(); para limpiar el buffer antes de leer un String con nextLine().
+
+-   `Evitar Errores`: Al no limpiar el buffer, el programa puede no capturar la entrada del usuario como se espera y leer datos incorrectos o vacíos.
+
+### Uso de `BufferedReader`
+
+`BufferedReader` es otra opción para la lectura de datos y es especialmente útil para aplicaciones que requieren un manejo eficiente de grandes volúmenes de datos. Utiliza `InputStreamReader` para leer desde `System.in`.
+
+**Ejemplo: Leer una cadena de texto**
+
+``` java
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.io.IOException;
+
+public class EjemploBufferedReader {
+    public static void main(String[] args) throws IOException {
+        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+
+        System.out.print("Ingresa un mensaje: ");
+        String mensaje = reader.readLine();
+
+        System.out.println("Mensaje recibido: " + mensaje);
+    }
+}
+```
+
+**Explicación**:
+
+-   `readLine()`: lee una línea de texto completa, ideal para capturar grandes bloques de datos.
+
+## Escritura de Datos en la Consola
+
+### Uso de `System.out.println`
+
+`System.out.println` es el método más sencillo y común para mostrar datos en la consola. Acepta texto y datos variables, permitiendo mostrar mensajes, resultados, y más.
+
+**Ejemplo: Saludo Básico**
+
+``` java
+public class EjemploPrintln {
+    public static void main(String[] args) {
+        System.out.println("Bienvenido al sistema.");
+        System.out.println("Este mensaje aparecerá en una nueva línea.");
+    }
+}
+```
+
+Formateo de Salida con `System.out.printf`
+
+El método `printf` permite controlar el formato de la salida, especialmente útil cuando se requiere una presentación organizada de datos, como tablas o valores numéricos con un número específico de decimales.
+
+**Ejemplo: Formateo con printf**
+
+```         
+public class EjemploPrintf {
+    public static void main(String[] args) {
+        String producto = "Laptop";
+        double precio = 1234.56;
+
+        System.out.printf("Producto: %s, Precio: %.2f\n", producto, precio);
+    }
+}
+```
+
+-   `%s` es un marcador de posición para cadenas.
+
+-   `%.2f` indica un número decimal con dos dígitos después del punto.
+
+**Ejemplo 2 : Formateo con printf**
+
+``` java
+public class Ejemplo2Printf {
+    public static void main(String[] args) {
+        String nombre = "Ana";
+        int edad = 25;
+
+        System.out.printf("Nombre: %s, Edad: %d años\n", nombre, edad);
+    }
+}
+```
+
+Salida esperada: Nombre: Ana, Edad: 25 años

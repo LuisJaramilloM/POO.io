@@ -1,4 +1,3 @@
-ntro
 
 ## Modelamiento de clases y objetos.
 

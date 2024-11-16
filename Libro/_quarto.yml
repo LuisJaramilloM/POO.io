@@ -36,6 +36,15 @@ book:
       chapters: 
         - Unidades/unidad7/cap7.qmd
 
+    - part: "Unidad 8: Lectura y Escritura de Datos por consola"
+      chapters: 
+        - Unidades/unidad8/cap8.qmd
+    
+    - part: "Unidad 9: Manejor de Exepciones"
+      chapters: 
+        - Unidades/unidad9/cap9.qmd
+
+
 
     - summary.qmd
     - references.qmd
