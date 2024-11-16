@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Libro - 9&nbsp; Lectura y Escritura de Datos por Consola</title>
+<title>Libro - 9&nbsp; Manejo de excepciones.</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -19,40 +19,6 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
-}
-/* CSS for syntax highlighting */
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -108,7 +74,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../Unidades/unidad9/cap9.html">Unidad 9: Manejor de Exepciones</a></li><li class="breadcrumb-item"><a href="../../Unidades/unidad9/cap9.html"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Lectura y Escritura de Datos por Consola</span></a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../Unidades/unidad9/cap9.html">Unidad 9: Manejor de Exepciones</a></li><li class="breadcrumb-item"><a href="../../Unidades/unidad9/cap9.html"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Manejo de excepciones.</span></a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -287,7 +253,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../Unidades/unidad9/cap9.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Lectura y Escritura de Datos por Consola</span></span></a>
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Manejo de excepciones.</span></span></a>
   </div>
 </li>
       </ul>
@@ -310,29 +276,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">Table of contents</h2>
-   
-  <ul>
-  <li><a href="#introducción-a-la-entrada-y-salida-en-consola" id="toc-introducción-a-la-entrada-y-salida-en-consola" class="nav-link active" data-scroll-target="#introducción-a-la-entrada-y-salida-en-consola"><span class="header-section-number">9.1</span> Introducción a la Entrada y Salida en Consola</a></li>
-  <li><a href="#entrada-de-datos" id="toc-entrada-de-datos" class="nav-link" data-scroll-target="#entrada-de-datos"><span class="header-section-number">9.2</span> Entrada de datos</a>
-  <ul class="collapse">
-  <li><a href="#clase-scanner" id="toc-clase-scanner" class="nav-link" data-scroll-target="#clase-scanner"><span class="header-section-number">9.2.1</span> Clase <code>Scanner</code></a></li>
-  <li><a href="#uso-de-bufferedreader" id="toc-uso-de-bufferedreader" class="nav-link" data-scroll-target="#uso-de-bufferedreader"><span class="header-section-number">9.2.2</span> Uso de <code>BufferedReader</code></a></li>
-  </ul></li>
-  <li><a href="#escritura-de-datos-en-la-consola" id="toc-escritura-de-datos-en-la-consola" class="nav-link" data-scroll-target="#escritura-de-datos-en-la-consola"><span class="header-section-number">9.3</span> Escritura de Datos en la Consola</a>
-  <ul class="collapse">
-  <li><a href="#uso-de-system.out.println" id="toc-uso-de-system.out.println" class="nav-link" data-scroll-target="#uso-de-system.out.println"><span class="header-section-number">9.3.1</span> Uso de <code>System.out.println</code></a></li>
-  </ul></li>
-  </ul>
-</nav>
+        
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Lectura y Escritura de Datos por Consola</span></h1>
+<h1 class="title"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Manejo de excepciones.</span></h1>
 </div>
 
 
@@ -347,162 +298,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </header>
 
-<p>El desarrollo de aplicaciones en Java, uno de los primeros aspectos fundamentales que todo programador debe dominar es la interacción entre el programa y el usuario a través de la consola. Esta capacidad de leer y escribir datos en la consola no solo es esencial para crear aplicaciones interactivas, sino también para facilitar la depuración y prueba de código, además de permitir el desarrollo de interfaces de usuario en programas de línea de comandos.</p>
-<p>Este capítulo explora en profundidad los conceptos de lectura y escritura de datos por consola, desde las operaciones básicas hasta las técnicas avanzadas de captura y manipulación de datos. Iniciaremos con una explicación de los métodos más comunes en Java para obtener entradas del usuario, utilizando la clase <code>Scanner</code> de la biblioteca estándar, y abordaremos otros métodos útiles como <code>System.in</code> y <code>BufferedReader</code>. A continuación, profundizaremos en las técnicas de salida de datos utilizando <code>System.out</code>, desde el uso básico de <code>println</code> hasta el formato avanzado de mensajes con <code>printf</code>.</p>
-<section id="introducción-a-la-entrada-y-salida-en-consola" class="level2" data-number="9.1">
-<h2 data-number="9.1" class="anchored" data-anchor-id="introducción-a-la-entrada-y-salida-en-consola"><span class="header-section-number">9.1</span> Introducción a la Entrada y Salida en Consola</h2>
-<p>La interacción por consola en Java permite a los desarrolladores capturar información ingresada por el usuario y devolver resultados o mensajes. En Java, la entrada y salida (E/S) de datos es fundamental para muchos programas, y este capítulo se centra en métodos prácticos para implementar E/S en aplicaciones de consola. A través de ejemplos prácticos, entenderás cómo utilizar las clases y métodos esenciales para obtener y mostrar información en el entorno de línea de comandos.</p>
-</section>
-<section id="entrada-de-datos" class="level2" data-number="9.2">
-<h2 data-number="9.2" class="anchored" data-anchor-id="entrada-de-datos"><span class="header-section-number">9.2</span> Entrada de datos</h2>
-<section id="clase-scanner" class="level3" data-number="9.2.1">
-<h3 data-number="9.2.1" class="anchored" data-anchor-id="clase-scanner"><span class="header-section-number">9.2.1</span> Clase <code>Scanner</code></h3>
-<p>La clase <code>Scanner</code> es la herramienta más común para la entrada de datos en Java. Pertenece al paquete <code>java.util</code> y permite leer diferentes tipos de datos: <strong>cadenas, enteros, decimales y booleanos</strong>. El uso de <code>Scanner</code> facilita la captura de datos con el método <strong><code>next()</code></strong> para cadenas o <code>nextInt()</code>, <strong><code>nextDouble()</code></strong>, entre otros, para tipos específicos.</p>
-<ul>
-<li>Ejemplo: Leer un número y un nombre</li>
-</ul>
-<div class="sourceCode" id="cb1"><pre class="sourceCode java code-with-copy"><code class="sourceCode java"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">import</span> <span class="im">java</span><span class="op">.</span><span class="im">util</span><span class="op">.</span><span class="im">Scanner</span><span class="op">;</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="kw">class</span> EjemploScanner <span class="op">{</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">public</span> <span class="dt">static</span> <span class="dt">void</span> <span class="fu">main</span><span class="op">(</span><span class="bu">String</span><span class="op">[]</span> args<span class="op">)</span> <span class="op">{</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>        <span class="bu">Scanner</span> entrada <span class="op">=</span> <span class="kw">new</span> <span class="bu">Scanner</span><span class="op">(</span><span class="bu">System</span><span class="op">.</span><span class="fu">in</span><span class="op">);</span></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>        <span class="bu">System</span><span class="op">.</span><span class="fu">out</span><span class="op">.</span><span class="fu">print</span><span class="op">(</span><span class="st">"Ingresa tu nombre: "</span><span class="op">);</span></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>        <span class="bu">String</span> nombre <span class="op">=</span> entrada<span class="op">.</span><span class="fu">nextLine</span><span class="op">();</span></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>        <span class="bu">System</span><span class="op">.</span><span class="fu">out</span><span class="op">.</span><span class="fu">print</span><span class="op">(</span><span class="st">"Ingresa tu edad: "</span><span class="op">);</span></span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>        <span class="dt">int</span> edad <span class="op">=</span> entrada<span class="op">.</span><span class="fu">nextInt</span><span class="op">();</span></span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>        <span class="bu">System</span><span class="op">.</span><span class="fu">out</span><span class="op">.</span><span class="fu">println</span><span class="op">(</span><span class="st">"Hola "</span> <span class="op">+</span> nombre <span class="op">+</span> <span class="st">", tienes "</span> <span class="op">+</span> edad <span class="op">+</span> <span class="st">" años."</span><span class="op">);</span></span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<ul>
-<li><p><code>nextLine()</code>: captura una línea completa de texto, incluyendo espacios.</p></li>
-<li><p><code>nextInt()</code>: captura un número entero.</p></li>
-</ul>
-<p><strong>Precaución al Leer Datos en Java</strong></p>
-<p>Es importante tener cuidado al alternar la lectura de datos de diferentes tipos en Java, especialmente cuando se combinan enteros o decimales (<code>int</code>, <code>float</code>, etc.) con cadenas (<code>String</code>). Después de leer un valor numérico con métodos como <code>nextInt()</code> o <code>nextFloat()</code>, el buffer de entrada puede contener un salto de línea (<code>\n</code>) residual. Esto puede causar que una llamada posterior a <code>nextLine()</code> lea dicho salto de línea en lugar de capturar la cadena esperada. Para evitar errores, se recomienda limpiar el buffer antes de leer una cadena, usando <code>nextLine()</code> adicionalmente.</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode java code-with-copy"><code class="sourceCode java"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="kw">import</span> <span class="im">java</span><span class="op">.</span><span class="im">util</span><span class="op">.</span><span class="im">Scanner</span><span class="op">;</span></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="kw">class</span> principal <span class="op">{</span></span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>    <span class="kw">public</span> <span class="dt">static</span> <span class="dt">void</span> <span class="fu">main</span><span class="op">(</span><span class="bu">String</span><span class="op">[]</span> args<span class="op">)</span> <span class="op">{</span></span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>        <span class="bu">Scanner</span> lectura <span class="op">=</span> <span class="kw">new</span> <span class="bu">Scanner</span><span class="op">(</span><span class="bu">System</span><span class="op">.</span><span class="fu">in</span><span class="op">);</span> <span class="co">// 'in' significa entrada, 'out' significa salida</span></span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>        <span class="co">// Ejemplo de lectura de datos</span></span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>        <span class="bu">System</span><span class="op">.</span><span class="fu">out</span><span class="op">.</span><span class="fu">print</span><span class="op">(</span><span class="st">"Ingrese su nombre: "</span><span class="op">);</span></span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>        <span class="bu">String</span> nombre <span class="op">=</span> lectura<span class="op">.</span><span class="fu">nextLine</span><span class="op">();</span> <span class="co">// Leemos un dato tipo cadena de caracteres</span></span>
-<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>        <span class="bu">System</span><span class="op">.</span><span class="fu">out</span><span class="op">.</span><span class="fu">print</span><span class="op">(</span><span class="st">"Ingrese su edad: "</span><span class="op">);</span></span>
-<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>        <span class="dt">int</span> edad <span class="op">=</span> lectura<span class="op">.</span><span class="fu">nextInt</span><span class="op">();</span> <span class="co">// Leemos un dato tipo entero</span></span>
-<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>        <span class="bu">System</span><span class="op">.</span><span class="fu">out</span><span class="op">.</span><span class="fu">print</span><span class="op">(</span><span class="st">"Salario: "</span><span class="op">);</span></span>
-<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>        <span class="dt">float</span> salario <span class="op">=</span> lectura<span class="op">.</span><span class="fu">nextFloat</span><span class="op">();</span></span>
-<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>        <span class="co">// Limpiar el buffer después de leer un entero</span></span>
-<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>        lectura<span class="op">.</span><span class="fu">nextLine</span><span class="op">();</span></span>
-<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>        <span class="bu">System</span><span class="op">.</span><span class="fu">out</span><span class="op">.</span><span class="fu">print</span><span class="op">(</span><span class="st">"Ingrese su apellido: "</span><span class="op">);</span></span>
-<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>        <span class="bu">String</span> apellido <span class="op">=</span> lectura<span class="op">.</span><span class="fu">nextLine</span><span class="op">();</span></span>
-<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>        <span class="co">// ¿Qué pasará si no limpiamos el buffer?</span></span>
-<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>        <span class="bu">System</span><span class="op">.</span><span class="fu">out</span><span class="op">.</span><span class="fu">println</span><span class="op">(</span><span class="st">"¿Qué pasará si no limpiamos el buffer?"</span><span class="op">);</span></span>
-<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a>        <span class="bu">System</span><span class="op">.</span><span class="fu">out</span><span class="op">.</span><span class="fu">print</span><span class="op">(</span><span class="st">"Ingrese su nombre2: "</span><span class="op">);</span></span>
-<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a>        <span class="bu">String</span> nombre2 <span class="op">=</span> lectura<span class="op">.</span><span class="fu">nextLine</span><span class="op">();</span></span>
-<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a>        <span class="bu">System</span><span class="op">.</span><span class="fu">out</span><span class="op">.</span><span class="fu">print</span><span class="op">(</span><span class="st">"Ingrese su edad2: "</span><span class="op">);</span></span>
-<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a>        <span class="dt">int</span> edad2 <span class="op">=</span> lectura<span class="op">.</span><span class="fu">nextInt</span><span class="op">();</span></span>
-<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a>        <span class="bu">System</span><span class="op">.</span><span class="fu">out</span><span class="op">.</span><span class="fu">print</span><span class="op">(</span><span class="st">"Salario2: "</span><span class="op">);</span></span>
-<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a>        <span class="dt">float</span> salario2 <span class="op">=</span> lectura<span class="op">.</span><span class="fu">nextFloat</span><span class="op">();</span></span>
-<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a>        <span class="bu">System</span><span class="op">.</span><span class="fu">out</span><span class="op">.</span><span class="fu">print</span><span class="op">(</span><span class="st">"Ingrese su apellido: "</span><span class="op">);</span></span>
-<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a>        <span class="bu">String</span> apellido2 <span class="op">=</span> lectura<span class="op">.</span><span class="fu">nextLine</span><span class="op">();</span></span>
-<span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a>        <span class="co">// Cerrar el scanner al finalizar</span></span>
-<span id="cb2-32"><a href="#cb2-32" aria-hidden="true" tabindex="-1"></a>        lectura<span class="op">.</span><span class="fu">close</span><span class="op">();</span></span>
-<span id="cb2-33"><a href="#cb2-33" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-34"><a href="#cb2-34" aria-hidden="true" tabindex="-1"></a>        <span class="co">// Ejemplo de escritura de datos</span></span>
-<span id="cb2-35"><a href="#cb2-35" aria-hidden="true" tabindex="-1"></a>        <span class="bu">System</span><span class="op">.</span><span class="fu">out</span><span class="op">.</span><span class="fu">println</span><span class="op">(</span><span class="st">"******************************"</span><span class="op">);</span></span>
-<span id="cb2-36"><a href="#cb2-36" aria-hidden="true" tabindex="-1"></a>        <span class="bu">System</span><span class="op">.</span><span class="fu">out</span><span class="op">.</span><span class="fu">println</span><span class="op">(</span><span class="st">"</span><span class="sc">\n</span><span class="st">Información ingresada1:"</span><span class="op">);</span></span>
-<span id="cb2-37"><a href="#cb2-37" aria-hidden="true" tabindex="-1"></a>        <span class="bu">System</span><span class="op">.</span><span class="fu">out</span><span class="op">.</span><span class="fu">println</span><span class="op">(</span><span class="st">"Nombre: "</span> <span class="op">+</span> nombre<span class="op">);</span></span>
-<span id="cb2-38"><a href="#cb2-38" aria-hidden="true" tabindex="-1"></a>        <span class="bu">System</span><span class="op">.</span><span class="fu">out</span><span class="op">.</span><span class="fu">println</span><span class="op">(</span><span class="st">"Apellido: "</span> <span class="op">+</span> apellido<span class="op">);</span></span>
-<span id="cb2-39"><a href="#cb2-39" aria-hidden="true" tabindex="-1"></a>        <span class="bu">System</span><span class="op">.</span><span class="fu">out</span><span class="op">.</span><span class="fu">println</span><span class="op">(</span><span class="st">"Edad: "</span> <span class="op">+</span> edad<span class="op">);</span></span>
-<span id="cb2-40"><a href="#cb2-40" aria-hidden="true" tabindex="-1"></a>        <span class="bu">System</span><span class="op">.</span><span class="fu">out</span><span class="op">.</span><span class="fu">println</span><span class="op">(</span><span class="st">"Salario: "</span> <span class="op">+</span> salario<span class="op">);</span></span>
-<span id="cb2-41"><a href="#cb2-41" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-42"><a href="#cb2-42" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-43"><a href="#cb2-43" aria-hidden="true" tabindex="-1"></a>        <span class="bu">System</span><span class="op">.</span><span class="fu">out</span><span class="op">.</span><span class="fu">println</span><span class="op">(</span><span class="st">"******************************"</span><span class="op">);</span></span>
-<span id="cb2-44"><a href="#cb2-44" aria-hidden="true" tabindex="-1"></a>        <span class="bu">System</span><span class="op">.</span><span class="fu">out</span><span class="op">.</span><span class="fu">println</span><span class="op">(</span><span class="st">"</span><span class="sc">\n</span><span class="st">Información ingresada2:"</span><span class="op">);</span></span>
-<span id="cb2-45"><a href="#cb2-45" aria-hidden="true" tabindex="-1"></a>        <span class="bu">System</span><span class="op">.</span><span class="fu">out</span><span class="op">.</span><span class="fu">println</span><span class="op">(</span><span class="st">"Nombre2: "</span> <span class="op">+</span> nombre2<span class="op">);</span></span>
-<span id="cb2-46"><a href="#cb2-46" aria-hidden="true" tabindex="-1"></a>        <span class="bu">System</span><span class="op">.</span><span class="fu">out</span><span class="op">.</span><span class="fu">println</span><span class="op">(</span><span class="st">"Apellido: "</span> <span class="op">+</span> apellido2<span class="op">);</span></span>
-<span id="cb2-47"><a href="#cb2-47" aria-hidden="true" tabindex="-1"></a>        <span class="bu">System</span><span class="op">.</span><span class="fu">out</span><span class="op">.</span><span class="fu">println</span><span class="op">(</span><span class="st">"Edad2: "</span> <span class="op">+</span> edad2<span class="op">);</span></span>
-<span id="cb2-48"><a href="#cb2-48" aria-hidden="true" tabindex="-1"></a>        <span class="bu">System</span><span class="op">.</span><span class="fu">out</span><span class="op">.</span><span class="fu">println</span><span class="op">(</span><span class="st">"Salario2: "</span> <span class="op">+</span> salario2<span class="op">);</span></span>
-<span id="cb2-49"><a href="#cb2-49" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
-<span id="cb2-50"><a href="#cb2-50" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb2-51"><a href="#cb2-51" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<ul>
-<li><p><code>Limpieza de Buffer</code>: Luego de leer int o float, se utiliza lectura.nextLine(); para limpiar el buffer antes de leer un String con nextLine().</p></li>
-<li><p><code>Evitar Errores</code>: Al no limpiar el buffer, el programa puede no capturar la entrada del usuario como se espera y leer datos incorrectos o vacíos.</p></li>
-</ul>
-</section>
-<section id="uso-de-bufferedreader" class="level3" data-number="9.2.2">
-<h3 data-number="9.2.2" class="anchored" data-anchor-id="uso-de-bufferedreader"><span class="header-section-number">9.2.2</span> Uso de <code>BufferedReader</code></h3>
-<p><code>BufferedReader</code> es otra opción para la lectura de datos y es especialmente útil para aplicaciones que requieren un manejo eficiente de grandes volúmenes de datos. Utiliza <code>InputStreamReader</code> para leer desde <code>System.in</code>.</p>
-<p><strong>Ejemplo: Leer una cadena de texto</strong></p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode java code-with-copy"><code class="sourceCode java"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">import</span> <span class="im">java</span><span class="op">.</span><span class="im">io</span><span class="op">.</span><span class="im">BufferedReader</span><span class="op">;</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="kw">import</span> <span class="im">java</span><span class="op">.</span><span class="im">io</span><span class="op">.</span><span class="im">InputStreamReader</span><span class="op">;</span></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="kw">import</span> <span class="im">java</span><span class="op">.</span><span class="im">io</span><span class="op">.</span><span class="im">IOException</span><span class="op">;</span></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="kw">class</span> EjemploBufferedReader <span class="op">{</span></span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>    <span class="kw">public</span> <span class="dt">static</span> <span class="dt">void</span> <span class="fu">main</span><span class="op">(</span><span class="bu">String</span><span class="op">[]</span> args<span class="op">)</span> <span class="kw">throws</span> <span class="bu">IOException</span> <span class="op">{</span></span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>        <span class="bu">BufferedReader</span> reader <span class="op">=</span> <span class="kw">new</span> <span class="bu">BufferedReader</span><span class="op">(</span><span class="kw">new</span> <span class="bu">InputStreamReader</span><span class="op">(</span><span class="bu">System</span><span class="op">.</span><span class="fu">in</span><span class="op">));</span></span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>        <span class="bu">System</span><span class="op">.</span><span class="fu">out</span><span class="op">.</span><span class="fu">print</span><span class="op">(</span><span class="st">"Ingresa un mensaje: "</span><span class="op">);</span></span>
-<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>        <span class="bu">String</span> mensaje <span class="op">=</span> reader<span class="op">.</span><span class="fu">readLine</span><span class="op">();</span></span>
-<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>        <span class="bu">System</span><span class="op">.</span><span class="fu">out</span><span class="op">.</span><span class="fu">println</span><span class="op">(</span><span class="st">"Mensaje recibido: "</span> <span class="op">+</span> mensaje<span class="op">);</span></span>
-<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
-<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p><strong>Explicación</strong>:</p>
-<ul>
-<li><code>readLine()</code>: lee una línea de texto completa, ideal para capturar grandes bloques de datos.</li>
-</ul>
-</section>
-</section>
-<section id="escritura-de-datos-en-la-consola" class="level2" data-number="9.3">
-<h2 data-number="9.3" class="anchored" data-anchor-id="escritura-de-datos-en-la-consola"><span class="header-section-number">9.3</span> Escritura de Datos en la Consola</h2>
-<section id="uso-de-system.out.println" class="level3" data-number="9.3.1">
-<h3 data-number="9.3.1" class="anchored" data-anchor-id="uso-de-system.out.println"><span class="header-section-number">9.3.1</span> Uso de <code>System.out.println</code></h3>
-<p><code>System.out.println</code> es el método más sencillo y común para mostrar datos en la consola. Acepta texto y datos variables, permitiendo mostrar mensajes, resultados, y más.</p>
-<p><strong>Ejemplo: Saludo Básico</strong></p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode java code-with-copy"><code class="sourceCode java"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="kw">class</span> EjemploPrintln <span class="op">{</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">public</span> <span class="dt">static</span> <span class="dt">void</span> <span class="fu">main</span><span class="op">(</span><span class="bu">String</span><span class="op">[]</span> args<span class="op">)</span> <span class="op">{</span></span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>        <span class="bu">System</span><span class="op">.</span><span class="fu">out</span><span class="op">.</span><span class="fu">println</span><span class="op">(</span><span class="st">"Bienvenido al sistema."</span><span class="op">);</span></span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>        <span class="bu">System</span><span class="op">.</span><span class="fu">out</span><span class="op">.</span><span class="fu">println</span><span class="op">(</span><span class="st">"Este mensaje aparecerá en una nueva línea."</span><span class="op">);</span></span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Formateo de Salida con <code>System.out.printf</code></p>
-<p>El método <code>printf</code> permite controlar el formato de la salida, especialmente útil cuando se requiere una presentación organizada de datos, como tablas o valores numéricos con un número específico de decimales.</p>
-<p><strong>Ejemplo: Formateo con printf</strong></p>
-<pre><code>public class EjemploPrintf {
-    public static void main(String[] args) {
-        String producto = "Laptop";
-        double precio = 1234.56;
-
-        System.out.printf("Producto: %s, Precio: %.2f\n", producto, precio);
-    }
-}</code></pre>
-<ul>
-<li><p><code>%s</code> es un marcador de posición para cadenas.</p></li>
-<li><p><code>%.2f</code> indica un número decimal con dos dígitos después del punto.</p></li>
-</ul>
-<p><strong>Ejemplo 2 : Formateo con printf</strong></p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode java code-with-copy"><code class="sourceCode java"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="kw">class</span> Ejemplo2Printf <span class="op">{</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">public</span> <span class="dt">static</span> <span class="dt">void</span> <span class="fu">main</span><span class="op">(</span><span class="bu">String</span><span class="op">[]</span> args<span class="op">)</span> <span class="op">{</span></span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>        <span class="bu">String</span> nombre <span class="op">=</span> <span class="st">"Ana"</span><span class="op">;</span></span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>        <span class="dt">int</span> edad <span class="op">=</span> <span class="dv">25</span><span class="op">;</span></span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>        <span class="bu">System</span><span class="op">.</span><span class="fu">out</span><span class="op">.</span><span class="fu">printf</span><span class="op">(</span><span class="st">"Nombre: </span><span class="sc">%s</span><span class="st">, Edad: </span><span class="sc">%d</span><span class="st"> años</span><span class="sc">\n</span><span class="st">"</span><span class="op">,</span> nombre<span class="op">,</span> edad<span class="op">);</span></span>
-<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
-<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Salida esperada: Nombre: Ana, Edad: 25 años</p>
 
 
-</section>
-</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
