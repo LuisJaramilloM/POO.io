@@ -1,1 +1,85 @@
 ## Manejo de excepciones.
+
+## **Introducción**
+
+El manejo de excepciones en Java es una característica fundamental que permite gestionar errores durante la ejecución de un programa, evitando que se interrumpa abruptamente. Las excepciones representan condiciones inusuales o errores que pueden ocurrir, como intentos fallidos de abrir un archivo o la entrada de datos inválidos.
+
+## **Conceptos Básicos**
+
+### **¿Qué es una excepción?**
+
+Una excepción es un evento que ocurre durante la ejecución de un programa y que interrumpe el flujo normal de las instrucciones. En Java, todas las excepciones son objetos que heredan de la clase base `Throwable`.
+
+### **Jerarquía de Excepciones**
+
+-   **`Throwable`:** Clase base de todas las excepciones y errores.
+
+    -   **`Exception`:** Errores que pueden ser manejados por el programa.
+
+        -   **`IOException`:** Relacionadas con operaciones de entrada/salida.
+
+        -   **`SQLException`:** Errores en bases de datos.
+
+        -   **`FileNotFoundException`:** Archivo no encontrado.
+
+        -   **`ArithmeticException`:** Errores matemáticos como división por cero.
+
+    -   **`Error`:** Condiciones críticas del sistema, como falta de memoria, que no deben manejarse directamente.
+
+    Uso de `throw`
+
+    Ejemplo lanzando una excepción
+
+``` java
+
+import java.io.FileReader;
+public class Throws {
+
+     public static void main(String[] args) {
+        
+        FileReader archivo = new FileReader("archivo_inexistente.txt"); // Puede lanzar FileNotFoundException
+        System.out.println("Archivo abierto con éxito.");
+      
+    }
+    
+}
+```
+
+saldrá el siguiente mensaje: Exception in thread "main" java.lang.RuntimeException: Uncompilable code - unreported exception java.io.FileNotFoundException; must be caught or declared to be thrown at exepciones.Exepciones.main(
+
+Español: Excepción en el hilo "main" java.lang.RuntimeException: Código no compilable - excepción no reportada java.io.FileNotFoundException; debe ser capturada o declarada para lanzarse en exepciones.Exepciones.main(
+
+Ejemplo: Si ahora sólo lanzaramos la excepción con la palabra throws obtendríamos el siguiente mensaje.
+
+``` java
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+
+public class Exepciones {
+
+    public static void main(String[] args) throws FileNotFoundException {
+        
+        FileReader archivo = new FileReader("archivo_inexistente.txt"); // Puede lanzar FileNotFoundException
+        System.out.println("Archivo abierto con éxito.");
+    }
+    
+}
+```
+
+Exception in thread "main" java.io.FileNotFoundException: archivo_inexistente.txt (El sistema no puede encontrar el archivo especificado).
+
+Uso de `try` y `catch`
+
+Ejemplo básico:
+
+``` java
+public class EjemploTryCatch {
+    public static void main(String[] args) {
+        try {
+            int resultado = 10 / 0; // Genera ArithmeticException
+        } catch (ArithmeticException e) {
+            System.out.println("Error: No se puede dividir entre cero.");
+        }
+    }
+}
+```
