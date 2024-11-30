@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Libro - 4&nbsp; Conceptos Generales de la POO</title>
+<title>Libro - 14&nbsp; Relaciones entre clases</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,40 +20,6 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
 </style>
 
 
@@ -64,8 +30,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../../">
-<link href="../../Unidades/unidad5/cap5.html" rel="next">
-<link href="../../Unidades/unidad3/cap3.html" rel="prev">
+<link href="../../summary.html" rel="next">
+<link href="../../Unidades/unidad13/cap13.html" rel="prev">
 <script src="../../site_libs/quarto-html/quarto.js"></script>
 <script src="../../site_libs/quarto-html/popper.min.js"></script>
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -108,7 +74,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../Unidades/unidad4/cap4.html">Unidad 4: Conceptos Generales de la POO</a></li><li class="breadcrumb-item"><a href="../../Unidades/unidad4/cap4.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Conceptos Generales de la POO</span></a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../Unidades/unidad14/cap14.html">Unidad 14: Persistencia de datos</a></li><li class="breadcrumb-item"><a href="../../Unidades/unidad14/cap14.html"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Relaciones entre clases</span></a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -201,7 +167,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../Unidades/unidad4/cap4.html" class="sidebar-item-text sidebar-link active">
+  <a href="../../Unidades/unidad4/cap4.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Conceptos Generales de la POO</span></span></a>
   </div>
 </li>
@@ -371,7 +337,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-14" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../Unidades/unidad14/cap14.html" class="sidebar-item-text sidebar-link">
+  <a href="../../Unidades/unidad14/cap14.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Relaciones entre clases</span></span></a>
   </div>
 </li>
@@ -395,34 +361,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">Table of contents</h2>
-   
-  <ul>
-  <li><a href="#principios-fundamentales-de-la-poo" id="toc-principios-fundamentales-de-la-poo" class="nav-link active" data-scroll-target="#principios-fundamentales-de-la-poo"><span class="header-section-number">4.1</span> Principios Fundamentales de la POO</a></li>
-  <li><a href="#clases-y-objetos" id="toc-clases-y-objetos" class="nav-link" data-scroll-target="#clases-y-objetos"><span class="header-section-number">4.2</span> 1 Clases y Objetos</a>
-  <ul class="collapse">
-  <li><a href="#clases" id="toc-clases" class="nav-link" data-scroll-target="#clases"><span class="header-section-number">4.2.1</span> Clases</a></li>
-  <li><a href="#objetos" id="toc-objetos" class="nav-link" data-scroll-target="#objetos"><span class="header-section-number">4.2.2</span> Objetos</a></li>
-  </ul></li>
-  <li><a href="#encapsulación" id="toc-encapsulación" class="nav-link" data-scroll-target="#encapsulación"><span class="header-section-number">4.3</span> 2. Encapsulación</a>
-  <ul class="collapse">
-  <li><a href="#ejemplo-de-encapsulación" id="toc-ejemplo-de-encapsulación" class="nav-link" data-scroll-target="#ejemplo-de-encapsulación"><span class="header-section-number">4.3.1</span> Ejemplo de Encapsulación</a></li>
-  </ul></li>
-  <li><a href="#herencia" id="toc-herencia" class="nav-link" data-scroll-target="#herencia"><span class="header-section-number">4.4</span> 3 Herencia</a></li>
-  <li><a href="#polimorfismo" id="toc-polimorfismo" class="nav-link" data-scroll-target="#polimorfismo"><span class="header-section-number">5</span> Polimorfismo</a>
-  <ul class="collapse">
-  <li><a href="#ejemplo-de-polimorfismo" id="toc-ejemplo-de-polimorfismo" class="nav-link" data-scroll-target="#ejemplo-de-polimorfismo"><span class="header-section-number">5.0.1</span> Ejemplo de Polimorfismo</a></li>
-  </ul></li>
-  </ul>
-</nav>
+        
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Conceptos Generales de la POO</span></h1>
+<h1 class="title"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Relaciones entre clases</span></h1>
 </div>
 
 
@@ -437,141 +383,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </header>
 
-<p>La <strong>Programación Orientada a Objetos (POO)</strong> es un paradigma de programación que organiza el código en torno a “objetos” que representan entidades del mundo real. La POO permite una estructura modular, reutilizable y escalable, haciendo el código más fácil de entender y mantener.</p>
-<section id="principios-fundamentales-de-la-poo" class="level2" data-number="4.1">
-<h2 data-number="4.1" class="anchored" data-anchor-id="principios-fundamentales-de-la-poo"><span class="header-section-number">4.1</span> Principios Fundamentales de la POO</h2>
-<p>La POO se basa en cuatro principios clave: <strong>Clases y Objetos</strong>, <strong>Encapsulación</strong>, <strong>Herencia</strong> y <strong>Polimorfismo</strong>. A continuación, veremos cada uno en detalle.</p>
-<hr>
-</section>
-<section id="clases-y-objetos" class="level2" data-number="4.2">
-<h2 data-number="4.2" class="anchored" data-anchor-id="clases-y-objetos"><span class="header-section-number">4.2</span> 1 Clases y Objetos</h2>
-<section id="clases" class="level3" data-number="4.2.1">
-<h3 data-number="4.2.1" class="anchored" data-anchor-id="clases"><span class="header-section-number">4.2.1</span> Clases</h3>
-<p>Una <strong>clase</strong> es una plantilla o modelo que define las propiedades y comportamientos de un tipo de objeto. Es como un plano que describe cómo debe ser un objeto.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="imagenes/objeto.png" class="img-fluid figure-img"></p>
-</figure>
-</div>
-<div class="sourceCode" id="cb1"><pre class="sourceCode java code-with-copy"><code class="sourceCode java"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="kw">class</span> Persona <span class="op">{</span> <span class="co">// NOMBRE DE LA CLASE</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">String</span> nombre<span class="op">;</span>     <span class="co">// ATRIBUTO</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    <span class="dt">int</span> edad<span class="op">;</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>    <span class="kw">public</span> <span class="dt">void</span> <span class="fu">presentarse</span><span class="op">()</span> <span class="op">{</span> <span class="co">// METODO</span></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>        <span class="bu">System</span><span class="op">.</span><span class="fu">out</span><span class="op">.</span><span class="fu">println</span><span class="op">(</span><span class="st">"Hola, soy "</span> <span class="op">+</span> nombre <span class="op">+</span> <span class="st">" y tengo "</span> <span class="op">+</span> edad <span class="op">+</span> <span class="st">" años."</span><span class="op">);</span></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
-<section id="objetos" class="level3" data-number="4.2.2">
-<h3 data-number="4.2.2" class="anchored" data-anchor-id="objetos"><span class="header-section-number">4.2.2</span> Objetos</h3>
-<p>Un <strong>objeto</strong> es una instancia concreta de una clase. Cuando se crea un objeto, se asigna un espacio en memoria y se puede interactuar con sus atributos y métodos.</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode java code-with-copy"><code class="sourceCode java"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="kw">class</span> Main <span class="op">{</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">public</span> <span class="dt">static</span> <span class="dt">void</span> <span class="fu">main</span><span class="op">(</span><span class="bu">String</span><span class="op">[]</span> args<span class="op">)</span> <span class="op">{</span></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>        Persona persona <span class="op">=</span> <span class="kw">new</span> <span class="fu">Persona</span><span class="op">();</span></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>        persona<span class="op">.</span><span class="fu">nombre</span> <span class="op">=</span> <span class="st">"Ana"</span><span class="op">;</span></span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>        persona<span class="op">.</span><span class="fu">edad</span> <span class="op">=</span> <span class="dv">25</span><span class="op">;</span></span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>        persona<span class="op">.</span><span class="fu">presentarse</span><span class="op">();</span></span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>En este ejemplo, <code>persona</code> es un objeto de la clase <code>Persona</code> con atributos <code>nombre</code> y <code>edad</code>.</p>
-</section>
-</section>
-<section id="encapsulación" class="level2" data-number="4.3">
-<h2 data-number="4.3" class="anchored" data-anchor-id="encapsulación"><span class="header-section-number">4.3</span> 2. Encapsulación</h2>
-<p>La <strong>encapsulación</strong> consiste en restringir el acceso directo a ciertos datos de un objeto, protegiendo sus atributos para que solo se modifiquen a través de métodos específicos.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="imagenes/encapsulamiento.png" class="img-fluid figure-img"></p>
-</figure>
-</div>
-<section id="ejemplo-de-encapsulación" class="level3" data-number="4.3.1">
-<h3 data-number="4.3.1" class="anchored" data-anchor-id="ejemplo-de-encapsulación"><span class="header-section-number">4.3.1</span> Ejemplo de Encapsulación</h3>
-<div class="sourceCode" id="cb3"><pre class="sourceCode java code-with-copy"><code class="sourceCode java"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Persona <span class="op">{</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">public</span> <span class="bu">String</span> nombre<span class="op">;</span></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">private</span> <span class="dt">int</span> edad<span class="op">;</span></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>    <span class="kw">public</span> <span class="fu">Persona</span><span class="op">(</span><span class="bu">String</span> nombre<span class="op">)</span> <span class="op">{</span></span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>        <span class="kw">this</span><span class="op">.</span><span class="fu">nombre</span> <span class="op">=</span> nombre<span class="op">;</span></span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>    <span class="kw">public</span> <span class="bu">String</span> <span class="fu">getEdad</span><span class="op">()</span> <span class="op">{</span></span>
-<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> edad<span class="op">;</span></span>
-<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
-<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>    <span class="kw">public</span> <span class="dt">void</span> <span class="fu">setEdad</span><span class="op">(</span><span class="dt">int</span> edad<span class="op">)</span> <span class="op">{</span></span>
-<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>        <span class="kw">this</span><span class="op">.</span><span class="fu">edad</span> <span class="op">=</span> edad<span class="op">;</span></span>
-<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
-<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>En este caso, el atributos <code>nombre</code> es público y <code>edad</code> es privados, y solo se pueden acceder mediante los métodos <code>getEdad()</code> y <code>setEdad()</code>.</p>
-</section>
-</section>
-<section id="herencia" class="level2" data-number="4.4">
-<h2 data-number="4.4" class="anchored" data-anchor-id="herencia"><span class="header-section-number">4.4</span> 3 Herencia</h2>
-<p>La <strong>herencia</strong> permite que una clase (subclase) herede atributos y métodos de otra clase (superclase), permitiendo reutilizar código y extender funcionalidades.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="imagenes/herencia.png" class="img-fluid figure-img"></p>
-</figure>
-</div>
-<p>Ejemplo de Herencia</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode java code-with-copy"><code class="sourceCode java"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Animal <span class="op">{</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="kw">public</span> <span class="bu">String</span> nombre<span class="op">;</span></span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  <span class="kw">public</span> <span class="fu">Animal</span> <span class="op">(</span><span class="bu">String</span> nombre<span class="op">){</span></span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">this</span><span class="op">.</span><span class="fu">nombre</span> <span class="op">=</span> nombre<span class="op">;</span></span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>  <span class="op">}</span> </span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>  <span class="kw">public</span> <span class="dt">void</span> <span class="fu">sonido</span><span class="op">()</span> <span class="op">{</span></span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>        <span class="bu">System</span><span class="op">.</span><span class="fu">out</span><span class="op">.</span><span class="fu">println</span><span class="op">(</span><span class="st">"El animal hace un sonido"</span><span class="op">);</span></span>
-<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>  <span class="op">}</span></span>
-<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span>
-<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Perro <span class="kw">extends</span> Animal <span class="op">{</span></span>
-<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>  <span class="at">@Override</span></span>
-<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>  <span class="kw">public</span> <span class="dt">void</span> <span class="fu">sonido</span><span class="op">()</span> <span class="op">{</span></span>
-<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>      <span class="bu">System</span><span class="op">.</span><span class="fu">out</span><span class="op">.</span><span class="fu">println</span><span class="op">(</span><span class="st">"El perro ladra"</span><span class="op">);</span></span>
-<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a>  <span class="op">}</span></span>
-<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Aquí, <code>Perro</code> es una subclase de <code>Animal</code> y hereda el atributo nombre y su método <code>sonido()</code>, que luego sobrescribimos (@verride) para proporcionar un comportamiento específico.</p>
-</section>
-<section id="polimorfismo" class="level1" data-number="5">
-<h1 data-number="5"><span class="header-section-number">5</span> Polimorfismo</h1>
-<p>El <strong>polimorfismo</strong> permite que objetos de diferentes clases respondan al mismo método de formas distintas, aumentando la flexibilidad del código.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="imagenes/herencia.png" class="img-fluid figure-img"></p>
-</figure>
-</div>
-<section id="ejemplo-de-polimorfismo" class="level3" data-number="5.0.1">
-<h3 data-number="5.0.1" class="anchored" data-anchor-id="ejemplo-de-polimorfismo"><span class="header-section-number">5.0.1</span> Ejemplo de Polimorfismo</h3>
-<div class="sourceCode" id="cb5"><pre class="sourceCode java code-with-copy"><code class="sourceCode java"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Animal <span class="op">{</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">public</span> <span class="dt">void</span> <span class="fu">sonido</span><span class="op">()</span> <span class="op">{</span></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>        <span class="bu">System</span><span class="op">.</span><span class="fu">out</span><span class="op">.</span><span class="fu">println</span><span class="op">(</span><span class="st">"El animal hace un sonido"</span><span class="op">);</span></span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Perro <span class="kw">extends</span> Animal <span class="op">{</span></span>
-<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>    <span class="kw">public</span> <span class="dt">void</span> <span class="fu">sonido</span><span class="op">()</span> <span class="op">{</span></span>
-<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>        <span class="bu">System</span><span class="op">.</span><span class="fu">out</span><span class="op">.</span><span class="fu">println</span><span class="op">(</span><span class="st">"El perro ladra"</span><span class="op">);</span></span>
-<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
-<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span>
-<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Gato <span class="kw">extends</span> Animal <span class="op">{</span></span>
-<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>    <span class="kw">public</span> <span class="dt">void</span> <span class="fu">sonido</span><span class="op">()</span> <span class="op">{</span></span>
-<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>        <span class="bu">System</span><span class="op">.</span><span class="fu">out</span><span class="op">.</span><span class="fu">println</span><span class="op">(</span><span class="st">"El gato maúlla"</span><span class="op">);</span></span>
-<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
-<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span>
-<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="kw">class</span> Main <span class="op">{</span></span>
-<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a>    <span class="kw">public</span> <span class="dt">static</span> <span class="dt">void</span> <span class="fu">main</span><span class="op">(</span><span class="bu">String</span><span class="op">[]</span> args<span class="op">)</span> <span class="op">{</span></span>
-<span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a>        Animal miAnimal <span class="op">=</span> <span class="kw">new</span> <span class="fu">Perro</span><span class="op">();</span></span>
-<span id="cb5-22"><a href="#cb5-22" aria-hidden="true" tabindex="-1"></a>        miAnimal<span class="op">.</span><span class="fu">sonido</span><span class="op">();</span></span>
-<span id="cb5-23"><a href="#cb5-23" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
-<span id="cb5-24"><a href="#cb5-24" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>En este ejemplo, el método <code>sonido()</code> se comporta de manera distinta dependiendo del tipo de objeto (<code>Perro</code> o <code>Gato</code>) que lo invoque.</p>
-<p><a href="https://forms.gle/u9kWsVgsEHhDfahZ7">TEST</a></p>
 
 
-</section>
-</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -809,13 +622,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../../Unidades/unidad3/cap3.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Introducción a los Paradigmas de Programación</span></span>
+      <a href="../../Unidades/unidad13/cap13.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Persistencia</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../../Unidades/unidad5/cap5.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Modelamiento de clases y objetos.</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../../summary.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Summary</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
