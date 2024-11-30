@@ -355,7 +355,7 @@ public class Main {
 ### **Diferencias Clave entre los programas anteriores**
 
 | Característica             | **Primer Código (con `finally`)**                                            | **Segundo Código (sin `finally`)**                                                        |
-|----------------------------|------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------|
+|----------------|--------------------------|------------------------------|
 | **Uso de `finally`**       | Utiliza el bloque `finally` para garantizar el cierre del recurso `Scanner`. | No usa `finally`, pero cierra el recurso manualmente al final.                            |
 | **Liberación de Recursos** | El cierre del `Scanner` ocurre **siempre**, incluso si ocurre una excepción. | El cierre del `Scanner` depende de que el flujo salga del bucle correctamente.            |
 | **Robustez del Código**    | Más robusto, ya que garantiza que el `Scanner` siempre se cierre.            | Menos robusto, podría no cerrar el recurso si ocurre un error inesperado fuera del bucle. |

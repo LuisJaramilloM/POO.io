@@ -43,6 +43,26 @@ book:
     - part: "Unidad 9: Manejor de Exepciones"
       chapters: 
         - Unidades/unidad9/cap9.qmd
+        
+    - part: "Unidad 10: Array - Arreglos"
+      chapters: 
+        - Unidades/unidad10/cap10.qmd
+
+    - part: "Unidad 11: Encapsulamiento"
+      chapters: 
+        - Unidades/unidad11/cap11.qmd
+
+    - part: "Unidad 12: Constructores"
+      chapters: 
+        - Unidades/unidad12/cap12.qmd
+    
+    - part: "Unidad 13: Getter & Setter"
+      chapters: 
+        - Unidades/unidad13/cap13.qmd
+    
+    - part: "Unidad 14: Persistencia de datos"
+      chapters: 
+        - Unidades/unidad14/cap14.qmd
 
 
 

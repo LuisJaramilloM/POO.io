@@ -1,0 +1,239 @@
+### Constructores
+
+En Java, un constructor es un bloque de código especial que se ejecuta automáticamente cuando se crea un objeto de una clase. Su propósito principal es inicializar los atributos del objeto. A diferencia de los métodos comunes, el constructor:
+
+Tiene el mismo nombre que la clase. No tiene un tipo de retorno, ni siquiera void.
+
+### **Definición y Función**
+
+El constructor se utiliza para:
+
+-   Asignar valores iniciales a los atributos de una clase.
+
+-   Garantizar que un objeto tenga un estado válido desde el momento de su creación.
+
+Ejemplo
+
+``` java
+public class Persona {
+    public String nombre;
+    public int edad;
+
+    // Constructor
+    public Persona(String nombre, int edad) {
+        this.nombre = nombre;
+        this.edad = edad;
+    }
+
+    public void mostrarInformacion() {
+        System.out.println("Nombre: " + nombre + ", Edad: " + edad);
+    }
+}
+```
+
+### **Tipos de Constructores**
+
+#### **a. Constructor por Defecto**
+
+Un constructor por defecto es un constructor sin parámetros que no se define explícitamente. Si no escribes ningún constructor, el compilador genera uno automáticamente.
+
+#### **Ejemplo:**
+
+``` java
+
+public class Persona {
+    public String nombre;
+    public int edad;
+
+    // Constructor por defecto generado automáticamente (sin parámetros)
+}
+```
+
+``` java
+public class Main {
+    public static void main(String[] args) {
+        Persona persona = new Persona();
+        persona.nombre("Luis");
+        persona.edad(23);
+    }
+}
+```
+
+#### **b. Constructor Parametrizado**
+
+Un constructor parametrizado permite inicializar los atributos del objeto con valores específicos.
+
+#### **Ejemplo:**
+
+``` java
+public class Persona {
+    public String nombre;
+    public int edad;
+
+    // Constructor parametrizado
+    public Persona(String nombre, int edad) {
+        this.nombre = nombre;
+        this.edad = edad;
+    }
+
+    public void mostrarInformacion() {
+        System.out.println("Nombre: " + nombre + ", Edad: " + edad);
+    }
+}
+```
+
+``` java
+public class Main {
+    public static void main(String[] args) {
+        Persona persona = new Persona("Juan Pérez", 30);
+        persona.mostrarInformacion();
+    }
+}
+```
+
+#### **c. Sobrecarga de Constructores**
+
+Java permite definir múltiples constructores en la misma clase, siempre que tengan diferentes listas de parámetros (número o tipo de parámetros). Esto se llama **sobrecarga de constructores**.
+
+#### **Ejemplo:**
+
+``` java
+public class Persona {
+    public String nombre;
+    public int edad;
+
+    // Constructor vacio
+    public Persona() {
+        this.nombre = "Desconocido";
+        this.edad = 0;
+    }
+
+    // Constructor parametrizado
+    public Persona(String nombre, int edad) {
+        this.nombre = nombre;
+        this.edad = edad;
+    }
+
+    public void mostrarInformacion() {
+        System.out.println("Nombre: " + nombre + ", Edad: " + edad);
+    }
+}
+```
+
+``` java
+public class Main {
+    public static void main(String[] args) {
+        Persona persona1 = new Persona(); // Llama al constructor por defecto
+        Persona persona2 = new Persona("Ana López", 25); // Llama al constructor parametrizado
+
+        persona1.mostrarInformacion();
+        persona2.mostrarInformacion();
+    }
+}
+```
+
+#### **d. Constructor copia.**
+
+Un **constructor copia** es un tipo especial de constructor que crea un nuevo objeto como una copia exacta de otro objeto existente de la misma clase. Es útil cuando deseas duplicar un objeto sin modificar el original, manteniendo la separación entre las instancias.
+
+El constructor copia toma un objeto de la misma clase como parámetro y copia los valores de sus atributos al nuevo objeto.
+
+### **Ventajas del Constructor Copia**
+
+1.  **Facilita la Clonación:**
+
+    -   Permite duplicar objetos sin necesidad de escribir métodos adicionales.
+
+2.  **Encapsulamiento:**
+
+    -   Copia los atributos directamente sin exponerlos al exterior.
+
+3.  **Separación de Instancias:**
+
+    -   El objeto copiado es independiente del original, incluso si tienen los mismos valores.
+
+Cómo funciona
+
+utiliza la siguiente línea de comando para crear un objeto copia
+
+Persona personaCopia = new Persona(personaOriginal);
+
+1.  **Crea un nuevo objeto `personaCopia`**
+
+2.  **Pasa `personaOriginal` como argumento al constructor copia:**
+
+    -   El objeto **`personaOriginal`** se pasa como parámetro al constructor copia, permitiendo que se acceda a sus atributos y se copien en el nuevo objeto **`personaCopia`**.
+
+3.  **Asignación de nombre en el constructor Copia:**
+
+    -   En la línea this.nombre = otraPersona.nombre;\
+        atributo `nombre` del objeto otraPersona es personaOriginal
+    -   Como el atributo `nombre` es `private`, puedes acceder a él directamente dentro de la misma clase porque las reglas de encapsulamiento lo permiten
+    -   Asigna el valor de **`otraPersona.nombre`** a **`this.nombre`**, copiando el valor del atributo del objeto original al nuevo objeto.
+
+#### **Ejemplo:**
+
+``` java
+public class Persona {
+    private String nombre; // Nombre de la persona
+    private int edad;      // Edad de la persona
+
+    // Constructor parametrizado
+    public Persona(String nombre, int edad) {
+        this.nombre = nombre;
+        this.edad = edad;
+    }
+
+    // Constructor copia
+    public Persona(Persona otraPersona) {
+        this.nombre = otraPersona.nombre;
+        this.edad = otraPersona.edad;
+    }
+
+    // Métodos getter
+    public String getNombre() {
+        return nombre;
+    }
+
+    public int getEdad() {
+        return edad;
+    }
+
+    // Método setter para modificar el nombre
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    // Método para mostrar información
+    public void mostrarInformacion() {
+        System.out.println("Nombre: " + nombre + ", Edad: " + edad);
+    }
+}
+```
+
+``` java
+public class Main {
+    public static void main(String[] args) {
+        // Crear un objeto original
+        Persona personaOriginal = new Persona("Juan Pérez", 30);
+        System.out.println("Información de la persona original:");
+        personaOriginal.mostrarInformacion();
+
+        // Crear una copia del objeto usando el constructor copia
+        Persona personaCopia = new Persona(personaOriginal);
+        System.out.println("Información de la persona copia:");
+        personaCopia.mostrarInformacion();
+
+        // Modificar el nombre de la copia
+        System.out.println("Modificando el nombre de la copia...");
+        personaCopia.setNombre("Ana López");
+
+        // Mostrar la información después de la modificación
+        System.out.println("Información después de la modificación:");
+        System.out.println("Original:");
+        personaOriginal.mostrarInformacion(); // Original permanece igual
+        System.out.println("Copia:");
+        personaCopia.mostrarInformacion();    // La copia tiene el nuevo nombre
+    }
+}
+```
