@@ -1,2 +1,356 @@
-### Relaciones entre clases
+### **Relación entre Clases en Java**
 
+Las relaciones entre clases en Java muestran cómo se conectan e interactúan dos o más clases. Estas relaciones reflejan situaciones del mundo real y ayudan a que las clases trabajen juntas, compartiendo información y funcionalidades.
+
+Ejemplo
+
+Una Persona vive en una Casa.
+
+Una factura pertenece a un Cliente
+
+En estos casos, las clases `Persona`, `Casa`, `Factura` y `Cliente` necesitan "hablarse" para representar estas relaciones del mundo real.
+
+Cuando modelamos relaciones entre clases en Java, es útil entender cómo interactúan las entidades en el mundo real. Estas relaciones pueden ser:
+
+1.  **De Uno a Uno:** Una entidad está relacionada con otra exclusivamente.\
+    Ejemplo: Una persona tiene un pasaporte.
+
+2.  **De Uno a Muchos:** Una entidad está relacionada con varias.\
+    Ejemplo: Un maestro enseña a muchos estudiantes.
+
+3.  **De Muchos a Uno:** Muchas entidades están relacionadas con una sola.\
+    Ejemplo: Muchos empleados trabajan en una empresa.
+
+### **Relación de Uno a Uno**
+
+#### **Descripción**
+
+-   Una relación de uno a uno significa que cada entidad de una clase está relacionada con exactamente una entidad de otra clase.
+
+-   Ejemplo: **Una Persona tiene un Pasaporte.**
+
+``` java
+public class Pasaporte {
+    private String numero;
+    private String pais;
+
+    // Constructor
+    public Pasaporte(String numero, String pais) {
+        this.numero = numero;
+        this.pais = pais;
+    }
+
+    // Métodos para obtener los valores
+    public String getNumero() {
+        return numero;
+    }
+
+    public String getPais() {
+        return pais;
+    }
+
+    @Override
+    public String toString() {
+        return "Pasaporte [Número: " + numero + ", País: " + pais + "]";
+    }
+}
+```
+
+``` java
+public class Persona {
+    private String nombre;
+    private Pasaporte pasaporte; // Relación de uno a uno con Pasaporte
+
+    // Constructor
+    public Persona(String nombre, Pasaporte pasaporte) {
+        this.nombre = nombre;
+        this.pasaporte = pasaporte;
+    }
+
+    // Métodos para obtener los valores
+    public String getNombre() {
+        return nombre;
+    }
+
+    public Pasaporte getPasaporte() {
+        return pasaporte;
+    }
+
+    @Override
+    public String toString() {
+        return "Persona [Nombre: " + nombre + ", " + pasaporte.toString() + "]";
+    }
+}
+```
+
+``` java
+public class Main {
+    public static void main(String[] args) {
+        // Crear un pasaporte
+        Pasaporte pasaporte = new Pasaporte("123456", "Ecuador");
+
+        // Crear una persona con un pasaporte
+        Persona persona = new Persona("Juan Pérez", pasaporte);
+
+        // Mostrar los datos de la persona y su pasaporte
+        System.out.println(persona);
+    }
+}
+```
+
+toString
+
+:   ### **¿Qué es `toString()` y por qué se utiliza?**
+
+    #### **¿Qué es `toString()`?**
+
+    El método **`toString()`** es un método que pertenece a la clase base de Java llamada **`Object`**, de la cual heredan todas las clases en Java. Este método está diseñado para devolver una representación en forma de cadena (texto) de un objeto.
+
+    Por defecto, el método **`toString()`** devuelve:
+
+    -   El nombre completo de la clase.
+
+    -   El símbolo **`@`**.
+
+    -   Un valor hash único del objeto.
+
+    Ejemplo del método por defecto:
+
+:   ``` java
+    public class Persona {
+        private String nombre;
+        private int edad;
+
+        public Persona(String nombre, int edad) {
+            this.nombre = nombre;
+            this.edad = edad;
+        }
+    }
+
+    public class Main {
+        public static void main(String[] args) {
+            Persona persona = new Persona("Juan", 30);
+            System.out.println(persona.toString()); // Resultado por defecto
+        }
+    }
+    ```
+
+:   1.  **`Persona`:**
+
+        -   Es el nombre de la clase del objeto que estás imprimiendo.
+
+        -   Indica que el objeto pertenece a la clase **`Persona`**.
+
+    2.  **`@`:**
+
+        -   Es un separador que Java utiliza para distinguir el nombre de la clase del valor hash.
+
+    3.  **`15db9742`:**
+
+        -   Es el "hashcode" del objeto.
+
+        -   Representa un valor hexadecimal que es único para ese objeto en particular durante su ciclo de vida en memoria.
+
+        -   Este hashcode se genera mediante el método **`hashCode()`** de la clase **`Object`**, y depende de la ubicación del objeto en la memoria.
+
+        ``` java
+        public class Persona {
+            private String nombre;
+            private int edad;
+
+            public Persona(String nombre, int edad) {
+                this.nombre = nombre;
+                this.edad = edad;
+            }
+
+            @Override
+            public String toString() {
+                return "Persona [Nombre: " + nombre + ", Edad: " + edad + "]";
+            }
+        }
+        ```
+
+        La diferencia principal entre **sobrescribir el método `toString()`** y crear un método personalizado como `informacion()` radica en el propósito y el uso estándar de cada uno.
+
+        -   Cuando intentas imprimir un objeto directamente (por ejemplo, con **`System.out.println(persona)`**), **Java llama automáticamente a `toString()`**. cuando utilizas un método personalizado debes llamarlo explícitamente, como **`persona.informacion()`**, para que funcione.
+
+        ``` java
+         @Override
+            public String toString() {
+                return "Persona [Nombre: " + nombre + ", Edad: " + edad + "]";
+            }
+
+            public String informacion() {
+                return "Persona [Nombre: " + nombre + ", Edad: " + edad + "]";
+            }
+        }
+        ```
+
+        ``` java
+        System.out.println(persona);
+        System.out.println(persona.informacion());
+        ```
+
+**Relación de Uno a Muchos**
+
+:   #### **Descripción**
+
+    -   Una relación de uno a muchos significa que una entidad está conectada con varias otras.
+
+    -   Ejemplo: **Un Maestro enseña a muchos Estudiantes.**
+
+``` java
+public class Estudiante {
+    private String nombre;
+
+    // Constructor
+    public Estudiante(String nombre) {
+        this.nombre = nombre;
+    }
+
+    // Método para obtener el nombre
+    public String getNombre() {
+        return nombre;
+    }
+
+    @Override
+    public String toString() {
+        return "Estudiante [Nombre: " + nombre + "]";
+    }
+}
+```
+
+``` java
+import java.util.List;
+
+public class Maestro {
+    private String nombre;
+    private List<Estudiante> estudiantes; // Relación de uno a muchos con Estudiantes
+
+    // Constructor
+    public Maestro(String nombre, List<Estudiante> estudiantes) {
+        this.nombre = nombre;
+        this.estudiantes = estudiantes;
+    }
+
+    // Métodos para obtener los valores
+    public String getNombre() {
+        return nombre;
+    }
+
+    public List<Estudiante> getEstudiantes() {
+        return estudiantes;
+    }
+
+    @Override
+    public String toString() {
+        return "Maestro [Nombre: " + nombre + ", Estudiantes: " + estudiantes + "]";
+    }
+}
+```
+
+``` java
+import java.util.Arrays;
+
+public class Main {
+    public static void main(String[] args) {
+        // Crear estudiantes
+        Estudiante estudiante1 = new Estudiante("Ana López");
+        Estudiante estudiante2 = new Estudiante("Carlos Martínez");
+        Estudiante estudiante3 = new Estudiante("Lucía Gómez");
+
+        // Crear un maestro con una lista de estudiantes
+        Maestro maestro = new Maestro("Profesor Pérez", Arrays.asList(estudiante1, estudiante2, estudiante3));
+
+        // Mostrar los datos del maestro y sus estudiantes
+        System.out.println(maestro);
+    }
+}
+```
+
+### **Relación de Muchos a Uno**
+
+#### **Descripción**
+
+-   Una relación de muchos a uno significa que muchas entidades están relacionadas con una sola.
+
+-   Ejemplo: **Muchos Empleados trabajan en una Empresa.**
+
+``` java
+public class Empresa {
+    private String nombre;
+
+    // Constructor
+    public Empresa(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    @Override
+    public String toString() {
+        return "Empresa [Nombre: " + nombre + "]";
+    }
+}
+```
+
+``` java
+public class Empleado {
+    private String nombre;
+    private Empresa empresa; // Relación de muchos a uno con Empresa
+
+    // Constructor
+    public Empleado(String nombre, Empresa empresa) {
+        this.nombre = nombre;
+        this.empresa = empresa;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public Empresa getEmpresa() {
+        return empresa;
+    }
+
+    @Override
+    public String toString() {
+        return "Empleado [Nombre: " + nombre + ", " + empresa.toString() + "]";
+    }
+}
+```
+
+``` java
+public class Main {
+    public static void main(String[] args) {
+        // Crear una empresa
+        Empresa empresa = new Empresa("TechCorp");
+
+        // Crear empleados asociados a la empresa
+        Empleado empleado1 = new Empleado("Pedro Gómez", empresa);
+        Empleado empleado2 = new Empleado("María López", empresa);
+
+        // Mostrar los datos de los empleados y su empresa
+        System.out.println(empleado1);
+        System.out.println(empleado2);
+    }
+}
+```
+
+### **Relaciones entre Clases en Java: Asociación, Agregación y Composición**
+
+En Java, las relaciones entre clases se clasifican según cómo están conectadas las clases. Las más comunes son:
+
+1.  **Asociación:**\
+    Una clase está relacionada con otra, pero ambas pueden existir de forma independiente.\
+    Ejemplo: Un **maestro** enseña a **estudiantes**.
+
+2.  **Agregación:**\
+    Una clase contiene otra, pero ambas pueden existir por separado.\
+    Ejemplo: Una **escuela** tiene **maestros**, pero si la escuela cierra, los maestros pueden trabajar en otro lugar.
+
+3.  **Composición:**\
+    Una clase contiene otra y no pueden existir separadas.\
+    Ejemplo: Una **casa** tiene una **dirección**, y sin dirección, la casa no tiene sentido.

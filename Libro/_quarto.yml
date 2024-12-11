@@ -64,6 +64,10 @@ book:
       chapters: 
         - Unidades/unidad14/cap14.qmd
 
+    - part: "Ejercicio1"
+      chapters: 
+        - Unidades/Ejercicio1/ejercicio.qmd
+
 
 
     - summary.qmd

@@ -346,5 +346,4 @@ public class DeserializarPersona {
 
 **Deserialización**:
 
-El objeto deserializado es:
-Nombre: Juan Pérez, Edad: 30
+El objeto deserializado es: Nombre: Juan Pérez, Edad: 30

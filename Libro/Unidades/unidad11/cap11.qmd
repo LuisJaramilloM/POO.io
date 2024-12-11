@@ -219,7 +219,7 @@ public class EjemploFinalVariable {
 }
 ```
 
-###  **Uso de `final` con Métodos**
+### **Uso de `final` con Métodos**
 
 Cuando un método es declarado como **`final`**, significa que **no puede ser sobrescrito** en clases que heredan de la clase donde se define el método.
 
@@ -281,7 +281,7 @@ public class Persona {
 }
 ```
 
-###  **Ejercicio Práctico**
+### **Ejercicio Práctico**
 
 **Instrucciones:**
 
