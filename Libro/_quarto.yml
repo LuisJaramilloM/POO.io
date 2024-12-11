@@ -1,17 +1,18 @@
 project:
   type: book
+  
 
 book:
   title: "Libro"
   author: "Luis Jaramillo"
-  date: "8/11/2024"
-  chapters:
-
-    
+  date: "8/11/2024"  # <-- Aquí está correctamente
+  chapters: 
     - index.qmd
+
     - part: "Unidad 1: Nombre de la Unidad"
       chapters: 
         - Unidades/unidad1/intro.qmd     
+
     - part: "Unidad 2: Entorno de Desarrollo"
       chapters: 
         - Unidades/unidad2/cap2.qmd
@@ -24,11 +25,11 @@ book:
       chapters: 
         - Unidades/unidad4/cap4.qmd
     
-    - part: "Unidad 5: Modelamiento de clases y objetos"
+    - part: "Unidad 5: Modelamiento de Clases y Objetos"
       chapters: 
         - Unidades/unidad5/cap5.qmd
 
-    - part: "Unidad 6: Codigo Limpio"
+    - part: "Unidad 6: Código Limpio"
       chapters: 
         - Unidades/unidad6/cap6.qmd
 
@@ -36,11 +37,11 @@ book:
       chapters: 
         - Unidades/unidad7/cap7.qmd
 
-    - part: "Unidad 8: Lectura y Escritura de Datos por consola"
+    - part: "Unidad 8: Lectura y Escritura de Datos por Consola"
       chapters: 
         - Unidades/unidad8/cap8.qmd
     
-    - part: "Unidad 9: Manejor de Exepciones"
+    - part: "Unidad 9: Manejo de Excepciones"
       chapters: 
         - Unidades/unidad9/cap9.qmd
         
@@ -60,15 +61,13 @@ book:
       chapters: 
         - Unidades/unidad13/cap13.qmd
     
-    - part: "Unidad 14: Persistencia de datos"
+    - part: "Unidad 14: Persistencia de Datos"
       chapters: 
         - Unidades/unidad14/cap14.qmd
 
-    - part: "Ejercicio1"
+    - part: "Ejercicio 1"
       chapters: 
-        - Unidades/Ejercicio1/ejercicio.qmd
-
-
+        - Unidades/ejercicio1/ejercicio.qmd
 
     - summary.qmd
     - references.qmd
@@ -78,8 +77,30 @@ bibliography: references.bib
 format:
   html:
     theme: cosmo
+    toc: true  # Activa la tabla de contenidos
+    toc-depth: 3  # Nivel de profundidad para los títulos
+    number-sections: true  # Numeración de las secciones
+    css: styles.css  # Archivo CSS personalizado para el HTML
+    include-after-body: descarga-pdf.html  # Botón de descarga del PDF en todas las páginas
+
   pdf:
-    documentclass: scrreprt
+    documentclass: scrreprt  # Clase de documento de LaTeX
+    toc: true  # Activa la tabla de contenidos
+    toc-title: "Contenido"  # Título para la tabla de contenidos
+    number-sections: true  # Numeración de las secciones
+    keep-tex: true  # Guarda el archivo .tex generado
+    header-includes:
+      - \usepackage{fancyhdr}  # Personalización de encabezados y pies de página
+      - \usepackage{geometry}  # Control de los márgenes de la página
+      - \geometry{a4paper, margin=1in}  # Márgenes personalizados
+      - \usepackage{graphicx}  # Permite usar imágenes
+      - \usepackage{xcolor}  # Colores personalizados
+      - \usepackage{amsmath}  # Soporte de matemáticas avanzadas
+    title: "Libro de Programación"
+    subtitle: "Guía completa de aprendizaje"
+    author: "Luis Jaramillo"
+    date: "8/11/2024"
+
 
 
 
